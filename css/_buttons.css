@@ -46,9 +46,9 @@
 .btn-link:hover { color: #b32915; text-decoration: underline; background-color: transparent; }
 .btn-link[disabled]:hover { color: #bfbfbf; text-decoration: none; }
 
-.btn-sm, .btn-group-sm > .btn { height: 26px; border-radius: 2px; padding-right: 14px; padding-left: 14px; font-size: 12px; }
+.btn-sm, .btn-group-sm > .btn, .pagination-sm .btn { height: 26px; border-radius: 2px; padding-right: 14px; padding-left: 14px; font-size: 12px; }
 
-.btn-lg, .btn-group-lg > .btn { height: 40px; border-radius: 4px; padding-right: 20px; padding-left: 20px; font-size: 16px; }
+.btn-lg, .btn-group-lg > .btn, .pagination-lg .btn { height: 40px; border-radius: 4px; padding-right: 20px; padding-left: 20px; font-size: 16px; }
 
 .btn-block { display: block; width: 100%; }
 
@@ -64,7 +64,7 @@
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus { color: #bfbfbf; }
 .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus { text-decoration: none; background-color: transparent; cursor: not-allowed; }
 
-.btn-group { position: relative; display: inline-block; vertical-align: middle; }
+.btn-group { position: relative; display: inline-block; *display: inline; vertical-align: middle; }
 .btn-group .btn + .btn { margin-left: -1px; }
 .btn-group > .btn { position: relative; float: left; }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) { border-top-right-radius: 0; border-bottom-right-radius: 0; }

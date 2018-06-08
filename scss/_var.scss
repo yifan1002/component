@@ -49,8 +49,10 @@ $fm-h: "SimHei" !default; //黑体
 $fm-a: Arial !default;   //英文字体
 //字号
 $fz:		               14px !default;
+$fz-smer:	floor(($fz * 0.72)) !default; //10px
 $fz-sm:		floor(($fz * 0.88)) !default; //12px
 $fz-lg:		floor(($fz * 1.15)) !default; //16px
+$fz-lger:	floor(($fz * 1.29)) !default; //18px
 $fz-h1:		floor(($fz * 2.15)) !default; //30px
 $fz-h2:		floor(($fz * 1.72)) !default; //24px
 $fz-h3:		floor(($fz * 1.45)) !default; //20px
@@ -67,8 +69,18 @@ $lh-lg:   1.8 !default;
 
 // ===5 表单 
 $input-px: 				10px !default;
-$input-bg:				#fff !default;
+$input-bgc:				#fff !default;
 $input-bg-disabled:		#fafafa !default;
 $input-color:           #333 !default;
 $input-border:          #d9d9d9 !default;
 $input-focus-border:    #e63101 !default;
+
+
+// ===5 分页
+$form-width: 		30px !default;
+$form-width-sm: 	28px !default;
+$form-width-lg: 	45px !default;
+$page-width: 		32px !default;
+$page-width-sm: 	26px !default;
+$page-width-lg: 	46px !default;
+$page-bdc: 			#e0e0e0 !default;

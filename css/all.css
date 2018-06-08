@@ -404,9 +404,9 @@ h4, h6, .h4, .h6 { font-weight: 700; }
 .btn-link:hover { color: #b32915; text-decoration: underline; background-color: transparent; }
 .btn-link[disabled]:hover { color: #bfbfbf; text-decoration: none; }
 
-.btn-sm, .btn-group-sm > .btn { height: 26px; border-radius: 2px; padding-right: 14px; padding-left: 14px; font-size: 12px; }
+.btn-sm, .btn-group-sm > .btn, .pagination-sm .btn { height: 26px; border-radius: 2px; padding-right: 14px; padding-left: 14px; font-size: 12px; }
 
-.btn-lg, .btn-group-lg > .btn { height: 40px; border-radius: 4px; padding-right: 20px; padding-left: 20px; font-size: 16px; }
+.btn-lg, .btn-group-lg > .btn, .pagination-lg .btn { height: 40px; border-radius: 4px; padding-right: 20px; padding-left: 20px; font-size: 16px; }
 
 .btn-block { display: block; width: 100%; }
 
@@ -422,7 +422,7 @@ h4, h6, .h4, .h6 { font-weight: 700; }
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus { color: #bfbfbf; }
 .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus { text-decoration: none; background-color: transparent; cursor: not-allowed; }
 
-.btn-group { position: relative; display: inline-block; vertical-align: middle; }
+.btn-group { position: relative; display: inline-block; *display: inline; vertical-align: middle; }
 .btn-group .btn + .btn { margin-left: -1px; }
 .btn-group > .btn { position: relative; float: left; }
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
@@ -434,16 +434,18 @@ label, .label { display: inline-block; max-width: 100%; margin-bottom: 5px; colo
 
 label + .form-control, .label + .form-control { margin-left: 5px; }
 
+select.form-control { padding-left: 5px !important; padding-right: 0 !important; }
+
 .form-control { height: 32px; background-color: #fff; border: 1px solid #d9d9d9; border-radius: 2px; padding-right: 10px; padding-left: 10px; vertical-align: middle; color: #333; -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
 .form-control:focus { border-color: #e63101; -webkit-box-shadow: 0 0 6px rgba(228, 49, 3, 0.2); box-shadow: 0 0 6px rgba(228, 49, 3, 0.2); }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #fafafa; opacity: 1; }
 .form-control[disabled], fieldset[disabled] .form-control { cursor: not-allowed; }
 
-.form-control-sm { height: 26px; border-radius: 2px; font-size: 12px; }
+.form-control-sm, .pagination-sm .form-control { height: 26px; border-radius: 2px; font-size: 12px; }
 
-.form-control-lg { height: 40px; border-radius: 4px; font-size: 16px; }
+.form-control-lg, .pagination-lg .form-control { height: 40px; border-radius: 4px; font-size: 16px; }
 
-.form-group { display: inline-block; vertical-align: middle; }
+.form-group { display: inline-block; *display: inline; vertical-align: middle; }
 
 .choice { display: inline-block; margin: 5px 30px 5px 0; cursor: pointer; }
 .choice > input { width: 16px; height: 16px; margin-bottom: -3px; *margin-bottom: 1px; }
@@ -473,12 +475,6 @@ label + .form-control, .label + .form-control { margin-left: 5px; }
 .choice-advanced:hover > input ~ .choice-name { color: #e1331a; }
 .choice-advanced:hover > input[type="checkbox"] ~ .choice-name { border-color: #e1331a; }
 
-.container { width: 1200px; margin: 0 auto; background-color: #fff; }
-
-.row { padding: 10px 0; }
-
-.row > [class^=col-] { height: 40px; line-height: 40px; background-color: #ffe5e5; text-align: center; }
-
 .switch { display: inline-block; /*利用能力来进行选择的CSS Hack，最后一个子元素*/ }
 .switch > input { /*IE7 IE8*/ width: 16px; height: 16px; margin-bottom: -3px; *margin-bottom: 1px; /*利用能力来进行选择的CSS Hack，第一个子元素*/ }
 .switch > input:nth-child(1) { display: none; }
@@ -497,5 +493,39 @@ label + .form-control, .label + .form-control { margin-left: 5px; }
 .switch-sm > .switch-name::before { width: 12px; height: 12px; }
 .switch-sm > .switch-name::after { width: 12px; height: 8px; line-height: 8px; }
 .switch-sm > input:checked ~ .switch-name::before { left: 14px; }
+
+/* =5 pagination */
+.pagination { margin: 10px 0; }
+.pagination .label { color: #666; }
+.pagination .form-paging { width: 30px; padding: 0 2px; text-align: center; }
+
+.pagination-list { display: inline-block; *display: inline; }
+.pagination-list > li { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.pagination-list > li > a, .pagination-list > li > span { position: relative; float: left; display: inline-block; min-width: 32px; height: 32px; line-height: 30px; background: #fff; border: 1px solid #e0e0e0; border-radius: 2px; margin-right: 6px; padding: 0 5px; text-decoration: none; text-align: center; color: #999; }
+.pagination-list > li > a:hover, .pagination-list > li > span:hover { border-color: #e1331a; color: #e1331a; }
+.pagination-list > li.active > a, .pagination-list > li.active > span { background-color: #e1331a !important; border-color: #e1331a !important; color: #fff; }
+.pagination-list > li.disabled > a, .pagination-list > li.disabled > span { border-color: #e0e0e0; color: #bfbfbf; cursor: not-allowed; }
+.pagination-list > li.more > a, .pagination-list > li.more > span { border-width: 0 !important; color: #999 !important; }
+
+.pagination-lg .label { font-size: 18px; }
+.pagination-lg .form-paging { width: 45px; }
+.pagination-lg .pagination-list > li > a, .pagination-lg .pagination-list > li > span { min-width: 46px; height: 40px; line-height: 38px; font-size: 18px; }
+
+.pagination-sm .label { font-size: 12px; }
+.pagination-sm .form-paging { width: 28px; }
+.pagination-sm .pagination-list > li > a, .pagination-sm .pagination-list > li > span { min-width: 26px; height: 26px; line-height: 24px; font-size: 12px; }
+
+.pagination-lite .pagination-list > li > a, .pagination-lite .pagination-list > li > span { background-color: transparent; border-color: transparent; margin-right: 0; }
+.pagination-lite .pagination-list > li.line > span { min-width: auto; margin: 0; }
+.pagination-lite .pagination-list > li.more > span { margin-right: -10px; }
+.pagination-lite .form-paging { width: 50px; }
+.pagination-lite.pagination-sm .form-paging { width: 40px; }
+.pagination-lite.pagination-lg .form-paging { width: 60px; }
+
+.container { width: 1200px; margin: 0 auto; background-color: #fff; }
+
+.row { padding: 10px 0; }
+
+.row > [class^=col-] { height: 40px; line-height: 40px; background-color: #ffe5e5; text-align: center; }
 
 /*# sourceMappingURL=all.css.map */

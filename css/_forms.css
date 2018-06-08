@@ -1,18 +1,21 @@
+@charset "UTF-8";
 /* =5 forms */
 label, .label { display: inline-block; max-width: 100%; margin-bottom: 5px; color: #333; }
 
 label + .form-control, .label + .form-control { margin-left: 5px; }
+
+select.form-control { padding-left: 5px !important; padding-right: 0 !important; }
 
 .form-control { height: 32px; background-color: #fff; border: 1px solid #d9d9d9; border-radius: 2px; padding-right: 10px; padding-left: 10px; vertical-align: middle; color: #333; -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
 .form-control:focus { border-color: #e63101; -webkit-box-shadow: 0 0 6px rgba(228, 49, 3, 0.2); box-shadow: 0 0 6px rgba(228, 49, 3, 0.2); }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #fafafa; opacity: 1; }
 .form-control[disabled], fieldset[disabled] .form-control { cursor: not-allowed; }
 
-.form-control-sm { height: 26px; border-radius: 2px; font-size: 12px; }
+.form-control-sm, .pagination-sm .form-control { height: 26px; border-radius: 2px; font-size: 12px; }
 
-.form-control-lg { height: 40px; border-radius: 4px; font-size: 16px; }
+.form-control-lg, .pagination-lg .form-control { height: 40px; border-radius: 4px; font-size: 16px; }
 
-.form-group { display: inline-block; vertical-align: middle; }
+.form-group { display: inline-block; *display: inline; vertical-align: middle; }
 
 .choice { display: inline-block; margin: 5px 30px 5px 0; cursor: pointer; }
 .choice > input { width: 16px; height: 16px; margin-bottom: -3px; *margin-bottom: 1px; }
@@ -41,5 +44,24 @@ label + .form-control, .label + .form-control { margin-left: 5px; }
 .choice-advanced > input[type="checkbox"][disabled]:checked ~ .choice-name { background: url(../images/icon/checked_advanced_disable.png) no-repeat right bottom; }
 .choice-advanced:hover > input ~ .choice-name { color: #e1331a; }
 .choice-advanced:hover > input[type="checkbox"] ~ .choice-name { border-color: #e1331a; }
+
+.switch { display: inline-block; /*利用能力来进行选择的CSS Hack，最后一个子元素*/ }
+.switch > input { /*IE7 IE8*/ width: 16px; height: 16px; margin-bottom: -3px; *margin-bottom: 1px; /*利用能力来进行选择的CSS Hack，第一个子元素*/ }
+.switch > input:nth-child(1) { display: none; }
+.switch > .switch-name:last-child { position: relative; display: inline-block; width: 44px; height: 22px; background-color: #bfbfbf; border-radius: 22px; cursor: pointer; text-indent: -9999em; }
+.switch > .switch-name::before { position: absolute; top: 2px; left: 2px; display: block; width: 18px; height: 18px; content: ""; border-radius: 50%; background: #fff; -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35); -webkit-transition: all 0.25s ease; -o-transition: all 0.25s ease; transition: all 0.25s ease; }
+.switch > .switch-name::after { position: absolute; top: 2px; right: 2px; display: block; width: 22px; height: 18px; line-height: 18px; content: ""; text-indent: 0; text-align: center; font-size: 12px; color: #fff; }
+.switch > input:checked ~ .switch-name { background-color: #e1331a; }
+.switch > input:checked ~ .switch-name::before { left: 24px; }
+.switch > input:checked ~ .switch-name::after { left: 2px; content: ""; }
+.switch > input[disabled] ~ .switch-name { opacity: 0.35; filter: alpha(opacity=35); cursor: not-allowed; }
+
+.switch-txt > .switch-name::after { content: "关"; }
+.switch-txt > input:checked ~ .switch-name::after { content: "开"; }
+
+.switch-sm > .switch-name:last-child { width: 28px; height: 16px; }
+.switch-sm > .switch-name::before { width: 12px; height: 12px; }
+.switch-sm > .switch-name::after { width: 12px; height: 8px; line-height: 8px; }
+.switch-sm > input:checked ~ .switch-name::before { left: 14px; }
 
 /*# sourceMappingURL=_forms.css.map */
