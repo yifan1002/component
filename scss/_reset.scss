@@ -1,0 +1,9 @@
+/* =1 reset */
+html{font-size:12px}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}body,button,input,select,textarea{font:14px/1.5 "Microsoft YaHei","SimSun",Tahoma,Verdana,Arial;outline:none}fieldset,img{border:0}address,caption,cite,code,dfn,var,optgroup{font-style:inherit;font-weight:inherit}del,ins{text-decoration:none}li{list-style:none}caption{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:baseline}sub{vertical-align:baseline}a{outline:none}textarea{resize:none}input:focus,textarea:focus{outline:none}input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px white inset}
+textarea{resize:none}/*禁用文本域手动放大缩小*/
+input:focus,textarea:focus{outline:none}/*chrome获取焦点外框去除*/
+input:-webkit-autofill,textarea:-webkit-autofill,select:-webkit-autofill{-webkit-box-shadow: 0 0 0 1000px white inset}/*chrome表单自动填充去掉input黄色背景*/
+video::-webkit-media-controls-enclosur{overflow: hidden;}video::-webkit-media-controls-panel{width: calc(100% + 30px);}/*屏蔽 video标签下载按钮*/
+/*重置盒模型*/
+*{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+*:before,*:after{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}

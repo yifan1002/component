@@ -1,0 +1,167 @@
+@import 'var';
+@import 'mixin';
+
+/* =2 public */
+strong, b, .b {
+    font-weight: 700
+}
+button, submit, .button, .submit {
+    cursor: pointer
+}
+.height-auto {
+    height: auto !important;
+}
+
+//标题、段落
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: $lh-sm;
+}
+h1, .h1 {
+	font-size: $fz-h1;
+}
+h2, .h2 {
+	font-size: $fz-h2;
+}
+h3, .h3 {
+	font-size: $fz-h3;
+}
+h4, h5,
+.h4, .h5 {
+	font-size: $fz-h4;
+}
+h6, .h6 {
+	font-size: $fz;
+}
+h4, h6, .h4, .h6 {
+	font-weight: $fw;
+}
+
+//浮动
+.clearfix {
+  @include clearfix;
+}
+.clr {
+    clear: both;
+}
+.pull-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}
+
+//显示&隐藏
+.hide, .hidden {
+    display: none !important;
+}
+.show, .block {
+    display: block !important;
+}
+.overhide {
+    overflow: hidden;
+}
+.invisible {
+  visibility: hidden;
+}
+
+//定位
+.absolute {
+    position: absolute;
+}
+.relative {
+    position: relative;
+}
+.fixed {
+    position: fixed;
+}
+
+//字体：缩进、对齐、转换、换行
+.text-indent-em {
+    text-indent: 2em;
+}
+.text-indent-hide {
+    text-indent: -9999px;
+}
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-break-all {
+    word-wrap: break-word;
+    word-break: break-all
+}
+
+//补丁
+.m-auto {
+    margin-right: auto;
+    margin-left: auto
+}
+@each $i in 5,10,15,20,30,50 {
+	.pt-#{$i} {
+		padding-top: $i + px;
+	}
+	.pr-#{$i} {
+		padding-right: $i + px;
+	}
+	.pb-#{$i} {
+		padding-bottom: $i + px;
+	}
+	.pl-#{$i} {
+		padding-left: $i + px;
+	}
+	.pa-#{$i} {
+		padding: $i + px;
+	}
+	.px-#{$i} {
+		padding-right: $i + px;
+		padding-left: $i + px;
+	}
+	.py-#{$i} {
+		padding-top: $i + px;
+		padding-bottom: $i + px;
+	}
+	
+	.mt-#{$i} {
+		margin-top: $i + px;
+	}
+	.mr-#{$i} {
+		margin-right: $i + px;
+	}
+	.mb-#{$i} {
+		margin-bottom: $i + px;
+	}
+	.ml-#{$i} {
+		margin-left: $i + px;
+	}
+	.ma-#{$i} {
+		padding: $i + px;
+	}
+	.mx-#{$i} {
+		margin-right: $i + px;
+		margin-left: $i + px;
+	}
+	.my-#{$i} {
+		margin-top: $i + px;
+		margin-bottom: $i + px;
+	}
+}

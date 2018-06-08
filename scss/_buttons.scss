@@ -1,0 +1,265 @@
+@import 'var';
+@import 'mixin';
+
+/* =4 buttons */
+//*****S button var *****//
+//=== 文本链接 ===
+$link-color:             $c-primary !default;
+$link-hover-color:       darken($link-color, 10%) !default;
+$link-disabled-color:    $c-disable !default;
+$link-hover-decoration:  underline !default;
+$link-hover-bgc:         $c-hover !default;
+//=== 下拉按钮 ===
+$dropdown-zindex:  3 !default;
+$dropdown-bgc:     $c-white !default;
+$dropdown-bdc:     $c-light !default;
+$dropdown-fz:      $fz !default;
+//*****E button var *****//
+
+
+//*****S button mixin *****//
+// button var 按钮颜色控制
+@mixin btn-var($color, $background, $border) {
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    
+    &:hover {
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 10%);
+    }
+    
+    &:active,
+    &.active{
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 10%);
+        
+        &:hover{
+            color: $color;
+            background-color: darken($background, 15%);
+            border-color: darken($border, 15%);
+        }
+    }
+    
+    &.disabled,
+    &[disabled]{
+        &:hover{
+            background-color: $background;
+            border-color: $border;
+        }
+    }
+}
+// button sizes 按钮尺寸控制
+@mixin btn-size($height, $border-radius, $padding-horizontal, $font-size) {
+	height: $height;
+    border-radius: $border-radius;
+    padding-right: $padding-horizontal;
+    padding-left: $padding-horizontal;
+    font-size:$font-size;
+}
+//*****E button mixin *****//
+
+
+
+//*****S 样式生成 *****//
+.btn{
+    *overflow:visible;
+    display: inline-block;
+    border: 1px solid transparent;
+    margin-bottom: 0; // For input.btn
+    white-space: nowrap;
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    @include btn-size($box-height, $box-bdrs, $box-px, $fz);
+    @include user-select;
+    @include touch-action;
+    
+    &:hover{
+        text-decoration: none;
+    }
+    &:active,
+    &.active{
+        outline: 0;
+        background-image: none;
+        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125)); 
+    }
+    &.disabled,
+    &[disabled]{
+        cursor: $cur-d;
+        @include opacity(65);
+        @include box-shadow(none)
+    }
+}
+
+//按钮颜色
+.btn-default {
+    @include btn-var($c-darker,$c-white,$c-lighter);
+}
+.btn-primary{
+    @include btn-var($c-white,$c-primary,$c-primary);
+}
+.btn-info{
+    @include btn-var($c-white,$c-info,$c-info);
+}
+.btn-success{
+    @include btn-var($c-white,$c-success,$c-success);
+}
+.btn-warning{
+    @include btn-var($c-white,$c-warning,$c-warning);
+}
+.btn-danger{
+    @include btn-var($c-white,$c-danger,$c-danger);
+}
+
+//文本链接
+.btn-link {
+    color: $link-color;
+    font-weight: normal;
+    border-radius: 0;
+    
+    &,
+    &:active,
+    &.active,
+    &[disabled]{
+        background-color: transparent;
+        @include box-shadow(none);
+    }
+    
+    &,
+    &:hover,
+    &:active {
+        border-color: transparent;
+    }
+    
+    &:hover{
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+        background-color: transparent;
+    }
+    
+    &[disabled]{
+        &:hover{
+            color: $link-disabled-color;
+            text-decoration: none;
+        }
+    }
+}
+
+//按钮尺寸
+.btn-sm{
+    @include btn-size($box-height-sm, $box-bdrs-sm, $box-px-sm, $fz-sm);
+}
+.btn-lg{
+    @include btn-size($box-height-lg, $box-bdrs-lg, $box-px-lg, $fz-lg);
+    
+}
+
+//块级按钮
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+//按钮式下拉菜单
+.dropdown-toggle:after {
+    content: " ";
+    display:inline-block;
+    width:0;
+    height:0;
+    border-width:4px 4px 0;
+    border-style:solid;
+    border-color:#fff transparent transparent;
+    margin: 0 0 3px 2px;
+}
+.btn-default.dropdown-toggle:after {
+    border-color:$c-darker transparent transparent;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    z-index: $dropdown-zindex;
+    background-color:$dropdown-bgc;
+    border: 1px solid $dropdown-bdc;
+    border-radius: $box-bdrs;
+    @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+    background-clip: padding-box;
+    
+    > li > a {
+        display: block;
+        padding: 3px 20px;
+        clear: both;
+        text-decoration: none;
+        line-height: $lh;
+        font-weight: normal;
+        color: $link-color;
+        white-space: nowrap;
+    }
+}
+.dropdown-menu > li > a {
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $link-hover-color;
+        background-color: $link-hover-bgc;
+    }
+}
+.dropdown-menu > .disabled > a {
+    &,
+    &:hover,
+    &:focus {
+        color: $link-disabled-color;
+    }
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        background-color: transparent;
+        cursor: $cur-d;
+    }
+}
+
+
+//按钮组
+.btn-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    
+    .btn + .btn {
+        margin-left: -1px;
+    }
+    
+    > .btn {
+        position: relative;
+        float: left;
+    }
+    
+    > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    > .btn:last-child:not(:first-child):not(.dropdown-toggle) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    > .btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+}
+.btn-group-sm > .btn { @extend .btn-sm; }
+.btn-group-lg > .btn { @extend .btn-lg; }
+
+//*****E 样式生成 *****//
+
+
