@@ -522,6 +522,68 @@ select.form-control { padding-left: 5px !important; padding-right: 0 !important;
 .pagination-lite.pagination-sm .form-paging { width: 40px; }
 .pagination-lite.pagination-lg .form-paging { width: 60px; }
 
+/* =5 steps */
+/*基础*/
+.steps li { position: relative; float: left; width: 20%; height: 20px; line-height: 20px; }
+.steps li:before { position: absolute; top: 9px; right: 0; left: 0; z-index: 8; display: block; content: " "; height: 2px; background-color: #333; }
+.steps li:first-child:before { display: none; }
+.steps li span { position: absolute; top: 0; right: 0; z-index: 9; display: block; padding: 0 10px; background-color: #fff; color: #333; }
+.steps li i { display: inline-block; width: 20px; height: 20px; line-height: 18px; border-radius: 50%; border: 1px solid #333; margin: 0 8px 0 0; text-align: center; font-style: inherit; }
+.steps li.active:before { background-color: #e1331a; }
+.steps li.active i, .steps li.active span { color: #e1331a; }
+.steps li.active i { border-color: #e1331a; }
+
+/*点状*/
+.steps-dot { padding-top: 40px; }
+.steps-dot li { line-height: 1; }
+.steps-dot li span { top: -28px; right: -100px; width: 200px; height: 43px; background: none; padding: 0; text-align: center; font-size: 18px; }
+.steps-dot li i { position: absolute; right: 95px; bottom: 0; z-index: 10; width: 10px; height: 10px; background-color: #333; margin-right: 0; text-indent: -9999em; }
+.steps-dot li.active:before { background-color: #e1331a; }
+.steps-dot li.active i { background-color: #e1331a; }
+
+/*高级：基础+点状*/
+.steps-advanced { padding-top: 40px; }
+.steps-advanced li { line-height: 1; }
+.steps-advanced li:before { height: 12px; background-color: #d9d9d9; border-top: 3px solid #d9d9d9; border-bottom: 3px solid #d9d9d9; }
+.steps-advanced li span { top: -33px; right: -100px; width: 200px; height: 66px; background: none; padding: 0; text-align: center; font-size: 18px; color: #333 !important; }
+.steps-advanced li i { position: absolute; right: 82px; bottom: 0; z-index: 10; display: block; width: 36px; height: 36px; line-height: 24px; background-color: #d9d9d9; border: 6px solid #d9d9d9 !important; margin-right: 0; color: #fff; }
+.steps-advanced li.active:before { background-color: #e1331a; }
+.steps-advanced li.active i { background: url(../images/icon/right_white_15x10.png) no-repeat center center #e1331a; text-indent: -9999em; }
+
+/*三角形*/
+.steps-arrow li { float: left; width: 20%; padding-right: 32px; }
+.steps-arrow li a { display: block; background: #eeeeee; text-decoration: none; position: relative; height: 30px; line-height: 28px; padding: 0 10px 0 20px; color: #333; }
+.steps-arrow li a:before, .steps-arrow li a:after { content: ""; position: absolute; top: 0; border: 0 solid #eeeeee; border-width: 15px 15px; width: 0; height: 0; }
+.steps-arrow li a:before { left: -30px; border-left-color: transparent; }
+.steps-arrow li a:after { left: 100%; border-color: transparent; border-left-color: #eeeeee; }
+.steps-arrow li a i { display: inline-block; float: left; width: 20px; height: 20px; line-height: 18px; border-radius: 50%; border: 1px solid #333; margin: 5px 8px 0 0; text-align: center; font-style: inherit; }
+.steps-arrow li a:hover { background-color: #b32915; color: #fff; }
+.steps-arrow li a:hover:before { border-color: #b32915; border-left-color: transparent; }
+.steps-arrow li a:hover:after { border-left-color: #b32915; }
+.steps-arrow li a:hover i { border-color: #fff; color: #fff; }
+.steps-arrow li.active a { background-color: #e1331a; color: #fff; }
+.steps-arrow li.active a:before { border-color: #e1331a; border-left-color: transparent; }
+.steps-arrow li.active a:after { border-left-color: #e1331a; }
+.steps-arrow li.active a i { border-color: #fff; color: #fff; }
+.steps-arrow li:first-child a:before { border: none; }
+
+/*个数处理*/
+.steps-2 li { width: 50%; }
+
+.steps-3 li { width: 33.3%; }
+
+.steps-4 li { width: 25%; }
+
+.steps-5 li { width: 20%; }
+
+/* =6 navs */
+.breadcrumb li { float: left; display: inline-block; *margin-right: 6px; *padding-right: 6px; }
+.breadcrumb li a { display: inline-block; text-decoration: none; color: #333; }
+.breadcrumb li.home a:before { float: left; display: inline-block; content: ''; width: 16px; height: 16px; background: url(../images/icon/breadcrumb_home.png) no-repeat 0 0; margin: 2px 6px 0 0; }
+.breadcrumb li a.active, .breadcrumb li a:hover, .breadcrumb li span { color: #e1331a; }
+.breadcrumb li:after { display: inline-block; content: '/'; margin: 0 10px; color: #666; }
+.breadcrumb li:last-child:after { display: none; }
+
 .container { width: 1200px; margin: 0 auto; background-color: #fff; }
 
 .row { padding: 10px 0; }
