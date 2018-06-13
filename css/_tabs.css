@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* =7 tabs */
+/*基础*/
+.tabs { position: relative; border-bottom: 1px solid #d9d9d9; *zoom: 1; }
+.tabs:before, .tabs:after { content: " "; display: table; }
+.tabs:after { clear: both; }
+.tabs .tab { position: relative; float: left; display: inline-block; }
+.tabs .tab:after { position: absolute; top: 10px; right: 0; bottom: 20px; display: block; content: " "; width: 1px; background-color: #ebeceb; }
+.tabs .tab:last-child:after { display: none; }
+.tabs .tab a { position: relative; display: inline-block; height: 48px; padding: 10px 20px 20px; text-decoration: none; line-height: 1; font-size: 16px; color: #333; }
+.tabs .tab a:hover { color: #e1331a; }
+.tabs .tab.active a { color: #e1331a; }
+.tabs .tab.active a:before { position: absolute; right: 0; bottom: -1px; left: 0; display: block; content: " "; height: 2px; background-color: #e1331a; }
+.tabs .tab.disabled a { cursor: not-allowed; color: #bfbfbf; }
+.tabs .tab i { display: inline-block; width: 16px; height: 16px; margin-right: 10px; vertical-align: middle; background-repeat: no-repeat; background-position: 0 0; }
+.tabs .tab i.video { background-image: url(../images/icon/tabs_video.png); }
+.tabs .tab:hover i, .tabs .tab.active i { background-position: 0 -16px; }
+
+/*卡片*/
+.tabs-card .tab { margin-right: -1px; }
+.tabs-card .tab:after { display: none; }
+.tabs-card .tab a { bottom: -1px; height: 40px; line-height: 38px; background-color: #eeeeee; border: 1px solid #d9d9d9; padding: 0 20px; }
+.tabs-card .tab.active a { background-color: #fff; border-bottom-color: #fff; }
+.tabs-card .tab.active a:before { top: -1px; right: -1px; bottom: inherit; left: -1px; }
+
+/*胶囊*/
+.tabs-capsule { border-bottom: 0; }
+.tabs-capsule .tab { margin-right: -1px; }
+.tabs-capsule .tab:after { display: none; }
+.tabs-capsule .tab a { height: 32px; line-height: 30px; background-color: #fff; border: 1px solid #d9d9d9; padding: 0 20px; }
+.tabs-capsule .tab.active a { background-color: #e1331a; border-color: #e1331a; color: #fff; }
+.tabs-capsule .tab.active a:before { display: none; }
+.tabs-capsule .tab:first-child a { border-radius: 2px 0 0 2px; }
+.tabs-capsule .tab:last-child a { border-radius: 0 2px 2px 0; }
+
+/*竖状*/
+.tabs-vertical { float: left; width: 140px; border-right: 2px solid #666; border-bottom: 0; padding: 12px 0; }
+.tabs-vertical .tab { float: none; display: block; }
+.tabs-vertical .tab:after { display: none; }
+.tabs-vertical .tab a { display: block; height: 40px; line-height: 40px; padding: 0 20px 0 0; text-align: right; }
+.tabs-vertical .tab.active a { background-color: #eeeeee; }
+.tabs-vertical .tab.active a:before { top: 0; right: -2px; bottom: 0; left: inherit; width: 2px; height: 100%; }
+.tabs-vertical ~ .tabs-panel { margin-left: 140px; }
+
+.tabs-panel { display: none; }
+.tabs-panel.active { display: block; }
+
+/*# sourceMappingURL=_tabs.css.map */
