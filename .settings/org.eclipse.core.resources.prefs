@@ -1,11 +1,14 @@
 eclipse.preferences.version=1
+encoding//scss/_badges.scss=GB2312
 encoding//scss/_buttons.scss=GB2312
+encoding//scss/_feedback.scss=GB2312
 encoding//scss/_forms.scss=GB2312
 encoding//scss/_grid.scss=GB2312
 encoding//scss/_mixin.scss=GB2312
 encoding//scss/_navs.scss=GB2312
 encoding//scss/_public.scss=GB2312
 encoding//scss/_reset.scss=GB2312
+encoding//scss/_share.scss=GB2312
 encoding//scss/_steps.scss=GB2312
 encoding//scss/_tabs.scss=GB2312
 encoding//scss/_var.scss=GB2312

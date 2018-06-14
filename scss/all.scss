@@ -8,6 +8,9 @@ $lte7:false;
 @import 'steps';
 @import 'navs';
 @import 'tabs';
+@import 'share';
+@import 'feedback';
+@import 'badges';
 
 
 .container {
@@ -24,11 +27,6 @@ $lte7:false;
     background-color: #ffe5e5;
     text-align: center;
 }
-
-
-
-
-
 
 
 

@@ -84,9 +84,9 @@ h4, h6, .h4, .h6 { font-weight: 700; }
 
 .pull-right { float: right; }
 
-.hide, .hidden { display: none !important; }
+.hide, .hidden { display: none; }
 
-.show, .block { display: block !important; }
+.show, .block { display: block; }
 
 .overhide { overflow: hidden; }
 
@@ -599,7 +599,7 @@ select.form-control { padding-left: 5px !important; padding-right: 0 !important;
 .tabs .tab.active a:before { position: absolute; right: 0; bottom: -1px; left: 0; display: block; content: " "; height: 2px; background-color: #e1331a; }
 .tabs .tab.disabled a { cursor: not-allowed; color: #bfbfbf; }
 .tabs .tab i { display: inline-block; width: 16px; height: 16px; margin-right: 10px; vertical-align: middle; background-repeat: no-repeat; background-position: 0 0; }
-.tabs .tab i.video { background-image: url(../images/icon/tabs_video.png); }
+.tabs .tab i.video { background-image: url(../images/spirit/tabs_video.png); }
 .tabs .tab:hover i, .tabs .tab.active i { background-position: 0 -16px; }
 
 /*卡片*/
@@ -631,6 +631,51 @@ select.form-control { padding-left: 5px !important; padding-right: 0 !important;
 .tabs-panel { display: none; }
 .tabs-panel.active { display: block; }
 
+/* =8 share */
+.share { height: 32px; line-height: 32px; }
+.share > span, .share > a { display: inline-block; vertical-align: middle; }
+.share > a { position: relative; z-index: 6; width: 32px; height: 32px; border-radius: 50%; margin-right: 10px; text-indent: -9999em; overflow: hidden; }
+.share > a:after, .share > a i { position: absolute; display: block; content: " "; top: 0; right: 0; width: 100%; height: 100%; }
+.share > a:after { z-index: 8; top: 16px; left: 16px; width: 0; height: 0; border-radius: 50%; -webkit-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); -o-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); }
+.share > a:hover:after { top: -9px; left: -9px; width: 50px; height: 50px; }
+.share > a i { z-index: 9; background: url(../images/spirit/share.png) no-repeat; }
+.share > a.wx { background-color: #52c41a; }
+.share > a.wx:after { background-color: #6ae32e; }
+.share > a.wx i { background-position: 0 0; }
+.share > a.qq { background-color: #1890ff; }
+.share > a.qq:after { background-color: #4ba9ff; }
+.share > a.qq i { background-position: 0 -32px; }
+.share > a.wb { background-color: #e1331a; }
+.share > a.wb:after { background-color: #e95945; }
+.share > a.wb i { background-position: 0 -64px; }
+.share > a.qz { background-color: #faad14; }
+.share > a.qz:after { background-color: #fbbe46; }
+.share > a.qz i { background-position: 0 -96px; }
+
+/* =9 feedback */
+.feedback { position: fixed; right: 10px; bottom: 30px; }
+.feedback > a { position: relative; z-index: 7; display: block; width: 44px; height: 44px; background-color: #a3a0a0; margin-bottom: 5px; overflow: hidden; text-decoration: none; }
+.feedback > a > i, .feedback > a > span, .feedback > a:after { position: absolute; display: block; }
+.feedback > a > i, .feedback > a > span { z-index: 9; }
+.feedback > a > i { top: 9px; right: 9px; width: 26px; height: 26px; background: url(../images/spirit/feedback.png) no-repeat 0 0; }
+.feedback > a.code > i { background-position: 0 0; }
+.feedback > a.service > i { background-position: 0 -26px; }
+.feedback > a.help > i { background-position: 0 -52px; }
+.feedback > a.top > i { background-position: 0 -78px; }
+.feedback > a > span { top: 8px; right: 5px; bottom: 8px; left: 5px; display: none; line-height: 14px; text-align: center; font-size: 12px; color: #fff; }
+.feedback > a:after { top: 22px; left: 22px; z-index: 8; content: " "; width: 0; height: 0; border-radius: 50%; -webkit-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); -o-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); }
+.feedback > a:hover { *background-color: #e1331a; }
+.feedback > a:hover > i { display: none; }
+.feedback > a:hover > span { display: block; }
+.feedback > a:hover:after { top: -8px; left: -8px; width: 60px; height: 60px; background-color: #e1331a; }
+.feedback > .code-layer { position: absolute; top: 0; right: 60px; display: none; *width: 200px; background-color: #fff; border: 1px solid #d9d9d9; padding: 10px; white-space: nowrap; }
+.feedback > .code-layer > p { display: inline-block; *float: left; width: 100px; text-align: center; }
+.feedback > .code-layer > p > img { display: block; width: 80px; height: 80px; margin: 0 auto; }
+.feedback > .code-layer:before, .feedback > .code-layer:after { position: absolute; display: block; content: " "; width: 0; height: 0; border-width: 12px 0 12px 12px; border-style: solid; }
+.feedback > .code-layer:before { top: 12px; right: -12px; z-index: 7; border-color: transparent transparent transparent #d9d9d9; }
+.feedback > .code-layer:after { top: 12px; right: -11px; z-index: 8; border-color: transparent transparent transparent #fff; }
+
+/* =10 badges */
 .container { width: 1200px; margin: 0 auto; background-color: #fff; }
 
 .row { padding: 10px 0; }

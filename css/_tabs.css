@@ -13,7 +13,7 @@
 .tabs .tab.active a:before { position: absolute; right: 0; bottom: -1px; left: 0; display: block; content: " "; height: 2px; background-color: #e1331a; }
 .tabs .tab.disabled a { cursor: not-allowed; color: #bfbfbf; }
 .tabs .tab i { display: inline-block; width: 16px; height: 16px; margin-right: 10px; vertical-align: middle; background-repeat: no-repeat; background-position: 0 0; }
-.tabs .tab i.video { background-image: url(../images/icon/tabs_video.png); }
+.tabs .tab i.video { background-image: url(../images/spirit/tabs_video.png); }
 .tabs .tab:hover i, .tabs .tab.active i { background-position: 0 -16px; }
 
 /*卡片*/

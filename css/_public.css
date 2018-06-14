@@ -19,6 +19,7 @@ h6, .h6 { font-size: 14px; }
 
 h4, h6, .h4, .h6 { font-weight: 700; }
 
+.clearfix { *zoom: 1; }
 .clearfix:before, .clearfix:after { content: " "; display: table; }
 .clearfix:after { clear: both; }
 
@@ -28,9 +29,9 @@ h4, h6, .h4, .h6 { font-weight: 700; }
 
 .pull-right { float: right; }
 
-.hide, .hidden { display: none !important; }
+.hide, .hidden { display: none; }
 
-.show, .block { display: block !important; }
+.show, .block { display: block; }
 
 .overhide { overflow: hidden; }
 

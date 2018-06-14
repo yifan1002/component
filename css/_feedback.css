@@ -1,0 +1,24 @@
+/* =9 feedback */
+.feedback { position: fixed; right: 10px; bottom: 30px; }
+.feedback > a { position: relative; z-index: 7; display: block; width: 44px; height: 44px; background-color: #a3a0a0; margin-bottom: 5px; overflow: hidden; text-decoration: none; }
+.feedback > a > i, .feedback > a > span, .feedback > a:after { position: absolute; display: block; }
+.feedback > a > i, .feedback > a > span { z-index: 9; }
+.feedback > a > i { top: 9px; right: 9px; width: 26px; height: 26px; background: url(../images/spirit/feedback.png) no-repeat 0 0; }
+.feedback > a.code > i { background-position: 0 0; }
+.feedback > a.service > i { background-position: 0 -26px; }
+.feedback > a.help > i { background-position: 0 -52px; }
+.feedback > a.top > i { background-position: 0 -78px; }
+.feedback > a > span { top: 8px; right: 5px; bottom: 8px; left: 5px; display: none; line-height: 14px; text-align: center; font-size: 12px; color: #fff; }
+.feedback > a:after { top: 22px; left: 22px; z-index: 8; content: " "; width: 0; height: 0; border-radius: 50%; -webkit-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); -o-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); }
+.feedback > a:hover { *background-color: #e1331a; }
+.feedback > a:hover > i { display: none; }
+.feedback > a:hover > span { display: block; }
+.feedback > a:hover:after { top: -8px; left: -8px; width: 60px; height: 60px; background-color: #e1331a; }
+.feedback > .code-layer { position: absolute; top: 0; right: 60px; display: none; *width: 200px; background-color: #fff; border: 1px solid #d9d9d9; padding: 10px; white-space: nowrap; }
+.feedback > .code-layer > p { display: inline-block; *float: left; width: 100px; text-align: center; }
+.feedback > .code-layer > p > img { display: block; width: 80px; height: 80px; margin: 0 auto; }
+.feedback > .code-layer:before, .feedback > .code-layer:after { position: absolute; display: block; content: " "; width: 0; height: 0; border-width: 12px 0 12px 12px; border-style: solid; }
+.feedback > .code-layer:before { top: 12px; right: -12px; z-index: 7; border-color: transparent transparent transparent #d9d9d9; }
+.feedback > .code-layer:after { top: 12px; right: -11px; z-index: 8; border-color: transparent transparent transparent #fff; }
+
+/*# sourceMappingURL=_feedback.css.map */

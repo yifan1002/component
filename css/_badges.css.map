@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,gBAAgB",
+"sources": ["../scss/_badges.scss"],
+"names": [],
+"file": "_badges.css"
+}

@@ -1,0 +1,22 @@
+/* =8 share */
+.share { height: 32px; line-height: 32px; }
+.share > span, .share > a { display: inline-block; vertical-align: middle; }
+.share > a { position: relative; z-index: 6; width: 32px; height: 32px; border-radius: 50%; margin-right: 10px; text-indent: -9999em; overflow: hidden; }
+.share > a:after, .share > a i { position: absolute; display: block; content: " "; top: 0; right: 0; width: 100%; height: 100%; }
+.share > a:after { z-index: 8; top: 16px; left: 16px; width: 0; height: 0; border-radius: 50%; -webkit-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); -o-transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); transition: all 0.32s cubic-bezier(0.24, 0.82, 0.48, 0.89); }
+.share > a:hover:after { top: -9px; left: -9px; width: 50px; height: 50px; }
+.share > a i { z-index: 9; background: url(../images/spirit/share.png) no-repeat; }
+.share > a.wx { background-color: #52c41a; }
+.share > a.wx:after { background-color: #6ae32e; }
+.share > a.wx i { background-position: 0 0; }
+.share > a.qq { background-color: #1890ff; }
+.share > a.qq:after { background-color: #4ba9ff; }
+.share > a.qq i { background-position: 0 -32px; }
+.share > a.wb { background-color: #e1331a; }
+.share > a.wb:after { background-color: #e95945; }
+.share > a.wb i { background-position: 0 -64px; }
+.share > a.qz { background-color: #faad14; }
+.share > a.qz:after { background-color: #fbbe46; }
+.share > a.qz i { background-position: 0 -96px; }
+
+/*# sourceMappingURL=_share.css.map */
