@@ -6,6 +6,7 @@ $cur-d:    not-allowed !default;
 
 // ===2 颜色
 //基础色、中性色
+$c-black:		#000 !default;		//
 $c-darker:		#333 !default;		//一级文本色，用于标题正文等
 $c-dark:		#666 !default;		//二级文本色，用于部分次级文本
 $c-light:		#999 !default;		//三级文本色，用于说明性文字
@@ -26,7 +27,7 @@ $c-danger:		#f5222d !default;	//错误，用于错误提示
 $c-disable:		#bfbfbf !default;	//禁用色，用于按钮禁用、icon用色
 
 // ===3 容器相关
-//用于button、input、badge等
+//用于button、input等
 $box-height: 	32px !default;	//容器高度
 $box-bdrs: 		 2px !default;	//容器圆角半径
 $box-px: 		14px !default;	//容器横向内补丁
@@ -38,6 +39,19 @@ $box-px-sm:		14px !default;
 $box-height-lg: 40px !default;
 $box-bdrs-lg:    4px !default;
 $box-px-lg:		20px !default;
+
+//用于badge
+$badge-height: 		24px !default;
+$badge-bdrs: 		2px !default;
+$badge-px: 			6px !default;
+
+$badge-height-sm: 	20px !default;
+$badge-bdrs-sm: 	2px !default;
+$badge-px-sm: 		6px !default;
+
+$badge-height-lg: 	30px !default;
+$badge-bdrs-lg: 	4px !default;
+$badge-px-lg: 		10px !default;
 
 
 // ===4 字体相关
@@ -76,7 +90,7 @@ $input-border:          #d9d9d9 !default;
 $input-focus-border:    #e63101 !default;
 
 
-// ===5 分页
+// ===6 分页
 $form-width: 		30px !default;
 $form-width-sm: 	28px !default;
 $form-width-lg: 	45px !default;
