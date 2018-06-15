@@ -5,7 +5,8 @@
 //*****S button var *****//
 //=== 文本链接 ===
 $link-color:             $c-primary !default;
-$link-hover-color:       darken($link-color, 10%) !default;
+$link-hover-color:       lighten($link-color, 10%) !default;
+$link-active-color:      darken($link-color, 10%) !default;
 $link-disabled-color:    $c-disable !default;
 $link-hover-decoration:  underline !default;
 $link-hover-bgc:         $c-hover !default;
@@ -24,6 +25,26 @@ $dropdown-fz:      $fz !default;
     background-color: $background;
     border-color: $border;
     
+    //反白、幽灵按钮
+    &.btn-inverse,
+    &.btn-dashed {
+    	background-color: $c-white;
+		color: $border;
+		
+		&.disabled,
+	    &[disabled] {
+	        &:hover {
+	            background-color: $c-white;
+	            color: $border;
+	        }
+	    }
+	}
+
+	//虚线框按钮
+    &.btn-dashed {
+    	border-style: dashed;
+	}
+	
     &:hover {
         color: $color;
         background-color: darken($background, 10%);
@@ -136,15 +157,18 @@ $dropdown-fz:      $fz !default;
     }
     
     &:hover {
-        color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
         background-color: transparent;
+        color: $link-hover-color;
+    }
+    
+    &:active {
+        background-color: transparent;
+        color: $link-active-color;
     }
     
     &[disabled] {
         &:hover {
             color: $link-disabled-color;
-            text-decoration: none;
         }
     }
 }
@@ -162,6 +186,18 @@ $dropdown-fz:      $fz !default;
 .btn-block {
     display: block;
     width: 100%;
+}
+
+//图标按钮
+.btn {
+	img,
+	span {
+		vertical-align: middle;
+	}
+	
+	img + span {
+		margin-left: 5px;
+	}
 }
 
 //按钮式下拉菜单
