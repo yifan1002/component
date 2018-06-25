@@ -16,6 +16,10 @@ select.form-control {
 	padding-left: 5px !important;
 	padding-right: 0 !important;
 }
+textarea.form-control {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
 .form-control {
 	height: $box-height;
 	background-color: $input-bgc;
@@ -26,6 +30,10 @@ select.form-control {
 	vertical-align: middle;
 	color: $input-color;
 	@include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+	
+	&:hover {
+		border-color: $input-focus-border;
+	}
 	
 	&:focus {
 		border-color: $input-focus-border;
@@ -192,7 +200,7 @@ select.form-control {
 		//单选选中
 		&[type="radio"]:checked ~ .choice-name {
 		    background-color: $c-primary;
-		    color: #fff;
+		    color: #fff !important;
 		}
 		
 		//多选选中
@@ -216,7 +224,7 @@ select.form-control {
 	}
 	
 	//滑过
-	&:hover > input ~ .choice-name {
+	&:hover > input ~ .choice-name:nth-child(2) {
 	    color: $c-primary;
 	}
 	&:hover > input[type="checkbox"] ~ .choice-name {

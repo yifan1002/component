@@ -33,9 +33,9 @@ $dropdown-fz:      $fz !default;
 		
 		&.disabled,
 	    &[disabled] {
+        	background-color: $c-white;
 	        &:hover {
-	            background-color: $c-white;
-	            color: $border;
+	        	background-color: $c-white;
 	        }
 	    }
 	}
@@ -66,9 +66,13 @@ $dropdown-fz:      $fz !default;
     
     &.disabled,
     &[disabled] {
+    	background-color: $c-disable;
+        border-color: $c-disable;
+        color: $c-dark;
         &:hover {
-            background-color: $background;
-            border-color: $border;
+            background-color: $c-disable;
+            border-color: $c-disable;
+        	color: $c-dark;
         }
     }
 }
