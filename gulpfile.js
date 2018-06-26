@@ -2,8 +2,6 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
 
-<<<<<<< HEAD
-=======
 //任务1：清理目录
 gulp.task('clean', function(){
 	return gulp.src(['./dist/html','./dist/js','./dist/css','./dist/img'])
@@ -70,7 +68,6 @@ gulp.task('watch', function() {
 	gulp.watch('src/html/*.html', ['min-html']);
 	gulp.watch('src/img/**/*', ['images']);
 });
->>>>>>> b72f7c66881b7bf247de6df0dc3d84d03bee0ebc
 
 //任务9：文件变化，自动刷新浏览器
 gulp.task('auto', function(){
