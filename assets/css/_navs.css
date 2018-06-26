@@ -1,0 +1,10 @@
+/* =6 navs */
+.breadcrumb li { float: left; display: inline-block; *margin-right: 6px; *padding-right: 6px; }
+.breadcrumb li a { display: inline-block; text-decoration: none; color: #333; }
+.breadcrumb li.home a:before { float: left; display: inline-block; content: ''; width: 16px; height: 16px; background: url(../images/spirit/breadcrumb_home.png) no-repeat 0 0; margin: 2px 6px 0 0; }
+.breadcrumb li a.active, .breadcrumb li a:hover, .breadcrumb li span { color: #e1331a; }
+.breadcrumb li.home a:hover:before { background-position: 0 -16px; }
+.breadcrumb li:after { display: inline-block; content: '/'; margin: 0 10px; color: #666; }
+.breadcrumb li:last-child:after { display: none; }
+
+/*# sourceMappingURL=_navs.css.map */

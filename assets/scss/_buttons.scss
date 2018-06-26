@@ -4,17 +4,17 @@
 /* =4 buttons */
 //*****S button var *****//
 //=== 文本链接 ===
-$link-color:             $c-primary !default;
-$link-hover-color:       lighten($link-color, 10%) !default;
-$link-active-color:      darken($link-color, 10%) !default;
-$link-disabled-color:    $c-disable !default;
-$link-hover-decoration:  underline !default;
-$link-hover-bgc:         $c-hover !default;
+$link-color:             		$c-primary !default;
+$link-hover-color:       		lighten($link-color, 10%) !default;
+$link-active-color:      		darken($link-color, 10%) !default;
+$link-disabled-color:    		$c-disable !default;
+$link-hover-decoration:  		underline !default;
 //=== 下拉按钮 ===
-$dropdown-zindex:  3 !default;
-$dropdown-bgc:     $c-white !default;
-$dropdown-bdc:     $c-light !default;
-$dropdown-fz:      $fz !default;
+$dropdown-zindex:  				3 !default;
+$dropdown-bgc:     				$c-white !default;
+$dropdown-bdc:     				$c-separate !default;
+$dropdown-fz:      				$fz !default;
+$dropdown-bgc-hover: 			$c-hover !default;
 //*****E button var *****//
 
 
@@ -185,6 +185,15 @@ $dropdown-fz:      $fz !default;
     @include btn-size($box-height-lg, $box-bdrs-lg, $box-px-lg, $fz-lg);
     
 }
+a.btn {
+	line-height: ($box-height - 3);
+}
+a.btn-sm {
+	line-height: ($box-height-sm - 2);
+}
+a.btn-lg {
+	line-height: ($box-height-lg - 2);
+}
 
 //块级按钮
 .btn-block {
@@ -205,64 +214,85 @@ $dropdown-fz:      $fz !default;
 }
 
 //按钮式下拉菜单
+.dropdown-toggle[disabled]:after {
+    border-color: $c-dark transparent transparent !important;
+}
+.dropup .dropdown-toggle:after {
+    border-width: 0 4px 4px;
+	border-color: transparent transparent #fff;
+}
 .dropdown-toggle:after {
     content: " ";
-    display:inline-block;
-    width:0;
-    height:0;
-    border-width:4px 4px 0;
-    border-style:solid;
-    border-color:#fff transparent transparent;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 4px 4px 0;
+    border-style: solid;
+    border-color: #fff transparent transparent;
     margin: 0 0 3px 2px;
 }
 .btn-default.dropdown-toggle:after {
-    border-color:$c-darker transparent transparent;
+    border-color: $c-darker transparent transparent;
+}
+.btn-group.open .dropdown-menu {
+	display: block;
+}
+.btn-group.dropup .dropdown-menu {
+	top: auto;
+	bottom: 100%;
+	margin: 0 0 4px;
 }
 .dropdown-menu {
+	display: none;
     position: absolute;
     top: 100%;
     left: 0;
     float: left;
-    min-width: 160px;
+    min-width: 125px;
+    max-height: 256px;
     padding: 5px 0;
-    margin: 2px 0 0;
-    list-style: none;
+    margin: 4px 0 0;
+    overflow-x: hidden;
+    overflow-y: auto;
     z-index: $dropdown-zindex;
     background-color:$dropdown-bgc;
     border: 1px solid $dropdown-bdc;
     border-radius: $box-bdrs;
-    @include box-shadow(0 6px 12px rgba(0,0,0,.175));
+    @include box-shadow(0 0 6px rgba(128,128,128,.35));
     background-clip: padding-box;
+    
+    > li.line {
+    	height: 1px;
+	    margin: 8px 0;
+	    overflow: hidden;
+	    background-color: $c-separate;
+    }
     
     > li > a {
         display: block;
-        padding: 3px 20px;
+        height: $box-height;
+        line-height: $box-height;
+        padding: 0 20px;
         clear: both;
-        text-decoration: none;
-        line-height: $lh;
-        font-weight: normal;
-        color: $link-color;
         white-space: nowrap;
+        text-decoration: none;
+        font-weight: normal;
+        color: $c-darker;
     }
 }
-.dropdown-menu > li > a {
-    &:hover,
-    &:focus {
-        text-decoration: none;
-        color: $link-hover-color;
-        background-color: $link-hover-bgc;
-    }
+.dropdown-menu > li.active > a,
+.dropdown-menu > li > a:hover {
+	background-color: $dropdown-bgc-hover;
+	text-decoration: none;
 }
 .dropdown-menu > .disabled > a {
     &,
-    &:hover,
-    &:focus {
+    &:hover {
         color: $link-disabled-color;
     }
-    &:hover,
-    &:focus {
+    &:hover {
+    	background-color: transparent;
         text-decoration: none;
-        background-color: transparent;
         cursor: $cur-d;
     }
 }

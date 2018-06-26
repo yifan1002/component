@@ -169,7 +169,8 @@
 		width: 20%;
 		padding-right: 32px;
 		
-		& a {
+		& a,
+		& span {
 		    display: block;
 		    background: $c-separate;
 		    text-decoration: none;
@@ -214,27 +215,29 @@
 		        font-style: inherit;
 		    }
 		    
-		    &:hover {
-		    	background-color: darken($c-primary, 10%);
-		    	color: $c-white;
-		    	
-		        &:before {
-		        	border-color: darken($c-primary, 10%);
-		        	border-left-color: transparent;
-		        }
-		        
-		        &:after {
-			        border-left-color: darken($c-primary, 10%);
-			    }
-			    
-			    & i {
-			        border-color: $c-white;
-			        color: $c-white;
-			    }
-		    }
 		}
 		
-		&.active a {
+		& a:hover {
+	    	background-color: darken($c-primary, 10%);
+	    	color: $c-white;
+	    	
+	        &:before {
+	        	border-color: darken($c-primary, 10%);
+	        	border-left-color: transparent;
+	        }
+	        
+	        &:after {
+		        border-left-color: darken($c-primary, 10%);
+		    }
+		    
+		    & i {
+		        border-color: $c-white;
+		        color: $c-white;
+		    }
+	    }
+		
+		&.active a,
+		&.active span {
 		    background-color: $c-primary;
 		    color: $c-white;
 		    
@@ -253,7 +256,8 @@
 		    }
 		}
 		
-		&:first-child a:before {
+		&:first-child a:before,
+		&:first-child span:before {
 		    border: none;
 		}
 	}
