@@ -1,0 +1,15 @@
+/* =11 rating */
+.rating-item { height: 28px; padding: 5px 10px; }
+.rating-item.even { background-color: #fff1eb; }
+.rating-item > span { display: inline-block; vertical-align: text-top; }
+.rating-item .rating-name { width: 80px; text-align: right; }
+.rating-item .rating-list { width: 140px; *zoom: 1; }
+.rating-item .rating-list:before, .rating-item .rating-list:after { content: " "; display: table; }
+.rating-item .rating-list:after { clear: both; }
+.rating-item .rating-list > a { float: left; display: block; width: 18px; height: 18px; background: url(../images/spirit/star.png) no-repeat -5px 0; margin: 0 5px; }
+.rating-item .rating-list > a:hover, .rating-item .rating-list > a.active { background-position: -5px -18px; }
+.rating-item .rating-info { margin-left: 5px; color: #666; }
+
+.rating-show .rating-list { background: url(../images/spirit/star.png) repeat 0 0; }
+
+/*# sourceMappingURL=_rating.css.map */

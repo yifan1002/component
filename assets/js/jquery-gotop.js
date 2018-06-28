@@ -1,4 +1,4 @@
-//回到顶部：滚动定位
+//基于jquery的回到顶部：滚动定位
 var $btnTop = $('.feedback .top');
 var $btnCode = $('.feedback .code');
 var $qrCode = $('.feedback .code-layer');

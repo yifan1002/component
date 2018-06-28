@@ -136,10 +136,10 @@
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<div class="btn-group btn-group-lg">
-				<button class="btn btn-default">Left</button>
-				<button class="btn btn-default">Middle</button>
-				<button class="btn btn-default">Middle</button>
-				<button class="btn btn-default">Right</button>
+				<button class="btn btn-info">Left</button>
+				<button class="btn btn-primary">Middle</button>
+				<button class="btn btn-success">Middle</button>
+				<button class="btn btn-warning">Right</button>
 			</div>
 		</div>
 		<h2 class="mt-30 pl-10">下拉菜单</h2>
@@ -208,20 +208,29 @@
 		<h2 class="mt-30 pl-10">表单</h2>
 		<div class="row" style="padding: 5px 10px;">
 			<p class="form-group">
-				<input type="text" class="form-control form-control-sm" placeholder="替换文本"  />
-				<button class="btn btn-sm btn-warning">小按钮+警告色</button>
+				<input type="text" class="form-control form-control-sm form-control-success" placeholder="替换文本"  />
+				<button class="btn btn-sm btn-success">小按钮+成功</button>
+				<span class="form-tips form-tips-success">正确提示语</span>
 			</p>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<p class="form-group">
-				<input type="text" class="form-control form-control" placeholder="替换文本"  />
-				<button class="btn btn-primary">中按钮+主色</button>
+				<input type="text" class="form-control form-control form-control-danger" placeholder="替换文本"  />
+				<button class="btn btn-danger">中按钮+错误</button>
+				<span class="form-tips form-tips-danger">错误提示语</span>
 			</p>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<p class="form-group">
-				<input type="text" class="form-control form-control-lg" disabled="disabled" placeholder="替换文本"  />
-				<button class="btn btn-lg btn-success">大按钮+成功色</button>
+				<input type="text" class="form-control form-control-lg form-control-warning" placeholder="替换文本"  />
+				<button class="btn btn-lg btn-warning">大按钮+警告</button>
+				<span class="form-tips form-tips-warning">警告提示语</span>
+			</p>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<p class="form-group">
+				<input type="text" class="form-control form-control-lg form-control-warning" disabled="disabled" placeholder="替换文本"  />
+				<button class="btn btn-lg btn-success" disabled="disabled">大按钮+禁用</button>
 			</p>
 		</div>
 		<div class="row" style="padding: 35px 10px 0;">
@@ -792,9 +801,57 @@
 		</div>
 	</div>
 	
+	<link rel="stylesheet" type="text/css" href="assets/css/_rating.css"/>
+	<div class="container">
+		<h2 class="mt-30 pl-10">评价系统</h2>
+		<h3 class="mt-10 pl-10">普通</h3>
+		<div class="row">
+			<div class="rating-item">
+				<span class="rating-name">描述相符：</span>
+				<span class="rating-list">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</span>
+				<span class="rating-info"></span>
+			</div>
+			<div class="rating-item even">
+				<span class="rating-name">描述相符：</span>
+				<span class="rating-list">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</span>
+			</div>
+		</div>
+		<h3 class="mt-10 pl-10">仅展示</h3>
+		<div class="row">
+			<div class="rating-item rating-show" data-score="4.5">
+				<span class="rating-name">描述相符：</span>
+				<span class="rating-list">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</span>
+			</div>
+		</div>
+	</div>
+	
 <script src="assets/js/jquery-1.9.1.min.js"></script>
 <script src="assets/js/jquery-browser.update.js"></script>
 <script src="assets/js/jquery-gotop.js"></script>
+<script src="assets/js/jquery-rating.js"></script>
 <script src="assets/js/myscript.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+});
+</script>
 </body>
 </html>

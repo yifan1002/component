@@ -3,10 +3,10 @@
 
 /* =2 public */
 strong, b, .b {
-    font-weight: 700
+    font-weight: 700;
 }
 button, submit, .button, .submit {
-    cursor: pointer
+    cursor: pointer;
 }
 .height-auto {
     height: auto !important;
@@ -110,13 +110,13 @@ h4, h6, .h4, .h6 {
 }
 .text-break-all {
     word-wrap: break-word;
-    word-break: break-all
+    word-break: break-all;
 }
 
 //²¹¶¡
 .m-auto {
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
 }
 @each $i in 5,10,15,20,30,50 {
 	.pt-#{$i} {

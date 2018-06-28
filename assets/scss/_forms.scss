@@ -44,12 +44,25 @@ textarea.form-control {
 	&[readonly],
 	fieldset[disabled] & {
 	    background-color: $input-bg-disabled;
+	    border-color: $input-border !important;
 	    opacity: 1; 
 	}
 	
 	&[disabled],
 	fieldset[disabled] & {
 	    cursor: $cur-d;
+	}
+	
+	&-warning {
+		border-color: $c-warning;
+	}
+	
+	&-success {
+		border-color: $c-success;
+	}
+	
+	&-danger {
+		border-color: $c-danger;
 	}
 }
 .form-control-sm, .pagination-sm .form-control {
@@ -67,6 +80,31 @@ textarea.form-control {
 	display: inline-block;
 	*display:inline;
 	vertical-align: middle;
+}
+
+//正确、错误、警告提示
+.form-tips {
+	display: inline-block;
+	*display:inline;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-position: 0 center;
+	padding-left: 20px;
+	
+	&-warning {
+		background-image: url(../images/icon/warning_16x16.png);
+		color: $c-warning;
+	}
+	
+	&-success {
+		background-image: url(../images/icon/success_16x16.png);
+		color: $c-success;
+	}
+	
+	&-danger {
+		background-image: url(../images/icon/danger_16x16.png);
+		color: $c-danger;
+	}
 }
 
 

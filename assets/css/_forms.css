@@ -11,14 +11,22 @@ textarea.form-control { padding-top: 5px; padding-bottom: 5px; }
 .form-control { height: 32px; background-color: #fff; border: 1px solid #d9d9d9; border-radius: 4px; padding-right: 10px; padding-left: 10px; vertical-align: middle; color: #333; -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
 .form-control:hover { border-color: #e63101; }
 .form-control:focus { border-color: #e63101; -webkit-box-shadow: 0 0 6px rgba(228, 49, 3, 0.2); box-shadow: 0 0 6px rgba(228, 49, 3, 0.2); }
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #fafafa; opacity: 1; }
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control { background-color: #fafafa; border-color: #d9d9d9 !important; opacity: 1; }
 .form-control[disabled], fieldset[disabled] .form-control { cursor: not-allowed; }
+.form-control-warning { border-color: #faad14; }
+.form-control-success { border-color: #52c41a; }
+.form-control-danger { border-color: #f5222d; }
 
 .form-control-sm, .pagination-sm .form-control { height: 26px; border-radius: 4px; font-size: 12px; }
 
 .form-control-lg, .pagination-lg .form-control { height: 40px; border-radius: 4px; font-size: 16px; }
 
 .form-group { display: inline-block; *display: inline; vertical-align: middle; }
+
+.form-tips { display: inline-block; *display: inline; vertical-align: middle; background-repeat: no-repeat; background-position: 0 center; padding-left: 20px; }
+.form-tips-warning { background-image: url(../images/icon/warning_16x16.png); color: #faad14; }
+.form-tips-success { background-image: url(../images/icon/success_16x16.png); color: #52c41a; }
+.form-tips-danger { background-image: url(../images/icon/danger_16x16.png); color: #f5222d; }
 
 .choice { display: inline-block; margin: 5px 30px 5px 0; cursor: pointer; }
 .choice > input { width: 16px; height: 16px; margin-bottom: -3px; *margin-bottom: 1px; }
