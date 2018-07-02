@@ -52,6 +52,39 @@ $('.dropdown-menu li:not(.disabled)').click(function(e){
 	}
 });
 
+//数字输入框
+$('.form-number .form-control').on('keyup', function(){
+	var num = /^\d{1,4}$/;
+	if(!num.test($(this).val())){
+		layer.msg('请输入数字！', {
+			icon: 2,
+			time: 1500,
+			shade: 0.2
+		});
+		$(this).val('');
+	};
+});
+$('.form-number > a').click(function(e){
+	e.preventDefault();
+	var $num = $(this).siblings('.form-control');
+	var val = $num.val();
+	if (!val ) val = 0;
+	var num = parseInt(val);
+	var step = $num.parent('.form-number').attr('data-step');
+	if (step === undefined) {
+		step = 1;
+	} else{
+		step = parseInt(step);
+	}
+	if ($(this).hasClass('form-number-add')) {
+		num += step;
+	} else{
+		num -= step;
+		if (num <= 0) num = 0;
+	}
+	$num.val(num);
+});
+
 
 
 

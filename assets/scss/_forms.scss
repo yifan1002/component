@@ -37,7 +37,7 @@ textarea.form-control {
 	
 	&:focus {
 		border-color: $input-focus-border;
-		@include box-shadow(0 0 6px rgba(228,49,3,.2)); 
+		@include box-shadow(0 0 6px rgba(228,49,3,.2));
 	}
 	
 	&[disabled],
@@ -65,12 +65,18 @@ textarea.form-control {
 		border-color: $c-danger;
 	}
 }
-.form-control-sm, .pagination-sm .form-control {
+.form-control-sm,
+.pagination-sm .form-control,
+.form-number-sm .form-control,
+.input-group-sm .form-control {
 	height: $box-height-sm;
 	border-radius: $box-bdrs-sm;
 	font-size: $fz-sm;
 }
-.form-control-lg, .pagination-lg .form-control {
+.form-control-lg,
+.pagination-lg .form-control,
+.form-number-lg .form-control,
+.input-group-lg .form-control {
 	height: $box-height-lg;
 	border-radius: $box-bdrs-lg;
 	font-size: $fz-lg;
@@ -385,4 +391,127 @@ textarea.form-control {
         
     }
 }
+
+//数字输入框
+.form-number {
+	display: inline-block;
+    *display:inline;
+    vertical-align: middle;
+    @include clearfix;
+    
+    > .form-control {
+    	float: left;
+    	width: 55px;
+    	border-top-right-radius: 0;
+    	border-bottom-right-radius: 0;
+    	
+    	& + a {
+    		border-top-right-radius: $box-bdrs;
+    	}
+    	
+    	& + a + a {
+    		border-bottom-right-radius: $box-bdrs;
+    	}
+    }
+    
+    > a {
+    	display: block;
+    	width: 23px;
+    	height: $box-height / 2 + 1;
+    	line-height: $box-height / 2 - 4;
+    	border: 1px solid $input-border;
+    	border-left: 0;
+    	margin-left: 55px;
+    	text-decoration: none;
+    	text-align: center;
+    	color: $c-lighter;
+    	
+    	& + a{
+    		height: $box-height / 2;
+    		margin-top: -1px;
+    	}
+    	
+    	&:hover {
+    		color: $c-primary;
+    	}
+    	&:active {
+    		background-color: $c-hover;
+    		color: $c-primary;
+    	}
+    }
+}
+.form-number-sm {
+	> a {
+		height: $box-height-sm / 2 + 1;
+    	line-height: $box-height-sm / 2 - 4;
+    	
+    	& + a{
+    		height: $box-height-sm / 2;
+    	}
+	}
+}
+.form-number-lg {
+	> a {
+		height: $box-height-lg / 2 + 1;
+    	line-height: $box-height-lg / 2 - 4;
+    	
+    	& + a{
+    		height: $box-height-lg / 2;
+    	}
+	}
+}
+
+//前后置元素
+.input-group {
+	display: table;
+	border-collapse: separate;
+	
+	> .form-control {
+		display: table-cell;
+		width: 100%;
+		
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		
+		&:last-child {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		
+		&:not(:first-child):not(:last-child) {
+	        border-radius: 0;
+	    }
+	}
+	
+	> .input-group-addon:first-child {
+		border-right: 0;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	
+	> .input-group-addon:last-child {
+		border-left: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
+.input-group-addon {
+	display: table-cell;
+	width: 1%;
+	background-color: $c-hover;
+	border: 1px solid $input-border;
+	border-radius: $box-bdrs;
+	padding: 0 8px;
+	white-space:nowrap;
+	vertical-align: middle;
+	color: $c-light;
+	
+	> img {
+		vertical-align: middle;
+	}
+}
+
+
 

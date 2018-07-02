@@ -142,7 +142,6 @@
 				<button class="btn btn-warning">Right</button>
 			</div>
 		</div>
-		<link rel="stylesheet" type="text/css" href="assets/css/_buttons.css"/>
 		<h2 class="mt-30 pl-10">单按钮式下拉菜单</h2>
 		<div class="row" style="padding: 5px 10px;">
 			<div class="btn-group fn-left">
@@ -381,6 +380,31 @@
 				<button class="btn btn-lg btn-success" disabled="disabled">大按钮+禁用</button>
 			</p>
 		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="input-group">
+				<input type="text"  class="form-control" />
+				<a href="#" class="input-group-addon"><img src="assets/images/icon/search_gray_16x16.png"/></a>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="input-group">
+				<span class="input-group-addon">￥</span>
+				<input type="text" class="form-control" />
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="input-group input-group-sm">
+				<input type="text" class="form-control" />
+				<span class="input-group-addon">.00</span>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">￥</span>
+				<input type="text" class="form-control" />
+				<span class="input-group-addon">.00</span>
+			</div>
+		</div>
 		<div class="row" style="padding: 35px 10px 0;">
 			<p class="form-group">
 				<label for="user">用户名：</label>
@@ -490,6 +514,26 @@
 					<input type="checkbox" checked="checked" disabled="disabled" name="s5" id="s5" />
 					<span class="switch-name">显示</span>
 				</label>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
+				<label for="num">数字输入框：</label>
+				<div class="form-number form-number-sm">
+					<input type="text" name="" id="num1" class="form-control" />
+					<a href="#" class="form-number-add">+</a>
+					<a href="#" class="form-number-sub">-</a>
+				</div>
+				<div class="form-number" data-step="5">
+					<input type="text" name="" id="num2" class="form-control" />
+					<a href="#" class="form-number-add">+</a>
+					<a href="#" class="form-number-sub">-</a>
+				</div>
+				<div class="form-number form-number-lg" data-step="10">
+					<input type="text" name="" id="num3" class="form-control" />
+					<a href="#" class="form-number-add">+</a>
+					<a href="#" class="form-number-sub">-</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -991,6 +1035,7 @@
 	</div>
 	
 <script src="assets/js/jquery-1.9.1.min.js"></script>
+<script src="plugs/layer/layer.js"></script>
 <script src="assets/js/jquery-browser.update.js"></script>
 <script src="assets/js/jquery-gotop.js"></script>
 <script src="assets/js/jquery-rating.js"></script>

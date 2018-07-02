@@ -307,9 +307,10 @@ a.btn-lg {
 //分列式按钮下拉菜单
 .btn-group > .btn + .dropdown-toggle {
 	position: relative;
-	border-radius: 0 $box-bdrs $box-bdrs 0 !important;
-	padding-right: 8px !important;
-	padding-left: 8px !important;
+	border-top-right-radius: $box-bdrs !important;
+	border-bottom-right-radius: $box-bdrs !important;
+	padding-right: 8px;
+	padding-left: 8px;
 	
 	&:before {
 		position: absolute;
