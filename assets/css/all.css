@@ -810,33 +810,20 @@ textarea.form-control { padding-top: 5px; padding-bottom: 5px; }
 .empty-horizontal .empty-lg .empty-media ~ div { margin-left: 230px; }
 
 /* =11 rating */
-.ui-rating p { clear: both; height: 28px; padding: 10px 10px 0; }
+.rating-item { height: 28px; padding: 5px 10px; }
+.rating-item.even { background-color: #fff1eb; }
+.rating-item > span { display: inline-block; vertical-align: text-top; }
+.rating-item .rating-name { width: 80px; text-align: right; }
+.rating-item .rating-list { width: 140px; *zoom: 1; }
+.rating-item .rating-list:before, .rating-item .rating-list:after { content: " "; display: table; }
+.rating-item .rating-list:after { clear: both; }
+.rating-item .rating-list > a { float: left; display: block; width: 18px; height: 18px; background: url(../images/spirit/star.png) no-repeat -5px 0; margin: 0 5px; }
+.rating-item .rating-list > a:hover, .rating-item .rating-list > a.hover, .rating-item .rating-list > a.active { background-position: -5px -18px; }
+.rating-item .rating-info { margin-left: 5px; color: #666; }
 
-.ui-rating p.odd { background: #f6fbff; }
-
-.ui-rating p span { display: inline-block; float: left; }
-
-.ui-rating .rating-tt { width: 60px; text-align: right; }
-
-.ui-rating .rating-star { width: 130px; height: 17px; background: url(../images/rating.png) repeat-x; position: relative; }
-
-.ui-rating .rating-star a { display: block; height: 17px; text-decoration: none; position: absolute; left: 0; top: 0; outline: none; }
-
-.ui-rating .rating-star a:hover, .ui-rating .rating-star a.current { background: url(../images/rating.png) repeat-x 0 -23px; }
-
-.ui-rating .rating-star a.no { background-position: 0 0; }
-
-.ui-rating .rating-star a.star1 { width: 25px; z-index: 5; }
-
-.ui-rating .rating-star a.star2 { width: 51px; z-index: 4; }
-
-.ui-rating .rating-star a.star3 { width: 77px; z-index: 3; }
-
-.ui-rating .rating-star a.star4 { width: 102px; z-index: 2; }
-
-.ui-rating .rating-star a.star5 { width: 121px; z-index: 1; }
-
-.ui-rating .rating-info { display: none; color: #777; }
+.rating-show .rating-list { background: url(../images/spirit/star.png) repeat 0 0; }
+.rating-show .rating-list > a:hover { background-position: -5px 0; }
+.rating-show .rating-list > a.active:hover { background-position: -5px -18px; }
 
 .container { width: 1200px; margin: 0 auto; background-color: #fff; }
 

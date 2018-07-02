@@ -42,8 +42,14 @@ $(document).click(function(event){
 });
 $('.dropdown-menu li:not(.disabled)').click(function(e){
 	e.preventDefault();
+	var $btnGroup = $(this).parents('.btn-group');
 	$(this).addClass('active').siblings('li').removeClass('active');
-	$(this).parents('.btn-group').removeClass('open');
+	$btnGroup.removeClass('open');
+	
+	if ($btnGroup.hasClass('filter')) {
+		var txt = $(this).text();
+		$btnGroup.children('.dropdown-toggle').text(txt);
+	}
 });
 
 

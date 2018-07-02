@@ -4,19 +4,31 @@ $('.rating-show').each(function(){
 	if (dataScore.indexOf('.') === -1) dataScore = dataScore + '.0';
 	var score = dataScore .split('.');
 	var scoreInt = score[0];
-	if (scoreInt > 5)  scoreInt = 5;
 	var scoreDec = parseInt(score[1].substring(0,1));
+	if (scoreInt >= 5) {
+		scoreInt = 4;
+		scoreDec = 9;
+	}
+	//console.log(scoreInt);
+	//console.log(scoreDec);
 	var starWidth;
 	if (scoreDec <= 0) {
 		starWidth = '0';
+		starMarginRight = '23px';
 	} else if (scoreDec > 0 && scoreDec <= 5) {
 		starWidth = '9px';
+		starMarginRight = '14px';
 	} else{
 		starWidth = '18px';
-	}
-	$(this).children('.rating-list').children('a:eq(' + scoreInt + ')').addClass('active').css('width', starWidth).prevAll('a').addClass('active');
+		starMarginRight = '5px';
+	};
+	$(this).children('.rating-list').children('a:eq(' + scoreInt + ')').addClass('active').css({'width': starWidth, 'margin-right': starMarginRight}).prevAll('a').addClass('active');
 });
-
+$('.rating-item:not(.rating-show) .rating-list a').hover(function(){
+	$(this).prevAll('a:not(.active)').addClass('hover');
+}, function(){
+	$(this).prevAll('a').removeClass('hover');
+});
 $('.rating-item .rating-list a').click(function(e){
 	e.preventDefault();
 });

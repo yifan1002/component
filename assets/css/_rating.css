@@ -7,9 +7,11 @@
 .rating-item .rating-list:before, .rating-item .rating-list:after { content: " "; display: table; }
 .rating-item .rating-list:after { clear: both; }
 .rating-item .rating-list > a { float: left; display: block; width: 18px; height: 18px; background: url(../images/spirit/star.png) no-repeat -5px 0; margin: 0 5px; }
-.rating-item .rating-list > a:hover, .rating-item .rating-list > a.active { background-position: -5px -18px; }
+.rating-item .rating-list > a:hover, .rating-item .rating-list > a.hover, .rating-item .rating-list > a.active { background-position: -5px -18px; }
 .rating-item .rating-info { margin-left: 5px; color: #666; }
 
 .rating-show .rating-list { background: url(../images/spirit/star.png) repeat 0 0; }
+.rating-show .rating-list > a:hover { background-position: -5px 0; }
+.rating-show .rating-list > a.active:hover { background-position: -5px -18px; }
 
 /*# sourceMappingURL=_rating.css.map */

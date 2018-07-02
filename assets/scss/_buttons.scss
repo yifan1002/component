@@ -213,13 +213,19 @@ a.btn-lg {
 	}
 }
 
-//按钮式下拉菜单
+//单按钮式下拉菜单
 .dropdown-toggle[disabled]:after {
     border-color: $c-dark transparent transparent !important;
 }
 .dropup .dropdown-toggle:after {
     border-width: 0 4px 4px;
-	border-color: transparent transparent #fff;
+	border-color: transparent transparent $c-white;
+}
+.dropup .btn-default.dropdown-toggle:after {
+	border-color: transparent transparent $c-darker;
+}
+.dropup .btn-link.dropdown-toggle:after {
+	border-color: transparent transparent $c-primary;
 }
 .dropdown-toggle:after {
     content: " ";
@@ -228,11 +234,14 @@ a.btn-lg {
     height: 0;
     border-width: 4px 4px 0;
     border-style: solid;
-    border-color: #fff transparent transparent;
+    border-color: $c-white transparent transparent;
     margin: 0 0 3px 2px;
 }
 .btn-default.dropdown-toggle:after {
     border-color: $c-darker transparent transparent;
+}
+.btn-link.dropdown-toggle:after {
+    border-color: $c-primary transparent transparent;
 }
 .btn-group.open .dropdown-menu {
 	display: block;
@@ -247,7 +256,6 @@ a.btn-lg {
     position: absolute;
     top: 100%;
     left: 0;
-    float: left;
     min-width: 125px;
     max-height: 256px;
     padding: 5px 0;
@@ -296,6 +304,49 @@ a.btn-lg {
         cursor: $cur-d;
     }
 }
+//分列式按钮下拉菜单
+.btn-group > .btn + .dropdown-toggle {
+	position: relative;
+	border-radius: 0 $box-bdrs $box-bdrs 0 !important;
+	padding-right: 8px !important;
+	padding-left: 8px !important;
+	
+	&:before {
+		position: absolute;
+		top: -1px;
+		bottom: -1px;
+		left: -1px;
+		display: block;
+		content: '';
+		width: 1px;
+	}
+	
+	&[disabled]:before {
+		background-color: lighten($c-disable, 15%) !important;
+	}
+	
+	&.btn-primary:before {
+		background-color: lighten($c-primary, 10%);
+	}
+	
+	&.btn-info:before {
+		background-color: lighten($c-info, 10%);
+	}
+	
+	&.btn-success:before {
+		background-color: lighten($c-success, 10%);
+	}
+	
+	&.btn-warning:before {
+		background-color: lighten($c-warning, 10%);
+	}
+	
+	&.btn-danger:before {
+		background-color: lighten($c-danger, 10%);
+	}
+	
+}
+
 
 
 //按钮组

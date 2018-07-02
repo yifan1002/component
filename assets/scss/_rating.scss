@@ -34,6 +34,7 @@
 			margin: 0 5px;
 			
 			&:hover,
+			&.hover,
 			&.active {
 				background-position: -5px -18px;
 			}
@@ -50,5 +51,13 @@
 .rating-show  {
 	.rating-list {
 		background: url(../images/spirit/star.png) repeat 0 0;
+		
+		> a:hover {
+				background-position: -5px 0;
+		}
+		
+		> a.active:hover {
+				background-position: -5px -18px;
+		}
 	}
 }
