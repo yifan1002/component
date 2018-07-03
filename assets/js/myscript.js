@@ -54,7 +54,7 @@ $(document).click(function(event){
 });
 
 //数字输入框
-$('.form-number .form-control').on('keyup', function(){
+$('.form-number .form-control').keyup(function(){
 	var num = /^\d{1,4}$/;
 	if(!num.test($(this).val())){
 		layer.msg('请输入数字！', {
@@ -85,14 +85,3 @@ $('.form-number > a').click(function(e){
 	}
 	$num.val(num);
 });
-
-
-
-
-
-
-
-
-
-
-

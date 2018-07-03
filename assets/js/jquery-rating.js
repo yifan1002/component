@@ -13,16 +13,13 @@ $('.rating-show').each(function(){
 	//console.log(scoreDec);
 	var starWidth;
 	if (scoreDec <= 0) {
-		starWidth = '0';
-		starMarginRight = '23px';
+		className = 'active empty';
 	} else if (scoreDec > 0 && scoreDec <= 5) {
-		starWidth = '9px';
-		starMarginRight = '14px';
+		className = 'active half';
 	} else{
-		starWidth = '18px';
-		starMarginRight = '5px';
+		className = 'active';
 	};
-	$(this).children('.rating-list').children('a:eq(' + scoreInt + ')').addClass('active').css({'width': starWidth, 'margin-right': starMarginRight}).prevAll('a').addClass('active');
+	$(this).children('.rating-list').children('a:eq(' + scoreInt + ')').addClass(className).prevAll('a').addClass('active');
 });
 $('.rating-item:not(.rating-show) .rating-list a').hover(function(){
 	$(this).prevAll('a:not(.active)').addClass('hover');
@@ -37,7 +34,7 @@ $('.rating-item:not(.rating-show) .rating-list a').click(function(){
 	$(this).nextAll('a').removeClass('active');
 	var $info = $(this).parent('.rating-list').siblings('.rating-info');
 	if ($info.length) {
-		var myIndex = $(this).index()+1;
+		var myIndex = $(this).index() + 1;
 		switch (myIndex){
 		case 1:
 			myText='失望';

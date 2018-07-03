@@ -33,6 +33,16 @@
 			background: url(../images/spirit/star.png) no-repeat -5px 0;
 			margin: 0 5px;
 			
+			&.empty {
+				width: 0;
+				margin-right: 23px;
+			}
+			
+			&.half {
+				width: 9px;
+				margin-right: 14px;
+			}
+			
 			&:hover,
 			&.hover,
 			&.active {
