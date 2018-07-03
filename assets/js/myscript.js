@@ -35,21 +35,22 @@ $('.dropdown-toggle').not(':disabled').click(function(e){
 	});
 	$(this).parent('.btn-group').toggleClass('open');
 });
-$(document).click(function(event){
-	var eo=$(event.target);
-	if($('.dropdown-menu').is(':visible') && eo.attr('class') != 'dropdown-toggle' && !eo.parent('.btn-group').length && !eo.parents('.dropdown-menu').length)
-	$('.btn-group').removeClass('open');
-});
 $('.dropdown-menu li:not(.disabled)').click(function(e){
-	e.preventDefault();
+	//e.preventDefault();
 	var $btnGroup = $(this).parents('.btn-group');
 	$(this).addClass('active').siblings('li').removeClass('active');
 	$btnGroup.removeClass('open');
 	
 	if ($btnGroup.hasClass('filter')) {
+		e.preventDefault();
 		var txt = $(this).text();
 		$btnGroup.children('.dropdown-toggle').text(txt);
 	}
+});
+$(document).click(function(event){
+	var eo=$(event.target);
+	if($('.dropdown-menu').is(':visible') && eo.attr('class') != 'dropdown-toggle' && !eo.parent('.btn-group').length && !eo.parents('.dropdown-menu').length)
+	$('.btn-group').removeClass('open');
 });
 
 //数字输入框

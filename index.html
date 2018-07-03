@@ -36,10 +36,10 @@
 	</div>
 	<div class="row">
 	    <div class="slick">
-	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #e5e5e5;"></span></a></div>
-	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #398439;"></span></a></div>
-	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #0069CB;"></span></a></div>
-	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #C9302C;"></span></a></div>
+	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #e5e5e5;"><span style="display:block;width:1200px;height: 400px;background:rgba(0,0,0,.1);margin:0 auto;"></span></span></a></div>
+	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #398439;"><span style="display:block;width:1200px;height: 400px;background:rgba(0,0,0,.1);margin:0 auto;"></span></span></a></div>
+	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #0069CB;"><span style="display:block;width:1200px;height: 400px;background:rgba(0,0,0,.1);margin:0 auto;"></span></span></a></div>
+	        <div><a href="#" target="_blank"><span style="display: block;height: 400px;background: #C9302C;"><span style="display:block;width:1200px;height: 400px;background:rgba(0,0,0,.1);margin:0 auto;"></span></span></a></div>
 	    </div>
 	</div>
 	
@@ -1051,13 +1051,22 @@
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
 $(function(){
+	//幻灯片、跑马灯
     $('.slick').slick({
-    	autoplay: true,
-		dots: true,
-		arrows: true,
-        infinite: true,
-		speed: 300,
-		slidesToShow: 1
+    	/*
+    	特别说明：
+    	1、plugs/slick内部的.css和.scss为原版；
+    	2、assets/scss/_slick.scss为定制版；
+    	3、增加fullScreen参数，默认false，配置为ture全屏模式，屏幕大于1200px，上下切换按钮位置不同；
+    	4、其他参数参照http://www.jq22.com/jquery-info406
+    	*/
+    	fullScreen: true,//全屏模式
+    	autoplay: true,	//自动播放
+    	infinite: true,	//循环播放
+		dots: true,		//下面切换圆点
+		arrows: true,	//左右切换按钮
+		speed: 300,		//滚动速度
+		slidesToShow: 1	//显示个数
 	});
 
 });

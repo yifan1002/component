@@ -2,29 +2,18 @@
 @import 'mixin';
 
 /* =12 slick */
+$slick-loader-path: "../images/icon/" !default;
 
-$slick-loader-path: "../../plugs/slick/" !default;
-$slick-arrow-color: white !default;
-$slick-dot-color: black !default;
-$slick-prev-character: '\2190' !default;
-$slick-next-character: '\2192' !default;
-$slick-dot-character: '\2022' !default;
-
-/* Slider */
-
+.slick {
+	height: 400px;
+	overflow: hidden;
+}
 .slick-slider {
     position: relative;
     display: block;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    @include user-select;
+    @include touch-action(none);
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: none;
-    touch-action: none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .slick-list {
@@ -39,7 +28,7 @@ $slick-dot-character: '\2022' !default;
     }
 
     .slick-loading & {
-        background: #fff url(#{$slick-loader-path}ajax-loader.gif) center center no-repeat;
+        background: url(#{$slick-loader-path}slick_loader.gif) center center no-repeat #fff;
     }
 
     &.dragging {
@@ -51,11 +40,7 @@ $slick-dot-character: '\2022' !default;
 .slick-track,
 .slick-slide,
 .slick-slide img {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+    @include translate3d(0,0,0);
 }
 .slick-track {
     position: relative;
@@ -152,9 +137,6 @@ $slick-dot-character: '\2022' !default;
         background: url(#{$slick-loader-path}slick_next.png) center center no-repeat;
     }
 }
-
-/* Dots */
-
 .slick-slider {
     margin-bottom: 30px;
 }
