@@ -2,21 +2,6 @@
 @import 'mixin';
 
 /* =4 buttons */
-//*****S button var *****//
-//=== 文本链接 ===
-$link-color:             		$c-primary !default;
-$link-hover-color:       		lighten($link-color, 10%) !default;
-$link-active-color:      		darken($link-color, 10%) !default;
-$link-disabled-color:    		$c-disable !default;
-$link-hover-decoration:  		underline !default;
-//=== 下拉按钮 ===
-$dropdown-zindex:  				3 !default;
-$dropdown-bgc:     				$c-white !default;
-$dropdown-bdc:     				$c-separate !default;
-$dropdown-fz:      				$fz !default;
-$dropdown-bgc-hover: 			$c-hover !default;
-//*****E button var *****//
-
 
 //*****S button mixin *****//
 // button var 按钮颜色控制

@@ -2,7 +2,7 @@
 @import 'mixin';
 
 /* =12 slick */
-$slick-loader-path: "../images/icon/" !default;
+$slick-img-path: "../images/icon/" !default;
 
 .slick {
 	height: 400px;
@@ -28,7 +28,7 @@ $slick-loader-path: "../images/icon/" !default;
     }
 
     .slick-loading & {
-        background: url(#{$slick-loader-path}slick_loader.gif) center center no-repeat #fff;
+        background: url(#{$slick-img-path}slick_loader.gif) center center no-repeat #fff;
     }
 
     &.dragging {
@@ -128,13 +128,13 @@ $slick-loader-path: "../images/icon/" !default;
 .slick-prev {
     left: 10px;
     &:before {
-        background: url(#{$slick-loader-path}slick_prev.png) center center no-repeat;
+        background: url(#{$slick-img-path}slick_prev.png) center center no-repeat;
     }
 }
 .slick-next {
     right: 10px;
     &:before {
-        background: url(#{$slick-loader-path}slick_next.png) center center no-repeat;
+        background: url(#{$slick-img-path}slick_next.png) center center no-repeat;
     }
 }
 .slick-slider {

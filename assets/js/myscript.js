@@ -85,3 +85,23 @@ $('.form-number > a').click(function(e){
 	}
 	$num.val(num);
 });
+
+//下拉多选输入框
+if($('.chosen-select')){
+	$('.chosen-select').chosen({
+		allow_single_deselect:true,
+		disable_search_threshold: 10
+	}); 
+	//resize the chosen on window resize
+
+	$(window)
+	.off('resize.chosen')
+	.on('resize.chosen', function() {
+		$('.chosen-select').each(function() {
+			var $this = $(this);
+			$this.next().css({'width': $this.width()});
+		})
+	}).trigger('resize.chosen');
+}
+
+
