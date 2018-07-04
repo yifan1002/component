@@ -16,7 +16,7 @@
     
     ShowPassword.prototype = {
     	init: function() {
-	    	console.log(defaults);
+	    	//console.log(defaults);
 	    	var className = '', formSize = '';
 	    	if (defaults.show === false) {
 	    		_.attr('type', 'password');

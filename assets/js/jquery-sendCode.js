@@ -12,15 +12,15 @@
 			count: 60,
 			time: 5
 		},
-		//options = $.extend({}, defaults, options)
+		//options = $.extend({}, defaults, options),
 		options = $.extend(defaults, options),
-		_btn = $('.' + defaults.btn);
+		_btn = $('.' + defaults.btn)
 	}
     
     SendCode.prototype = {
     	//初始化
     	init: function() {
-	    	console.log(defaults);
+	    	//console.log(defaults);
 	    	_txt.attr({'maxlength': 11});
 	    	_btn.attr({'data-max': defaults.time, 'data-count': defaults.count});
 	    },
