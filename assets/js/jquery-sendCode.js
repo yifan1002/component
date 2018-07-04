@@ -9,8 +9,8 @@
 		_txt = element,
 		defaults = {
 			btn: 'js-code-btn',
-			count: 60,
-			time: 5
+			counts: 60,
+			times: 5
 		},
 		//options = $.extend({}, defaults, options),
 		options = $.extend(defaults, options),
@@ -22,7 +22,7 @@
     	init: function() {
 	    	//console.log(defaults);
 	    	_txt.attr({'maxlength': 11});
-	    	_btn.attr({'data-max': defaults.time, 'data-count': defaults.count});
+	    	_btn.attr({'data-counts': defaults.counts, 'data-times': defaults.times});
 	    },
 	    //校验格式
 		verify: function() {
@@ -41,7 +41,7 @@
 							shade: 0.2
 						});
 					} else{
-						_btn.removeAttr('disabled');
+						_btn.prop('disabled', false);
 					};
 				} else{
 					_btn.prop('disabled', true);
@@ -56,21 +56,21 @@
 					//console.log('send');
 					var start_time = new Date();
 					start_time = start_time.getTime();//获取开始时间的毫秒数
-					var newTime = parseInt(_btn.attr('data-max') - 1);
-					var timeCount = _btn.attr('data-count');
-					if(newTime >= 0){
-						_btn.attr('data-max',newTime).prop('disabled', true).text(timeCount + "秒后重获取");
+					var times = parseInt(_btn.attr('data-times') - 1);
+					var counts = parseInt(_btn.attr('data-counts'));
+					if(times >= 0){
+						_btn.attr('data-times',times).prop('disabled', true).text(counts + "秒后重获取");
 						
 						downTime = setInterval(function(){
 							//倒计时实时结束时间
-							var end_time = new Date();
+							var end_time = new Date();//获取结束时间的毫秒数
 							end_time = end_time.getTime();
 							//得到剩余时间
-							var dtime = timeCount - Math.floor((end_time - start_time) / 1000);
-							_btn.text(dtime + "秒后重获取");
-								if(dtime <= 0){
-									_btn.removeAttr('disabled').text("获取验证码");//启用按钮
-									_txt.removeAttr('disabled');
+							var d_time = counts - Math.floor((end_time - start_time) / 1000);
+							_btn.text(d_time + "秒后重获取");
+								if(d_time <= 0){
+									_btn.prop('disabled', false).text("获取验证码");//启用按钮
+									_txt.prop('disabled', false);//启用输入框
 									window.clearInterval(downTime);
 								};
 						},1000);
