@@ -995,4 +995,12 @@ textarea.form-control { padding-top: 5px; padding-bottom: 5px; }
 
 .row { padding: 10px 0; }
 
+.form-group-pwd { position: relative; display: inline-block; *display: inline; vertical-align: middle; }
+.form-group-pwd > i { position: absolute; right: 5px; display: block; width: 20px; height: 14px; background-image: url(../images/spirit/eye.png); background-repeat: no-repeat; cursor: pointer; }
+.form-group-pwd > i.hide { background-position: 0 0; }
+.form-group-pwd > i.show { background-position: 0 -14px; }
+.form-group-pwd .form-control + i { top: 9px; }
+.form-group-pwd .form-control-sm + i { top: 6px; }
+.form-group-pwd .form-control-lg + i { top: 13px; }
+
 /*# sourceMappingURL=all.css.map */

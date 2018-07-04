@@ -546,7 +546,7 @@
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
-				<label for="num">多选输入框：</label>
+				<label for="num">下拉多选输入框：</label>
 				<select multiple class="form-control chosen-select" data-placeholder="未选择" style="width:300px;">
 					<option value=""></option>
 					<option value="" disabled="disabled">张三</option>
@@ -567,6 +567,21 @@
 					<option value="">张三</option>
 					<option value="">王五</option>
 				</select>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
+				<label for="num">发送验证码：</label>
+				<input type="text" class="form-control js-code-txt" />
+				<button class="btn btn-primary js-code-btn" disabled>发送验证码</button>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
+				<label for="num">密码显示隐藏：</label>
+				<input type="text" class="form-control" id="showMyPwd1" />
+				<input type="text" class="form-control" id="showMyPwd2" />
+				<input type="text" class="form-control" id="showMyPwd3" />
 			</div>
 		</div>
 	</div>
@@ -1074,6 +1089,8 @@
 <script src="assets/js/jquery-browser.update.js"></script>
 <script src="assets/js/jquery-gotop.js"></script>
 <script src="assets/js/jquery-rating.js"></script>
+<script src="assets/js/jquery-showPassword.js"></script>
+<script src="assets/js/jquery-sendCode.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -1094,6 +1111,30 @@ $(function(){
 		speed: 300,		//滚动速度
 		slidesToShow: 1	//显示个数
 	});
+	
+	//发送验证码
+	$('.js-code-txt').sendCode({
+		/*
+		 * btn：绑定的点击按钮；
+		 * count：倒数时间，单位秒s
+		 * time: 每天发送次数，超过弹出提示层
+		 */
+		btn: 'js-code-btn',
+		count: 60,
+		time: 5
+	});
+	
+	//密码显示隐藏
+	$('#showMyPwd1').showPassord({
+		show: false,
+		size: 3
+	});
+	$('#showMyPwd2').showPassord({
+		show: true,
+		size: 1
+	});
+	$('#showMyPwd3').showPassord();
+	
 	
 
 });

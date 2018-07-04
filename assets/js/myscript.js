@@ -104,4 +104,3 @@ if($('.chosen-select')){
 	}).trigger('resize.chosen');
 }
 
-
