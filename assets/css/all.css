@@ -126,6 +126,12 @@ h4, h6, .h4, .h6 { font-weight: 700; }
 
 .text-break-all { word-wrap: break-word; word-break: break-all; }
 
+.text-zoom { position: absolute; z-index: 99999999; top: 0; left: 0; display: none; height: 40px; line-height: 40px; background-color: #fefae1; border: 1px solid #ffa55c; border-radius: 4px; padding: 0 10px; margin: 5px 0; white-space: nowrap; font-size: 18px; color: #ff7200; -webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-name: ant-up; animation-name: ant-up; }
+
+@-webkit-keyframes ant-up { from { -webkit-transform: translate3d(0, 20px, 0); opacity: 0.3; }
+  to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; } }
+@keyframes ant-up { from { transform: translate3d(0, 20px, 0); opacity: 0.3; }
+  to { transform: translate3d(0, 0, 0); opacity: 1; } }
 .m-auto { margin-right: auto; margin-left: auto; }
 
 .pt-5 { padding-top: 5px; }
@@ -1005,7 +1011,7 @@ textarea.form-control { padding-top: 5px; padding-bottom: 5px; }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx) { .chosen-rtl .chosen-search input[type="text"], .chosen-container-single .chosen-single abbr, .chosen-container-single .chosen-single div b, .chosen-container-single .chosen-search input[type="text"], .chosen-container-multi .chosen-choices .search-choice .search-choice-close, .chosen-container .chosen-results-scroll-down span, .chosen-container .chosen-results-scroll-up span { background-image: url(../images/spirit/chosen@2x.png) !important; background-size: 52px 37px !important; background-repeat: no-repeat !important; } }
 /* =14 citySelect */
 /*省市区行政区划-多级联动菜单*/
-.city-select { position: absolute; z-index: 99999999; top: 500px; left: 100px; width: 400px; background-color: #fff; border: 1px solid #eeeeee; border-radius: 4px; -webkit-box-shadow: 0 0 6px rgba(128, 128, 128, 0.35); box-shadow: 0 0 6px rgba(128, 128, 128, 0.35); margin: 10px 0 0; -webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-name: city-upbit; animation-name: city-upbit; }
+.city-select { position: absolute; z-index: 99999999; top: 0; left: 0; width: 400px; background-color: #fff; border: 1px solid #eeeeee; border-radius: 4px; -webkit-box-shadow: 0 0 6px rgba(128, 128, 128, 0.35); box-shadow: 0 0 6px rgba(128, 128, 128, 0.35); margin: 10px 0 0; -webkit-animation-duration: 0.3s; animation-duration: 0.3s; -webkit-animation-fill-mode: both; animation-fill-mode: both; -webkit-animation-name: ant-up; animation-name: ant-up; }
 
 .city-select-tab { *zoom: 1; }
 .city-select-tab:before, .city-select-tab:after { content: " "; display: table; }
@@ -1033,10 +1039,6 @@ ul.city-select-list:after { clear: both; }
 
 .city-select-list dd > span.active, ul.city-select-list li.active { background-color: #e1331a; border-radius: 3px; color: #fff; }
 
-@-webkit-keyframes city-upbit { from { -webkit-transform: translate3d(0, 20px, 0); opacity: 0.3; }
-  to { -webkit-transform: translate3d(0, 0, 0); opacity: 1; } }
-@keyframes city-upbit { from { transform: translate3d(0, 20px, 0); opacity: 0.3; }
-  to { transform: translate3d(0, 0, 0); opacity: 1; } }
 .container { width: 1200px; margin: 0 auto; background-color: #fff; }
 
 .row { padding: 10px 0; }

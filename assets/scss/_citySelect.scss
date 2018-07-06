@@ -7,8 +7,8 @@
 .city-select {
 	position: absolute;
 	z-index: 99999999;
-	top: 500px;
-	left: 100px;
+	top: 0;
+	left: 0;
 	width: 400px;
 	background-color:$c-white;
 	border: 1px solid $dropdown-bdc;
@@ -17,7 +17,7 @@
 	margin: 10px 0 0;
 	@include animation-duration(0.3s);
 	@include animation-fill-mode(both);
-	@include animation-name(city-upbit);
+	@include animation-name(ant-up);
 }
 
 
@@ -99,25 +99,4 @@ ul.city-select-list li.active {
     background-color: $c-primary;
     border-radius: 3px;
     color: $c-white;
-}
-
-@-webkit-keyframes city-upbit {
-	from {
-		-webkit-transform: translate3d(0, 20px, 0);
-		opacity: .3
-	}
-	to {
-		-webkit-transform: translate3d(0, 0, 0);
-		opacity: 1
-	}
-}
-@keyframes city-upbit {
-	from {
-		transform: translate3d(0, 20px, 0);
-		opacity: .3
-	}
-	to {
-		transform: translate3d(0, 0, 0);
-		opacity: 1
-	}
 }

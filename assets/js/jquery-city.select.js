@@ -46,6 +46,8 @@
 				'<ul id="district" class="city-select-list"></ul>' +
 			'</div>';
 			_.click(function(){
+				$('.city-select-txt').removeClass('city-select-txt');
+				$(this).addClass('city-select-txt');
 				if ($('.city-select').length === 1) {
 					$('.city-select').remove();
 				}
@@ -56,8 +58,6 @@
 				$('body').append(initStr);
 				var $city = $('.city-select');
 				$city.css({top: o_top, left: o_left});
-				$('.city-select-txt').removeClass('city-select-txt');
-				$(this).addClass('city-select-txt');
 			});
 	    },
 	    //隐藏功能组件
@@ -76,7 +76,7 @@
 		selectData: function(){
 			//console.log(_);
 			//省相关操作
-			$('body').off().on('click','#province dd > span',function(){
+			$('body').on('click','#province dd > span',function(){
 				//省选择获取数据
 				var province_txt = $(this).text();
 				$('#province dd > span').removeClass('active');

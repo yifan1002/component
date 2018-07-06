@@ -591,6 +591,13 @@
 				<input type="text" class="form-control form-control-sm" id="citySelect2" />
 			</div>
 		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
+				<label for="num">文字放大校对：</label>
+				<input type="text" class="form-control" id="textZoom1" maxlength="20" />
+				<input type="text" class="form-control form-control-sm" id="textZoom2" />
+			</div>
+		</div>
 	</div>
 	
 	<div class="container">
@@ -1101,6 +1108,7 @@
 <script src="assets/js/jquery-show.password.js"></script>
 <script src="assets/js/jquery-send.code.js"></script>
 <script src="assets/js/jquery-city.select.js"></script>
+<script src="assets/js/jquery-text.zoom.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -1148,6 +1156,15 @@ $(function(){
 	//行政区划选择
 	$('#citySelect1').citySelect();
 	$('#citySelect2').citySelect();
+	
+	//文字放大校对
+	$('#textZoom1').textZoom();
+	$('#textZoom2').textZoom({
+		offset: 2,
+		split: 5,
+		format: '，'
+	});
+	
 
 });
 </script>

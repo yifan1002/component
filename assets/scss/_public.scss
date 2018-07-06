@@ -112,6 +112,48 @@ h4, h6, .h4, .h6 {
     word-wrap: break-word;
     word-break: break-all;
 }
+.text-zoom {
+	position: absolute;
+	z-index: 99999999;
+	top: 0;
+	left: 0;
+	display: none;
+	height:40px;
+	line-height: 40px;
+	background-color:#fefae1;
+	border: 1px solid #ffa55c;
+	border-radius: $box-bdrs;
+	padding:0 10px;
+	margin: 5px 0;
+	white-space:nowrap;
+	font-size: $fz-lger;
+	color: #ff7200;
+	@include animation-duration(0.3s);
+	@include animation-fill-mode(both);
+	@include animation-name(ant-up);
+}
+
+//渐隐动画：主要用于插件的显示隐藏
+@-webkit-keyframes ant-up {
+	from {
+		-webkit-transform: translate3d(0, 20px, 0);
+		opacity: .3
+	}
+	to {
+		-webkit-transform: translate3d(0, 0, 0);
+		opacity: 1
+	}
+}
+@keyframes ant-up {
+	from {
+		transform: translate3d(0, 20px, 0);
+		opacity: .3
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1
+	}
+}
 
 //补丁
 .m-auto {
