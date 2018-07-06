@@ -584,6 +584,13 @@
 				<input type="text" class="form-control" id="showMyPwd3" />
 			</div>
 		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
+				<label for="num">行政区划选择：</label>
+				<input type="text" class="form-control" id="citySelect1" style="width: 300px;" />
+				<input type="text" class="form-control form-control-sm" id="citySelect2" />
+			</div>
+		</div>
 	</div>
 	
 	<div class="container">
@@ -1081,6 +1088,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 
 <script src="assets/js/jquery-1.9.1.min.js"></script>
 <script src="plugs/layer/layer.js"></script>
@@ -1089,8 +1098,9 @@
 <script src="assets/js/jquery-browser.update.js"></script>
 <script src="assets/js/jquery-gotop.js"></script>
 <script src="assets/js/jquery-rating.js"></script>
-<script src="assets/js/jquery-showPassword.js"></script>
-<script src="assets/js/jquery-sendCode.js"></script>
+<script src="assets/js/jquery-show.password.js"></script>
+<script src="assets/js/jquery-send.code.js"></script>
+<script src="assets/js/jquery-city.select.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -1120,8 +1130,8 @@ $(function(){
 		 * time: 每天发送次数，超过弹出提示层
 		 */
 		btn: 'js-code-btn',
-		counts: 3,
-		times: 1
+		counts: 60,
+		times: 5
 	});
 	
 	//密码显示隐藏
@@ -1135,7 +1145,9 @@ $(function(){
 	});
 	$('#showMyPwd3').showPassord();
 	
-	
+	//行政区划选择
+	$('#citySelect1').citySelect();
+	$('#citySelect2').citySelect();
 
 });
 </script>

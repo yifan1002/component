@@ -41,7 +41,6 @@ textarea.form-control {
 	}
 	
 	&[disabled],
-	&[readonly],
 	fieldset[disabled] & {
 	    background-color: $input-bg-disabled;
 	    border-color: $input-border !important;
@@ -80,6 +79,9 @@ textarea.form-control {
 	height: $box-height-lg;
 	border-radius: $box-bdrs-lg;
 	font-size: $fz-lg;
+}
+.form-control-toggle {
+	background: url(../images/icon/toggle_down.png) no-repeat right 10px center;
 }
 
 .form-group {
@@ -513,5 +515,42 @@ textarea.form-control {
 	}
 }
 
-
+//ÏÔÊ¾Òþ²ØÃÜÂë
+.form-group-pwd {
+	position: relative;
+	display: inline-block;
+	*display:inline;
+	vertical-align: middle;
+	
+	> i {
+		position: absolute;
+		right: 5px;
+		display: block;
+		width: 20px;
+		height: 14px;
+		background-image: url(../images/spirit/eye.png);
+		background-repeat: no-repeat;
+		cursor: pointer;
+		
+		&.hide {
+			background-position: 0 0;
+		}
+		
+		&.show {
+			background-position: 0 -14px;
+		}
+	}
+	
+	.form-control + i {
+		top: 9px;
+	}
+	
+	.form-control-sm + i {
+		top: 6px;
+	}
+	
+	.form-control-lg + i {
+		top: 13px;
+	}
+}
 

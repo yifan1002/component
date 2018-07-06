@@ -383,15 +383,24 @@ $chosen-img-path: "../images/spirit/" !default;
 //group Disabled Support
 .chosen-disabled {
     opacity: 0.5 !important;
-    cursor: default;
+    cursor: $cur-d;
     
     .chosen-single {
-        cursor: default;
+        cursor: $cur-d;
     }
 
-    .chosen-choices .search-choice .search-choice-close {
-        cursor: default;
+    .chosen-choices {
+        cursor: $cur-d;
+        
+        .chosen-search-input,
+        .search-choice .search-choice-close {
+        	cursor: $cur-d;
+        }
     }
+    
+	.chosen-choices:hover {
+		border-color: $input-border;
+	}
 }
 
 
