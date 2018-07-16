@@ -2,10 +2,10 @@
 //	step:2,
 //	size:3
 //});
-(function($) {
+;(function($,window,document,undefined){
 	//定义FormNumber的构造函数
 	var FormNumber = function(ele, opt) {
-		$element = ele,
+		_ = ele,
 		defaults = {
 			step: 1,
 			size: 2
@@ -24,11 +24,11 @@
 			} else {
 				className = 'form-number form-number-lg';
 			}
-			$element.addClass('form-control').wrap('<div class="' + className + '" data-step="' + options.step + '"></div>').after('<a href="#" class="form-number-add">+</a><a href="#" class="form-number-sub">-</a>');
+			_.addClass('form-control').wrap('<div class="' + className + '" data-step="' + options.step + '"></div>').after('<a href="#" class="form-number-add">+</a><a href="#" class="form-number-sub">-</a>');
 		},
 		//校验格式
 		verify: function() {
-			$('body').on('keyup', '.form-number .form-control', function(){
+			_.on('keyup', function(){
 				var num = /^\d{1,4}$/;
 				if(!num.test($(this).val())){
 					//调用layer.js
@@ -43,12 +43,13 @@
 		},
 		//加减运算
 		calculate: function() {
-			$('body').off('click').on('click', '.form-number > a', function(e) {
+			_.siblings('a').on('click', function(e) {
 				e.preventDefault();
 				var $num = $(this).siblings('.form-control');
 				var val = $num.val();
 				if(!val) val = 0;
 				var num = parseInt(val);
+				//console.log(num);
 				var step = parseInt($(this).parent('.form-number').attr('data-step'));
 				if($(this).hasClass('form-number-add')) {
 					num += step;
@@ -65,8 +66,10 @@
 		//创建FormNumber的实体
 		var newNumber = new FormNumber(this, options);
 		//调用其方法
-		newNumber.init();
-		newNumber.verify();
-		newNumber.calculate();
+		return this.each(function() {
+			newNumber.init();
+			newNumber.verify();
+			newNumber.calculate();
+		});
 	}
-})(jQuery);
+})(jQuery,window,document);

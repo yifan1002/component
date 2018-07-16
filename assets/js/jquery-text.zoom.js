@@ -1,29 +1,29 @@
-//$('.citySelect').sendCode();
+//$('#textZoom1').textZoom();
 //发送验证码
 ;(function($,window,document,undefined){
-    var TextZoom = function(element, options) {
+    var TextZoom = function(element, opt) {
 		_ = element,
 		defaults = {
 			offset: 1,
 			split: 4,
 			format: '-'
 		},
-		//options = $.extend({}, defaults, options),
-		options = $.extend(defaults, options)
+		options = $.extend({}, defaults, opt)
 	}
     
     TextZoom.prototype = {
     	init: function(){
-    		_.attr({'data-offset': defaults.offset, 'data-split': defaults.split, 'data-format': defaults.format});
+    		_.attr({'data-offset': options.offset, 'data-split': options.split, 'data-format': options.format});
     	},
     	//显示功能组件
     	show: function() {
-	    	//console.log(defaults);
+	    	//console.log(options);
 	    	var initStr = '<span class="text-zoom"></span>';
 			_.on('focus', function(){
+	    		//console.log(options);
 				$('.text-zoom-from').removeClass('text-zoom-from');
 				$(this).addClass('text-zoom-from');
-				if ($('.text-zoom').length === 1) {
+				if ($('.text-zoom')) {
 					$('.text-zoom').remove();
 				}
 				var o_left = $(this).offset().left;
@@ -35,14 +35,9 @@
 				//console.log(o_top);
 				//console.log(o_left);
 				$('body').append(initStr);
-				var $zoom = $('.text-zoom');
-				$zoom.css({top: o_top, left: o_left});
-				$zoom.text(splitStr());
-				if ($zoom.text().length > 0) {
-					$zoom.show();
-				}
+				$('.text-zoom').css({top: o_top, left: o_left});
 			});
-			_.on('keyup', function(){
+			_.on('keyup focus', function(){
 				var $zoom = $('.text-zoom');
 				$zoom.text(splitStr());
 				if ($zoom.text().length > 0) {
@@ -50,7 +45,6 @@
 				} else{
 					$zoom.hide();
 				}
-				
 			});
 	    },
 	    //隐藏功能组件

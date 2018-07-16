@@ -1,13 +1,12 @@
 //$('.citySelect').sendCode();
 //发送验证码
 ;(function($,window,document,undefined){
-    var CitySelect = function(element, options) {
+    var CitySelect = function(element, opt) {
 		_ = element,
 		defaults = {
 			
 		},
-		//options = $.extend({}, defaults, options),
-		options = $.extend(defaults, options)
+		options = $.extend({}, defaults, opt)
 	}
     
     CitySelect.prototype = {
@@ -17,7 +16,7 @@
     	},
     	//显示功能组件：加载省数据
     	show: function() {
-	    	//console.log(defaults);
+	    	//console.log(options);
 	    	var initStr = '<div class="city-select">' +
 				'<ul class="city-select-tab">' +
 					'<li class="active">选择省份</li>' +

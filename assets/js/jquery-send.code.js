@@ -5,16 +5,15 @@
 //});
 //发送验证码
 ;(function($,window,document,undefined){
-    var SendCode = function(element, options) {
+    var SendCode = function(element, opt) {
 		_txt = element,
 		defaults = {
-			btn: 'js-code-btn',
+			btn: '.js-code-btn',
 			counts: 60,
 			times: 5
 		},
-		//options = $.extend({}, defaults, options),
-		options = $.extend(defaults, options),
-		_btn = $('.' + defaults.btn)
+		options = $.extend({}, defaults, opt),
+		_btn = $(options.btn)
 	}
     
     SendCode.prototype = {
@@ -22,7 +21,8 @@
     	init: function() {
 	    	//console.log(defaults);
 	    	_txt.attr({'maxlength': 11});
-	    	_btn.attr({'data-counts': defaults.counts, 'data-times': defaults.times});
+	    	_btn.attr({'data-counts': options.counts, 'data-times': options.times});
+	    	//console.log(_btn)
 	    },
 	    //校验格式
 		verify: function() {

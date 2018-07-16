@@ -419,8 +419,8 @@ textarea.form-control {
     > a {
     	display: block;
     	width: 23px;
-    	height: $box-height / 2 + 1;
-    	line-height: $box-height / 2 - 4;
+    	height: $box-height / 2;
+    	line-height: $box-height / 2 - 2;
     	border: 1px solid $input-border;
     	border-left: 0;
     	margin-left: 55px;
@@ -429,8 +429,8 @@ textarea.form-control {
     	color: $c-lighter;
     	
     	& + a{
-    		height: $box-height / 2;
-    		margin-top: -1px;
+    		line-height: $box-height / 2 - 1;
+    		border-top: 0;
     	}
     	
     	&:hover {
@@ -444,21 +444,21 @@ textarea.form-control {
 }
 .form-number-sm {
 	> a {
-		height: $box-height-sm / 2 + 1;
-    	line-height: $box-height-sm / 2 - 4;
+		height: $box-height-sm / 2;
+    	line-height: $box-height-sm / 2 - 2;
     	
     	& + a{
-    		height: $box-height-sm / 2;
+    		line-height: $box-height-sm / 2 - 1;
     	}
 	}
 }
 .form-number-lg {
 	> a {
-		height: $box-height-lg / 2 + 1;
-    	line-height: $box-height-lg / 2 - 4;
+		height: $box-height-lg / 2;
+    	line-height: $box-height-lg / 2 - 2;
     	
     	& + a{
-    		height: $box-height-lg / 2;
+    		line-height: $box-height-lg / 2 - 1;
     	}
 	}
 }
