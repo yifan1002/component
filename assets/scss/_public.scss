@@ -112,6 +112,8 @@ h4, h6, .h4, .h6 {
     word-wrap: break-word;
     word-break: break-all;
 }
+
+//文字放大校对
 .text-zoom {
 	position: absolute;
 	z-index: 99999999;
@@ -131,6 +133,19 @@ h4, h6, .h4, .h6 {
 	@include animation-duration(0.3s);
 	@include animation-fill-mode(both);
 	@include animation-name(ant-up);
+}
+
+//文字横向滚动
+.marquee {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.marquee-inner {
+    position: absolute;
+    top: 0;
 }
 
 //渐隐动画：主要用于插件的显示隐藏

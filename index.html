@@ -44,6 +44,17 @@
 	</div>
 	
 	<div class="container">
+		<h2 class="mt-30 pl-10">文字横向滚动</h2>
+		<div class="row clearfix">
+			<div class="pull-left" style="width: 50%;border: 1px solid #000;">
+				<div id="textScrollLeft" class="marquee">文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动文字向左滚动</div>
+			</div>
+			<div class="pull-right" style="width: 50%;border: 1px solid #000;">
+				<div id="textScrollRight" class="marquee">文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动文字向右滚动</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
 		<h2 class="mt-30 pl-10">标题+段落</h2>
 		<div class="row">
 			<h1>H1：我是字体&emsp;ABCDEFGH&emsp;0123456789</h1>
@@ -71,6 +82,16 @@
 			<button class="btn btn-sm"><img src="assets/images/file/word_16x16.png"/></button>
 			<button class="btn btn-sm"><img src="assets/images/file/excel_16x16.png"/><span>按钮文字</span></button>
 			<button class="btn btn-sm btn-link">文字链接</button>
+		</p>
+		<p style="padding: 5px 10px;">
+			<button class="btn"><img src="assets/images/file/word_16x16.png"/></button>
+			<button class="btn"><img src="assets/images/file/excel_16x16.png"/><span>按钮文字</span></button>
+			<button class="btn btn-link">文字链接</button>
+		</p>
+		<p style="padding: 5px 10px;">
+			<button class="btn btn-lg"><img src="assets/images/file/word_16x16.png"/></button>
+			<button class="btn btn-lg"><img src="assets/images/file/excel_16x16.png"/><span>按钮文字</span></button>
+			<button class="btn btn-lg btn-link">文字链接</button>
 		</p>
 		<p style="padding: 5px 10px;">
 			<button class="btn btn-sm">（小按钮）Small button</button>
@@ -586,9 +607,15 @@
 				<input type="text" class="form-control form-control-sm" id="textZoom2" />
 			</div>
 		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
+				<label for="num">标签输入：</label>
+				<input type="text" class="form-control" id="Tags1" value="标签1,标签2,标签标签标签" style="width: 400px;" />
+			</div>
+		</div>
 		<div class="row" style="padding: 50px 10px 5px;">
 			<div class="form-group">
-				<label for="num">数值范围选取插件：</label>
+				<label for="num">数值范围选取：</label>
 				<input type="text" class="form-control" id="range1" value="60,90" />
 			</div>
 		</div>
@@ -1090,23 +1117,36 @@
 		</div>
 	</div>
 	
+	<div class="container">
+		<h2 class="mt-30 pl-10">其他插件</h2>
+		<h3 class="mt-10 pl-10">图表echarts</h3>
+		<div class="row">
+			<div id="echart-stat" style="height: 300px;"></div>
+		</div>
+		<h3 class="mt-10 pl-10">11111</h3>
+		<div class="row">
+			
+		</div>
+	</div>
 	
-	<input type="text" class="form-control" id="test1" />
-	<input type="text" class="form-control" id="test2" />
+	
 
 <script src="assets/js/jquery-1.9.1.min.js"></script>
 <script src="plugs/layer/layer.js"></script>
 <script src="plugs/slick/slick.min.js"></script>
 <script src="plugs/chosen/chosen.jquery.min.js"></script>
 <script src="plugs/jRange/jquery.range-min.js"></script>
+<script src="plugs/echarts.common.min.js"></script>
 <script src="assets/js/jquery-browser.update.js"></script>
 <script src="assets/js/jquery-tabs.js"></script>
+<script src="assets/js/jquery-tags.js"></script>
 <script src="assets/js/jquery-gotop.js"></script>
 <script src="assets/js/jquery-rating.js"></script>
 <script src="assets/js/jquery-show.password.js"></script>
 <script src="assets/js/jquery-send.code.js"></script>
 <script src="assets/js/jquery-city.select.js"></script>
 <script src="assets/js/jquery-text.zoom.js"></script>
+<script src="assets/js/jquery-text.scroll.js"></script>
 <script src="assets/js/jquery-form.number.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
@@ -1127,6 +1167,14 @@ $(function(){
 		arrows: true,	//左右切换按钮
 		speed: 300,		//滚动速度
 		slidesToShow: 1	//显示个数
+	});
+	
+	//文字横向滚动
+	$('#textScrollLeft').textScroll();
+	$('#textScrollRight').textScroll({
+		direction: 'right',
+		speed: 100,
+		offset: 50
 	});
 	
 	//tabs
@@ -1182,6 +1230,9 @@ $(function(){
 		size: 3
 	});
 	
+	//标签输入
+	$('#Tags1').tags();
+	
 	//数值范围选择
 	$('#range1').jRange({
 		theme: '',
@@ -1194,6 +1245,84 @@ $(function(){
 		showLabels: true,
 		isRange:true
 	});
+	
+	//echart图表
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('echart-stat'));
+    // 指定图表的配置项和数据
+    option = {
+	    title : {
+	        text: '未来一周气温变化',
+	        subtext: '纯属虚构'
+	    },
+	    tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['最高气温','最低气温']
+	    },
+	    toolbox: {
+	        show : true,
+	        feature : {
+	            mark : {show: true},
+	            dataView : {show: true, readOnly: false},
+	            magicType : {show: true, type: ['line', 'bar']},
+	            restore : {show: true},
+	            saveAsImage : {show: true}
+	        }
+	    },
+	    calculable : true,
+	    xAxis : [
+	        {
+	            type : 'category',
+	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [
+	        {
+	            type : 'value',
+	            axisLabel : {
+	                formatter: '{value} °C'
+	            }
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'最高气温',
+	            type:'line',
+	            data:[11, 11, 15, 13, 12, 13, 10],
+	            markPoint : {
+	                data : [
+	                    {type : 'max', name: '最大值'},
+	                    {type : 'min', name: '最小值'}
+	                ]
+	            },
+	            markLine : {
+	                data : [
+	                    {type : 'average', name: '平均值'}
+	                ]
+	            }
+	        },
+	        {
+	            name:'最低气温',
+	            type:'line',
+	            data:[1, -2, 2, 5, 3, 2, 0],
+	            markPoint : {
+	                data : [
+	                    {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
+	                ]
+	            },
+	            markLine : {
+	                data : [
+	                    {type : 'average', name : '平均值'}
+	                ]
+	            }
+	        }
+	    ]
+	};
+    // 使用刚指定的配置项和数据显示图表。
+	myChart.setOption(option);
 
 
 

@@ -5,6 +5,7 @@
 $slick-img-path: "../images/icon/" !default;
 
 .slick {
+	min-width: 1200px;
 	height: 400px;
 	overflow: hidden;
 }
