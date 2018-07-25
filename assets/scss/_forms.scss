@@ -554,3 +554,66 @@ textarea.form-control {
 	}
 }
 
+//±Í«© ‰»Î
+.form-tags {
+	display: inline-block;
+    *display:inline;
+    vertical-align: middle;
+    min-height: $box-height;
+	background-color: $input-bgc;
+	border: 1px solid $input-border;
+	border-radius: $box-bdrs;
+	padding: 5px $input-px;
+	@include clearfix;
+	
+	&-input {
+	    display: inline-block;
+	    background-color: transparent;
+	    width: 20px;
+	    height: 24px;
+	    outline: 0;
+	    border: 0;
+	    margin: 2px 0 0 5px;
+	}
+	
+	&-list {
+		float: left;
+		display: inline-block;
+    	*display:inline;
+    	
+    	li {
+    		position: relative;
+    		display: inline-block;
+    		*display:inline;
+    		height: 24px;
+    		line-height: 24px;
+    		background-color: $c-primary;
+			border-radius: 2px;
+    		padding: 0 24px 0 5px;
+    		margin: 2px;
+    		white-space:nowrap;
+    		overflow: hidden;
+    		color: $c-white;
+    		
+    		i {
+    			position: absolute;
+    			right: 0;
+    			top: 0;
+    			display: block;
+    			width: 20px;
+    			height: 24px;
+    			font-style: normal;
+    			text-align: center;
+    			cursor: pointer;
+    			
+    			&:hover {
+    				background-color: lighten($c-primary, 20%);
+    			}
+    		}
+    	}
+		
+	}
+	
+	color: $input-color;
+    
+}

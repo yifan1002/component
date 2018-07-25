@@ -1062,13 +1062,4 @@ ul.city-select-list:after { clear: both; }
 
 .row { padding: 10px 0; }
 
-.form-tags { display: inline-block; *display: inline; vertical-align: middle; min-height: 32px; background-color: #fff; border: 1px solid #d9d9d9; border-radius: 4px; padding: 5px 10px; *zoom: 1; color: #333; }
-.form-tags:before, .form-tags:after { content: " "; display: table; }
-.form-tags:after { clear: both; }
-.form-tags-input { display: inline-block; background-color: transparent; width: 20px; height: 24px; outline: 0; border: 0; margin: 2px 0 0 5px; }
-.form-tags-list { float: left; display: inline-block; *display: inline; }
-.form-tags-list li { position: relative; display: inline-block; *display: inline; height: 24px; line-height: 24px; background-color: #e1331a; border-radius: 2px; padding: 0 24px 0 5px; margin: 2px; white-space: nowrap; overflow: hidden; color: #fff; }
-.form-tags-list li i { position: absolute; right: 0; top: 0; display: block; width: 20px; height: 24px; font-style: normal; text-align: center; cursor: pointer; }
-.form-tags-list li i:hover { background-color: #ef8272; }
-
 /*# sourceMappingURL=all.css.map */
