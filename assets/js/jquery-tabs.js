@@ -28,7 +28,7 @@
 					$('.tabs-panel[tabs-group= '+ g +' ]').removeClass('active').siblings(href).addClass('active');
 				}
 			});
-		},
+		}
 		
 	}
 	//在插件中使用Tabs对象

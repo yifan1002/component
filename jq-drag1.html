@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>jq拖拽复制元素到容器内：事件居中</title>
+		<style type="text/css">
+			.outer {
+				width: 1200px;
+				margin: 100px auto;
+				clear: both;
+				zoom: 1
+			}
+			.left{
+				float: left;
+				width: 200px;
+			}
+			.right {
+				margin-left: 200px;
+			}
+			.box-from,.box-move {
+				width: 100px;
+				height: 100px;
+				background-color: #eee;
+				border: 1px solid #000;
+				margin-top: 10px;
+			}
+			.box-move {
+				position: fixed;
+				background-color: #f00;
+				margin-top: 0;
+			}
+			.box-from:hover {
+				cursor: move;
+			}
+			.box-to {
+				float: left;
+				width: 150px;
+				height: 150px;
+				border: 1px solid #ccc;
+				margin: 10px;
+			}
+			.box-to.hover {
+				border: 1px dashed #f00;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="outer">
+			<div class="left">
+				<div class="box-from">box1</div>
+				<div class="box-from">box2</div>
+				<div class="box-from">box3</div>
+			</div>
+			<div class="right">
+				<div class="box-to" data-index="1"></div>
+				<div class="box-to" data-index="2"></div>
+				<div class="box-to" data-index="3"></div>
+				<div class="box-to" data-index="4"></div>
+				<div class="box-to" data-index="5"></div>
+				<div class="box-to" data-index="6"></div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript" src="http://cdnjs.gtimg.com/cdnjs/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(function() {
+			$('.box-to').mouseup(function(e) {
+				e.preventDefault();
+				if($('.box-move').length > 0) {
+					$('.box-move').appendTo($(this));
+					$('.box-move').attr('class', '');
+				}
+				console.log(111);
+			});
+			$('.box-from').mousedown(function(e) {
+				e.preventDefault();
+				/* 获取需要拖动节点的坐标 */
+				var offset_x = $(this).offset().left;
+				var offset_y = $(this).offset().top;
+				console.log(offset_x);
+				/* 获取当前鼠标的坐标 */
+				var mouse_x = e.pageX;
+				var mouse_y = e.pageY;
+				console.log(mouse_x);
+				$(this).clone().addClass('box-move').appendTo($('body'));
+				$('body').css('cursor', 'move');
+				$('.box-move').css({
+					top: offset_y,
+					left: offset_x
+				});
+				$(document).mousemove(function(e) {
+					e.preventDefault();
+					if($('.box-move').length > 0) {
+						/* 计算鼠标移动了的位置 */
+						var _x = e.pageX - mouse_x;
+						var _y = e.pageY - mouse_y;
+						console.log(_x);
+						/* 设置移动后的元素坐标 */
+						var now_x = offset_x + _x;
+						var now_y = offset_y + _y;
+						console.log(now_x);
+						$('.box-move').css({
+							top: now_y,
+							left: now_x
+						});
+					}
+				});
+			});
+			
+			$(document).mouseup(function(e) {
+				e.preventDefault();
+				$('.box-move').remove();
+				$('body').css('cursor', 'auto');
+			});
+		});
+		</script>
+	</body>
+
+</html>

@@ -222,7 +222,8 @@ $chosen-img-path: "../images/spirit/" !default;
 		
 		em {
 		    font-style: normal;
-		    text-decoration: underline;
+		    color: $c-primary;
+		    //text-decoration: underline;
 		}
 	}
 }

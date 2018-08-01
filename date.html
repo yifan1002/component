@@ -50,7 +50,7 @@
 	<div class="row">
 		<div class="form-group mr-20">
 			<label for="range-date">日期：</label>
-			<input type="text" id="range-date" class="form-control" />
+			<input type="text" id="range-date" class="form-control" value="2018-08-01 - 2018-08-05" style="width: 200px;" />
 		</div>
 		<div class="form-group mr-20">
 			<label for="range-time">时间：</label>
@@ -154,7 +154,7 @@
 
 	
 <script src="assets/js/jquery-1.9.1.min.js"></script>
-<script src="plugs/laydate/laydate.js"></script>
+<script src="plugs/laydate/laydate.min.js"></script>
 <script type="text/javascript">
 	//常规用法
 	//中文版
@@ -205,6 +205,7 @@
 		elem: '#range-date',
 		range: true
 	});
+	
 	laydate.render({
 		elem: '#range-time',
 		type: 'time',

@@ -180,6 +180,11 @@ textarea::-webkit-input-placeholder {
     color: $c-white;
 }
 
+//IE input 叉叉和眼睛图标
+::-ms-clear,
+::-ms-reveal {
+	display:none;
+}
 
 //重置盒模型
 * {
