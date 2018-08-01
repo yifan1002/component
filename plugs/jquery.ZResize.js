@@ -403,13 +403,11 @@
             	var sIndex = 399;
             	var zIndex = parseInt(el.css('z-index'));
             	if (zIndex !== sIndex) {
-            		el.attr('data-zIndex', zIndex).css('z-index', sIndex);
+            		el.addClass('box-active').attr('data-zIndex', zIndex).css('z-index', sIndex);
             	}
-            	el.siblings('.box-to').each(function(){
+            	el.siblings('.box-active').each(function(){
             		var oIndex = $(this).attr('data-zIndex');
-            		if (oIndex) {
-            			$(this).css('z-index', oIndex).removeAttr('data-zIndex');
-            		}
+        			$(this).removeClass('box-active').css('z-index', oIndex).removeAttr('data-zIndex');
             	})
                 e.stopPropagation();
                 self.triggerResize(el);
