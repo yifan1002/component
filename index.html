@@ -548,9 +548,9 @@
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
 				<label for="num">数字输入框：</label>
-				<input type="text" name="" id="num1" class="form-control" />
-				<input type="text" name="" id="num2" class="form-control" />
-				<input type="text" name="" id="num3" class="form-control" />
+				<input type="text" name="" id="formNum1" class="form-control form-control-sm" />
+				<input type="text" name="" id="formNum2" class="form-control" />
+				<input type="text" name="" id="formNum3" class="form-control form-control-lg" />
 			</div>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
@@ -581,16 +581,18 @@
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
 				<label for="num">发送验证码：</label>
-				<input type="text" class="form-control js-code-txt" />
-				<button class="btn btn-primary js-code-btn" disabled>发送验证码</button>
+				<input type="text" class="form-control form-control-sm" />
+				<button class="btn btn-sm btn-primary" disabled>发送验证码</button>
+				<input type="text" class="form-control js-code-txt2" />
+				<button class="btn btn-primary js-code-btn2" disabled>发送验证码</button>
 			</div>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
 				<label for="num">密码显示隐藏：</label>
-				<input type="text" class="form-control" id="showMyPwd1" />
+				<input type="text" class="form-control form-control-sm" id="showMyPwd1" />
 				<input type="text" class="form-control" id="showMyPwd2" />
-				<input type="text" class="form-control" id="showMyPwd3" />
+				<input type="text" class="form-control form-control-lg" id="showMyPwd3" />
 			</div>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
@@ -603,8 +605,8 @@
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
 				<label for="num">文字放大校对：</label>
-				<input type="text" class="form-control" id="textZoom1" maxlength="20" />
-				<input type="text" class="form-control form-control-sm" id="textZoom2" />
+				<input type="text" class="form-control form-control-sm" id="textZoom1" />
+				<input type="text" class="form-control" id="textZoom2" maxlength="20" />
 			</div>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
@@ -616,7 +618,8 @@
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
 				<label for="num">表单字数校验：</label>
-				<input type="text" class="form-control" />
+				<input type="text" class="form-control" id="formCount1" />
+				<textarea rows="3" class="form-control" id="formCount2"></textarea>
 			</div>
 		</div>
 		<div class="row" style="padding: 5px 10px;">
@@ -832,7 +835,7 @@
 		<h2 class="mt-30 pl-10">标签</h2>
 		<h3 class="mt-10 pl-10">基本</h3>
 		<div class="row">
-			<ul class="tabs" tabs-group="g1">
+			<ul class="tabs tabs-basics" tabs-group="g1">
 				<li class="tab active"><a href="#g1-tab1">tab1tab1tab1</a></li>
 				<li class="tab disabled"><a href="#g1-tab2">tab2</a></li>
 				<li class="tab"><a href="#g1-tab3"><i class="video"></i>tab3</a></li>
@@ -1160,6 +1163,7 @@
 <script src="assets/js/jquery-text.zoom.js"></script>
 <script src="assets/js/jquery-text.scroll.js"></script>
 <script src="assets/js/jquery-form.number.js"></script>
+<script src="assets/js/jquery-form.count.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -1190,38 +1194,49 @@ $(function(){
 	});
 	
 	//tabs
-	$('.tabs').tabs();
+	$('.tabs-basics').tabs();
+	$('.tabs-card').tabs({
+		evt: 1,
+		ant: 2
+	});
+	$('.tabs-capsule').tabs({
+		evt: 0,
+		ant: 3
+	});
 	$('.tabs-vertical').tabs({
-		mode: 0
+		evt: 0,
+		ant: 2
 	});
 	
 	
 	//发送验证码
-	$('.js-code-txt').sendCode({
+	$('.js-code-txt').sendCode();
+	$('.js-code-txt2').sendCode({
 		/*
 		 * btn：绑定的点击按钮；
 		 * count：倒数时间，单位秒s
 		 * time: 每天发送次数，超过弹出提示层
 		 */
-		btn: '.js-code-btn',
-		counts: 60,
-		times: 5
+		btn: '.js-code-btn2',
+		counts: 5,
+		times: 2
 	});
 	
 	//密码显示隐藏
-	$('#showMyPwd1').showPassord({
-		show: false,
-		size: 3
+	$('#showMyPwd1').showPassword({
+		show: false
 	});
-	$('#showMyPwd2').showPassord({
-		show: true,
-		size: 1
+	$('#showMyPwd2').showPassword({
+		show: true
 	});
-	$('#showMyPwd3').showPassord();
+	$('#showMyPwd3').showPassword();
 	
 	//行政区划选择
 	$('#citySelect1').citySelect();
-	$('#citySelect2').citySelect();
+	$('#citySelect2').citySelect({
+		direction: 'up',
+		format: '、'
+	});
 	
 	//文字放大校对
 	$('#textZoom1').textZoom();
@@ -1232,14 +1247,22 @@ $(function(){
 	});
 	
 	//数字输入框
-	$('#num1').formNumber();
-	$('#num2').formNumber({
+	$('#formNum1').formNumber();
+	$('#formNum2').formNumber({
 		step: 5,
-		size: 1
+		min: -10,
+		max: 100
 	});
-	$('#num3').formNumber({
+	$('#formNum3').formNumber({
 		step: 10,
-		size: 3
+		min: 10,
+		max: 100
+	});
+	
+	//表单字数校验
+	$('#formCount1').formCount();
+	$('#formCount2').formCount({
+		max: 20
 	});
 	
 	//标签输入

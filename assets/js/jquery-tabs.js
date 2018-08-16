@@ -1,43 +1,58 @@
-//$('.tabs').formNumber({
-//	mode: 0,
+//$('.tabs').tabs({
+//	event: 0,
 //});
-;(function($,window,document,undefined){
-	//定义Tabs的构造函数
-	var Tabs = function(ele, opt) {
-		_ = ele,
-		defaults = {
-			mode: 1
-		},
-		options = $.extend({}, defaults, opt)
-	}
-	//定义Tabs的方法
+//tabs切换
+;
+(function($, window, document, undefined){
+	//默认参数
+	var defaults = {
+		evt: 1,	//事件：0-鼠标滑过切换，其他全部为点击
+		ant: 1	//动画：1-直接显示隐藏；2-淡入淡出；3-滑上滑下
+	};
+	
+	//定义构造函数
+	function Tabs(element, setting) {
+		this.element = element;
+		this.options = $.extend({}, defaults, setting);
+		this.cut();
+	};
+
+	//定义方法
 	Tabs.prototype = {
 		//切换
 		cut: function() {
-			var	even = 'click';
-			if(options.mode === 0){//鼠标滑过切换，其他全部为点击
-				even = 'mouseover';
+			//console.log(this.options);
+			var _ = this,
+				_el = $(this.element),
+				evt = 'click',
+				ant = this.options.ant;
+			if(this.options.evt === 0) {
+				evt = 'mouseover';
 			};
-			//console.log(options.mode);
-			_.children().on(even, function(e){
+			_el.children('.tab').on(evt, function(e) {
 				e.preventDefault();
 				if (!$(this).hasClass('disabled')) {
 					var g = $(this).parent('.tabs').attr('tabs-group');
 					var href = $(this).children('a').attr('href');
 					$(this).addClass('active').siblings().removeClass('active');
-					$('.tabs-panel[tabs-group= '+ g +' ]').removeClass('active').siblings(href).addClass('active');
+					$(href).siblings('.tabs-panel[tabs-group= '+ g +' ]').hide();
+					if(ant === 1) {
+						$(href).show();
+					} else if(ant === 2) {
+						$(href).fadeIn();
+					} else if(ant === 3) {
+						$(href).slideDown();
+					}
 				}
 			});
 		}
-		
-	}
-	//在插件中使用Tabs对象
+	};
+	
+	//定义插件
 	$.fn.tabs = function(options) {
-		//创建Tabs的实体
-		var newTabs = new Tabs(this, options);
-		//调用其方法
-		return this.each(function() {
-			newTabs.cut();
-		});
-	}
-})(jQuery,window,document);
+        return this.each(function(index, element) {
+            element.tabs = new Tabs(element, options);
+        });
+	};
+	
+})(jQuery, window, document);

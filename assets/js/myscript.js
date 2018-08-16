@@ -1,5 +1,5 @@
 //屏蔽不可用状态事件
-$('.disabled a,a.disabled').click(function(e){
+$('.disabled a, a.disabled').click(function(e){
 	e.preventDefault();
 });
 
@@ -22,7 +22,6 @@ $('.dropdown-menu li:not(.disabled)').click(function(e){
 	var $btnGroup = $(this).parents('.btn-group');
 	$(this).addClass('active').siblings('li').removeClass('active');
 	$btnGroup.removeClass('open');
-	
 	if ($btnGroup.hasClass('filter')) {
 		e.preventDefault();
 		var txt = $(this).text();

@@ -17,6 +17,7 @@ select.form-control {
 	padding-right: 0 !important;
 }
 textarea.form-control {
+	height: auto;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
@@ -66,7 +67,6 @@ textarea.form-control {
 }
 .form-control-sm,
 .pagination-sm .form-control,
-.form-number-sm .form-control,
 .input-group-sm .form-control {
 	height: $box-height-sm;
 	border-radius: $box-bdrs-sm;
@@ -74,7 +74,6 @@ textarea.form-control {
 }
 .form-control-lg,
 .pagination-lg .form-control,
-.form-number-lg .form-control,
 .input-group-lg .form-control {
 	height: $box-height-lg;
 	border-radius: $box-bdrs-lg;
@@ -394,6 +393,28 @@ textarea.form-control {
     }
 }
 
+//表单字数校验
+.form-count {
+	display: inline-block;
+    *display:inline;
+    vertical-align: middle;
+    @include clearfix;
+    
+    .form-count-max {
+    	margin-left: 5px;
+    	color: $c-light;
+    }
+    
+    textarea + .form-count-max {
+		display: block;
+		margin: 0;
+	}
+    
+    .form-count-num.exceed {
+    	color: $c-primary;
+    }
+}
+
 //数字输入框
 .form-number {
 	display: inline-block;
@@ -414,6 +435,28 @@ textarea.form-control {
     	& + a + a {
     		border-bottom-right-radius: $box-bdrs;
     	}
+    	
+    	&-sm {
+			~ a {
+				height: $box-height-sm / 2;
+		    	line-height: $box-height-sm / 2 - 2;
+		    	
+		    	& + a{
+		    		line-height: $box-height-sm / 2 - 1;
+		    	}
+			}
+		}
+		
+		&-lg {
+			~ a {
+				height: $box-height-lg / 2;
+		    	line-height: $box-height-lg / 2 - 2;
+		    	
+		    	& + a{
+		    		line-height: $box-height-lg / 2 - 1;
+		    	}
+			}
+		}
     }
     
     > a {
@@ -441,26 +484,6 @@ textarea.form-control {
     		color: $c-primary;
     	}
     }
-}
-.form-number-sm {
-	> a {
-		height: $box-height-sm / 2;
-    	line-height: $box-height-sm / 2 - 2;
-    	
-    	& + a{
-    		line-height: $box-height-sm / 2 - 1;
-    	}
-	}
-}
-.form-number-lg {
-	> a {
-		height: $box-height-lg / 2;
-    	line-height: $box-height-lg / 2 - 2;
-    	
-    	& + a{
-    		line-height: $box-height-lg / 2 - 1;
-    	}
-	}
 }
 
 //前后置元素
@@ -564,6 +587,7 @@ textarea.form-control {
 	border: 1px solid $input-border;
 	border-radius: $box-bdrs;
 	padding: 5px $input-px;
+	line-height: 1;
 	@include clearfix;
 	
 	&-input {
@@ -574,12 +598,11 @@ textarea.form-control {
 	    outline: 0;
 	    border: 0;
 	    margin: 2px 0 0 5px;
+	    vertical-align: top;
 	}
 	
 	&-list {
-		float: left;
-		display: inline-block;
-    	*display:inline;
+		display: inline;
     	
     	li {
     		position: relative;

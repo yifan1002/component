@@ -1,79 +1,84 @@
-//$('#textZoom1').textZoom();
-//发送验证码
-;(function($,window,document,undefined){
-    var TextZoom = function(element, opt) {
-		_ = element,
-		defaults = {
-			offset: 1,
-			split: 4,
-			format: '-'
-		},
-		options = $.extend({}, defaults, opt)
-	}
-    
-    TextZoom.prototype = {
-    	init: function(){
-    		_.attr({'data-offset': options.offset, 'data-split': options.split, 'data-format': options.format});
-    	},
-    	//显示功能组件
+//$('#textZoom1').textZoom({
+//	offset: 1,
+//	split: 4,
+//	format: '-'
+//});
+//文字放大校对
+;
+(function($, window, document, undefined){
+	//默认参数
+	var defaults = {
+		offset: 1,
+		split: 4,
+		format: '-'
+	};
+	
+	//定义构造函数
+	function TextZoom(element, setting) {
+		this.element = element;
+		this.options = $.extend({}, defaults, setting);
+		this.show();
+	};
+
+	//定义方法
+	TextZoom.prototype = {
+		//显示功能组件
     	show: function() {
-	    	//console.log(options);
-	    	var initStr = '<span class="text-zoom"></span>';
-			_.on('focus', function(){
-	    		//console.log(options);
+    		var _ = this,
+				_el = $(this.element),
+				offset = this.options.offset,
+	    		splitType = this.options.split,
+	    		connector = this.options.format,
+	    		initStr = '<span class="text-zoom"></span>';
+			_el.on('focus.textZoom', function(e) {
 				$('.text-zoom-from').removeClass('text-zoom-from');
-				$(this).addClass('text-zoom-from');
+				_el.addClass('text-zoom-from');
 				if ($('.text-zoom')) {
 					$('.text-zoom').remove();
 				}
-				var o_left = $(this).offset().left;
-				if(parseInt($(this).attr('data-offset')) === 1){
-					var o_top = $(this).offset().top - 48;
-				} else{
-					var o_top = $(this).offset().top + $(this).height();
-				}
-				//console.log(o_top);
-				//console.log(o_left);
 				$('body').append(initStr);
+				if(offset === 1){
+					var o_top = _el.offset().top - $('.text-zoom').height() - 10;
+				} else{
+					var o_top = _el.offset().top + _el.height();
+				}
+				var o_left = _el.offset().left;
 				$('.text-zoom').css({top: o_top, left: o_left});
 			});
-			_.on('keyup focus', function(){
-				var $zoom = $('.text-zoom');
-				$zoom.text(splitStr());
-				if ($zoom.text().length > 0) {
-					$zoom.show();
+			_el.on('keyup.textZoom focus.textZoom', function(e) {
+				var _zoom = $('.text-zoom');
+				_zoom.text(splitStr(splitType, connector));
+				if (_zoom.text().length > 0) {
+					_zoom.show();
 				} else{
-					$zoom.hide();
+					_zoom.hide();
 				}
+			});
+			$(document).click(function(event){
+				eo=$(event.target);
+				_.hide();
 			});
 	    },
-	    //隐藏功能组件
+		//隐藏功能组件
 	    hide: function(){
-	    	$(document).click(function(event){
-				var eo=$(event.target);
-				if(!eo.hasClass('text-zoom-from') && !eo.parents('.city-select').length){
-					$('.text-zoom').remove();
-					$('.text-zoom-from').removeClass('text-zoom-from').removeAttr('data-province data-city data-district');
-				}
-			});
+			if(!eo.hasClass('text-zoom-from') && !eo.parents('.city-select').length){
+				$('.text-zoom').remove();
+				$('.text-zoom-from').removeClass('text-zoom-from');
+			}
 	    }
-	   
-    }
-
-    $.fn.textZoom = function (options) {
-        var newZoom = new TextZoom(this, options);
-		return this.each(function() {
-            newZoom.init();
-            newZoom.show();
-            newZoom.hide();
+	};
+	
+	//定义插件
+	$.fn.textZoom = function(options) {
+        return this.each(function(index, element) {
+            element.textZoom = new TextZoom(element, options);
         });
-    }
-    
-    //分割字符串方法
-	function splitStr(){
+	};
+	
+	//分割字符串方法
+	function splitStr(splitType, connector){
 		var $from = $('.text-zoom-from');
-		var splitType = parseInt($from.attr('data-split'));
-		var connector = $from.attr('data-format');
+		var splitType, connector
 		var txtStr = $from.val();
 		var txtLen = txtStr.length;
 		var txtMax = Math.ceil(txtLen / splitType);
@@ -85,4 +90,5 @@
 		splitTxt = splitTxt.substring(0, splitTxt.length - 1);
 		return splitTxt;
 	};
-})(jQuery,window,document);
+	
+})(jQuery, window, document);

@@ -51,6 +51,19 @@
 	}
 }
 
+.city-select-list + .city-select-tab {
+	li {
+	    border-top: 1px solid $dropdown-bdc;
+	    border-bottom: 0;
+	
+		&.active {
+		    border-top: 1px solid $c-white;
+		    border-bottom: 0;
+		}
+	}
+}
+
+
 .city-select-list {
     padding: 20px 0;
     

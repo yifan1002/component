@@ -1,54 +1,58 @@
 //$('.js-password').showPassord({
-//	show: true,
-//	size: 3
+//	show: true
 //});
 //密码显示隐藏
-;(function($,window,document,undefined){
-    var ShowPassword = function(element, opt) {
-		_ = element,
-		defaults = {
-			show: false,
-			size: 2
-		},
-		options = $.extend({}, defaults, opt)
-	}
-    
-    ShowPassword.prototype = {
-    	init: function() {
-	    	//console.log(options);
-	    	var className = '', formSize = '';
-	    	if (options.show === false) {
-	    		_.attr('type', 'password');
+;
+(function($, window, document, undefined){
+	//默认参数
+	var defaults = {
+		show: false
+	};
+	
+	//定义构造函数
+	function ShowPassword(element, setting) {
+		this.element = element;
+		this.options = $.extend({}, defaults, setting);
+		this.init();
+	};
+
+	//定义方法
+	ShowPassword.prototype = {
+		//初始化
+		init: function() {
+			//console.log(this.options);
+			var _ = this,
+				_el = $(this.element);
+				className;
+	    	if (this.options.show === false) {
+	    		_el.prop('type', 'password');
 	    		className = 'hide';
 	    	} else{
-	    		_.attr('type', 'text');
+	    		_el.prop('type', 'text');
 	    		className = 'show';
 	    	}
-	    	if (options.size === 1) {
-	    		_.removeClass('form-control-lg').addClass('form-control-sm');
-	    	} else if (options.size === 2) {
-	    		_.removeClass('form-control-sm form-control-lg');
-	    	} else{
-	    		_.removeClass('form-control-sm').addClass('form-control-lg');
-	    	}
-	    	_.wrap('<div class="form-group-pwd"></div>').after('<i class="' + className + '"></i>');
-	    },
-	    change: function() {
-	    	_.siblings('i').on('click', function(){
-	    		if ($(this).hasClass('hide')) {
-	    			$(this).addClass('show').removeClass('hide').siblings('.form-control').attr('type', 'text');
-	    		} else{
-	    			$(this).addClass('hide').removeClass('show').siblings('.form-control').attr('type', 'password');
-	    		}
-	    	});
-	    }
-    }
-
-    $.fn.showPassord = function (options) {
-        var newPassword = new ShowPassword(this, options);
-		return this.each(function() {
-            newPassword.init();
-            newPassword.change();
+	    	_el.wrap('<div class="form-group-pwd"></div>').after('<i class="' + className + '"></i>');	
+			_el.siblings('i').on('click.showPassword', function(e) {
+				e.preventDefault();
+				_i = $(this);
+				_.change();
+			});
+		},
+		//改变状态
+		change: function() {
+			if (_i.hasClass('hide')) {
+    			_i.addClass('show').removeClass('hide').siblings('.form-control').attr('type', 'text');
+    		} else{
+    			_i.addClass('hide').removeClass('show').siblings('.form-control').attr('type', 'password');
+    		}
+		}
+	};
+	
+	//定义插件
+	$.fn.showPassword = function(options) {
+        return this.each(function(index, element) {
+            element.showPassword = new ShowPassword(element, options);
         });
-    }
-})(jQuery,window,document);
+	};
+	
+})(jQuery, window, document);

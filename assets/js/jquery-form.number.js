@@ -1,75 +1,119 @@
 //$('.form-number').formNumber({
-//	step:2,
-//	size:3
+//	step: 2,
+//	min: 0,
+//	max: 9999
 //});
-;(function($,window,document,undefined){
-	//定义FormNumber的构造函数
-	var FormNumber = function(ele, opt) {
-		_ = ele,
-		defaults = {
-			step: 1,
-			size: 2
-		},
-		options = $.extend({}, defaults, opt)
-	}
-	//定义FormNumber的方法
+//表单字数校验
+;
+(function($, window, document, undefined){
+	//默认参数
+	var defaults = {
+		step: 1,
+		min: 0,
+		max: 9999
+	};
+	
+	//定义构造函数
+	function FormNumber(element, setting) {
+		this.element = element;
+		this.options = $.extend({}, defaults, setting);
+		this.init();
+	};
+
+	//定义方法
 	FormNumber.prototype = {
 		//初始化
 		init: function() {
-			var className = ''
-			if(options.size === 1) {
-				className = 'form-number form-number-sm';
-			} else if(options.size === 2) {
-				className = 'form-number';
-			} else {
-				className = 'form-number form-number-lg';
-			}
-			_.addClass('form-control').wrap('<div class="' + className + '" data-step="' + options.step + '"></div>').after('<a href="#" class="form-number-add">+</a><a href="#" class="form-number-sub">-</a>');
-		},
-		//校验格式
-		verify: function() {
-			_.on('keyup', function(){
-				var num = /^\d{1,4}$/;
-				if(!num.test($(this).val())){
-					//调用layer.js
-					layer.msg('请输入数字！', {
-						icon: 2,
-						time: 1500,
-						shade: 0.2
-					});
-					$(this).val('');
-				};
+			//console.log(this.options);
+			var _ = this,
+				_el = $(this.element);
+			_el.val(this.options.min).addClass('form-control').wrap('<div class="form-number"></div>').after('<a href="#" class="form-number-add">+</a><a href="#" class="form-number-sub">-</a>');
+			_el.on('keyup.formNumber', function(e) {
+				_.verify();
 			});
+			_el.siblings('a').on('click.formNumber', function(e) {
+				e.preventDefault();
+				_a = $(this);
+				_.calculate();
+			});
+		},
+		//格式校验
+		verify: function() {
+			var _ = this,
+				_el = $(this.element),
+				val = _el.val(),
+				min = this.options.min,
+				max = this.options.max,
+				num = /^(\-?)\d+$/;
+			if((!num.test(val) && val != '' && val != '-') || (val.length > 1 && val.substring(0,1) == 0)){
+				//调用layer.js
+				layer.msg('请输入规范的数字！', {
+					icon: 2,
+					time: 1500,
+					shade: 0.2
+				});
+				_el.val('');
+			};
+			if(val < min){
+				//调用layer.js
+				layer.msg('请输入大于等于' + min + '的数字！', {
+					icon: 2,
+					time: 1500,
+					shade: 0.2
+				});
+				_el.val(min);
+			};
+			if(val > max){
+				//调用layer.js
+				layer.msg('请输入小于等于' + max + '的数字！', {
+					icon: 2,
+					time: 1500,
+					shade: 0.2
+				});
+				_el.val(max);
+			};
 		},
 		//加减运算
 		calculate: function() {
-			_.siblings('a').on('click', function(e) {
-				e.preventDefault();
-				var $num = $(this).siblings('.form-control');
-				var val = $num.val();
-				if(!val) val = 0;
-				var num = parseInt(val);
-				//console.log(num);
-				var step = parseInt($(this).parent('.form-number').attr('data-step'));
-				if($(this).hasClass('form-number-add')) {
-					num += step;
-				} else {
-					num -= step;
-					if(num <= 0) num = 0;
-				}
-				$num.val(num);
-			});
+			var _ = this,
+				_el = $(this.element),
+				val = _el.val(),
+				min = this.options.min,
+				max = this.options.max,
+				step = this.options.step;
+			if(!val) val = 0;
+			var num = parseInt(val);
+			if(_a.hasClass('form-number-add')) {
+				num += step;
+			} else {
+				num -= step;
+			}
+			if (num <= min) {
+				//调用layer.js
+				layer.msg(min + '为最小值', {
+					icon: 2,
+					time: 1500,
+					shade: 0.2
+				});
+				num = min;
+			} else if (num > max) {
+				//调用layer.js
+				layer.msg(max + '为最大值', {
+					icon: 2,
+					time: 1500,
+					shade: 0.2
+				});
+				num = max;
+			}
+			_el.val(num);
 		}
-	}
-	//在插件中使用FormNumber对象
+	};
+	
+	//定义插件
 	$.fn.formNumber = function(options) {
-		//创建FormNumber的实体
-		var newNumber = new FormNumber(this, options);
-		//调用其方法
-		return this.each(function() {
-			newNumber.init();
-			newNumber.verify();
-			newNumber.calculate();
-		});
-	}
-})(jQuery,window,document);
+        return this.each(function(index, element) {
+            element.formNumber = new FormNumber(element, options);
+        });
+	};
+	
+})(jQuery, window, document);

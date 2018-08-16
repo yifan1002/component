@@ -13,14 +13,16 @@
         };
         options = $.extend({}, defaults, opt);
         
-        var txt = $outer.text();
-		$outer.text('').addClass('marquee').append('<div class="marquee-inner" data-speed="' + options.speed + '" data-direction="' + options.direction + '">' + txt + '</div>');
+        var txt = $outer.text(),
+        	direction = options.direction,
+        	speed = options.speed;
+		$outer.text('').addClass('marquee').append('<div class="marquee-inner">' + txt + '</div>');
 		var	$inner = $outer.children('.marquee-inner'),
 			outer_w = $outer.width(),
 			inner_w = $inner.width(),
 			percent = options.offset / 100,
 			s_left;
-		if (options.direction == 'right') {
+		if (direction == 'right') {
 			s_left = percent * outer_w - inner_w;
 		} else{
 			s_left = (1 - percent) * outer_w;
@@ -28,19 +30,17 @@
 		$inner.css({
 			left: s_left
 		});
-		var o_time = (inner_w + outer_w) / options.speed * 1000;
+		var o_time = (inner_w + outer_w) / speed * 1000;
 		play();
 		
 		$inner.on({
 			mouseenter: function() {
-				direction = $(this).attr('data-direction');
 				var _offset = $(this).position().left;
-				var _speed = parseInt($(this).data('speed'));
 				$(this).stop();
 				if (direction == 'right') {
 					_offset = -_offset 
 				}
-				e_time = (inner_w + _offset) / _speed * 1000;
+				e_time = (inner_w + _offset) / speed * 1000;
 			},
 			mouseleave: function() {
 				play(e_time);
@@ -51,7 +51,7 @@
 		function play(m) {
 			var time = m == undefined ? o_time : m;
 			var e_left, n_left;
-			if ($inner.attr('data-direction') == 'right') {
+			if (direction == 'right') {
 				e_left = outer_w;
 				n_left = -inner_w;
 			} else{
