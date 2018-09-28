@@ -22,7 +22,7 @@
 		init: function() {
 			//console.log(this.options);
 			var _ = this,
-				_el = $(this.element);
+				_el = $(this.element),
 				className;
 	    	if (this.options.show === false) {
 	    		_el.prop('type', 'password');

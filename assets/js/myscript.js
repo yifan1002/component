@@ -34,6 +34,22 @@ $(document).click(function(event){
 	$('.btn-group').removeClass('open');
 });
 
+//表格折叠
+$('.tables-nest .toggle-next').click(function(){
+	var $next = $(this).parents('.has-next').next('.has-inner');
+	$(this).toggleClass('open').parents('.has-next').next('.has-inner').toggleClass('open-inner');
+});
+//表格全选
+$('.tables .choice-all input').click(function(){
+	var chk = $(this).prop('checked'),
+		$choice = $(this).parents('.tables').children('tbody, tr').find('> tr > td > .choice > input, > td > .choice > input');
+	if (chk === true) {
+		$choice.prop('checked', true);
+	} else{
+		$choice.prop('checked', false);
+	}
+});
+
 //下拉多选输入框
 if($('.chosen-select')){
 	$('.chosen-select').chosen({
@@ -46,8 +62,7 @@ if($('.chosen-select')){
 	.off('resize.chosen')
 	.on('resize.chosen', function() {
 		$('.chosen-select').each(function() {
-			var $this = $(this);
-			$this.next().css({'width': $this.width()});
+			$(this).next().css({'width': $(this).width()});
 		})
 	}).trigger('resize.chosen');
 }

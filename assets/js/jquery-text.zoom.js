@@ -55,13 +55,13 @@
 				}
 			});
 			$(document).click(function(event){
-				eo=$(event.target);
+				eo = $(event.target);
 				_.hide();
 			});
 	    },
 		//隐藏功能组件
 	    hide: function(){
-			if(!eo.hasClass('text-zoom-from') && !eo.parents('.city-select').length){
+			if(!eo.hasClass('text-zoom-from')){
 				$('.text-zoom').remove();
 				$('.text-zoom-from').removeClass('text-zoom-from');
 			}

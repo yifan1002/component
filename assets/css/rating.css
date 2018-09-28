@@ -1,0 +1,23 @@
+/* =15 rating */
+.rating-item { height: 28px; padding: 5px 10px; }
+.rating-item.even { background-color: #fff1eb; }
+
+.rating-name, .rating-list, .rating-info { display: inline-block; vertical-align: text-top; }
+
+.rating-name { width: 80px; text-align: right; }
+
+.rating-list { width: 140px; *zoom: 1; }
+.rating-list:before, .rating-list:after { content: " "; display: table; }
+.rating-list:after { clear: both; }
+.rating-list > a { float: left; display: block; width: 18px; height: 18px; background: url(../images/spirit/star.png) no-repeat -5px 0; margin: 0 5px; }
+.rating-list > a.empty { width: 0; margin-right: 23px; }
+.rating-list > a.half { width: 9px; margin-right: 14px; }
+.rating-list > a:hover, .rating-list > a.hover, .rating-list > a.active { background-position: -5px -18px; }
+
+.rating-info { margin-left: 5px; color: #666; }
+
+.rating-show .rating-list { background: url(../images/spirit/star.png) repeat 0 0; }
+.rating-show .rating-list > a:hover { background-position: -5px 0; }
+.rating-show .rating-list > a.active:hover { background-position: -5px -18px; }
+
+/*# sourceMappingURL=rating.css.map */

@@ -72,6 +72,7 @@
 				_input = _el.siblings('.form-tags-input');
 			keyCode = e.keyCode || e.which;
 			if (keyCode === 32) {
+				e.preventDefault();
 				var val = _input.val(),
 					tags = _el.val().split(','),
 					hasTag = false;

@@ -1,7 +1,7 @@
 @import 'var';
 @import 'mixin';
 
-/* =14 chosen */
+/* =18 chosen */
 
 $chosen-img-path: "../images/spirit/" !default;
 
@@ -201,13 +201,13 @@ $chosen-img-path: "../images/spirit/" !default;
 		}
 		
 		&.highlighted {
-		    background-color: $c-hover;
+		    background-color: $c-bgc;
 		}
 		
 		&.no-results {
 		    color: $c-darker;
 		    display: list-item;
-		    background: $c-hover;
+		    background: $c-bgc;
 		}
 		
 		&.group-result {

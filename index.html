@@ -581,8 +581,8 @@
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
 				<label for="num">发送验证码：</label>
-				<input type="text" class="form-control form-control-sm" />
-				<button class="btn btn-sm btn-primary" disabled>发送验证码</button>
+				<input type="text" class="form-control form-control-sm js-code-txt" />
+				<button class="btn btn-sm btn-primary js-code-btn" disabled>发送验证码</button>
 				<input type="text" class="form-control js-code-txt2" />
 				<button class="btn btn-primary js-code-btn2" disabled>发送验证码</button>
 			</div>
@@ -624,8 +624,8 @@
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
-				<label for="num">邮箱自动填充：</label>
-				<input type="text" class="form-control" />
+				<label for="num">邮箱自动输入：</label>
+				<input type="text" class="form-control" id="email" />
 			</div>
 		</div>
 		<div class="row" style="padding: 50px 10px 5px;">
@@ -633,6 +633,401 @@
 				<label for="num">数值范围选取：</label>
 				<input type="text" class="form-control" id="range1" value="60,90" />
 			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<h2 class="mt-30 pl-10">表格</h2>
+		<h3 class="mt-10 pl-10">基础</h3>
+		<div class="row">
+			<table class="tables">
+				<thead>
+					<tr>
+						<th>
+							<label for="l1-all" class="choice choice-all">
+								<input type="checkbox" name="l1-all" id="l1-all" />
+								<span class="choice-name">全选</span>
+							</label>
+						</th>
+						<th>姓名</th>
+						<th>
+							<div class="btn-group filter dropdown">
+								<button class="btn btn-link dropdown-toggle">学号</button>
+								<ul class="dropdown-menu">
+									<li class="disabled"><a href="#">选项一</a></li>
+									<li><a href="#">选项二</a></li>
+									<li><a href="#">选项三</a></li>
+									<li class="line"></li>
+									<li><a href="#">其他选项</a></li>
+							    </ul>
+							</div>
+						</th>
+						<th>性别</th>
+						<th>行政班</th>
+						<th class="text-right">总分</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label for="l1-1" class="choice">
+								<input type="checkbox" name="l1-1" id="l1-1" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="l2-2" class="choice">
+								<input type="checkbox" name="l1-2" id="l1-2" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="l1-3" class="choice">
+								<input type="checkbox" name="l1-3" id="l1-3" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="l1-4" class="choice">
+								<input type="checkbox" name="l1-4" id="l1-4" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<h3 class="mt-10 pl-10">嵌套、折叠</h3>
+		<div class="row">
+			<table class="tables tables-nest">
+				<thead>
+					<tr>
+						<th>&nbsp;</th>
+						<th>姓名</th>
+						<th>
+							<div class="btn-group filter dropdown">
+								<button class="btn btn-link dropdown-toggle">学号</button>
+								<ul class="dropdown-menu">
+									<li class="disabled"><a href="#">选项一</a></li>
+									<li><a href="#">选项二</a></li>
+									<li><a href="#">选项三</a></li>
+									<li class="line"></li>
+									<li><a href="#">其他选项</a></li>
+							    </ul>
+							</div>
+						</th>
+						<th>性别</th>
+						<th>行政班</th>
+						<th class="text-right">总分</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="has-next">
+						<td><i class="toggle-next"></i></td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr class="has-inner">
+						<td colspan="7">
+							<table class="tables">
+								<tbody>
+									<tr>
+										<td>
+											<label for="l3-3-1" class="choice">
+												<input type="checkbox" name="l3-3-1" id="l3-3-1" />
+												<span class="choice-name"></span>
+											</label>
+										</td>
+										<td>张弓学</td>
+										<td>20160614</td>
+										<td>女</td>
+										<td>高一(1)班</td>
+										<td class="text-right">77</td>
+										<td>
+											<a href="#">编辑</a>
+											<span class="tables-line">|</span>
+											<a href="#">删除</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="l3-3-2" class="choice">
+												<input type="checkbox" name="l3-3-2" id="l3-3-2" />
+												<span class="choice-name"></span>
+											</label>
+										</td>
+										<td>张弓学</td>
+										<td>20160614</td>
+										<td>女</td>
+										<td>高一(1)班</td>
+										<td class="text-right">77</td>
+										<td>
+											<a href="#">编辑</a>
+											<span class="tables-line">|</span>
+											<a href="#">删除</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="l3-3-3" class="choice">
+												<input type="checkbox" name="l3-3-3" id="l3-3-3" />
+												<span class="choice-name"></span>
+											</label>
+										</td>
+										<td>张弓学</td>
+										<td>20160614</td>
+										<td>女</td>
+										<td>高一(1)班</td>
+										<td class="text-right">77</td>
+										<td>
+											<a href="#">编辑</a>
+											<span class="tables-line">|</span>
+											<a href="#">删除</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+					<tr class="has-next">
+						<td><i class="toggle-next"></i></td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr class="has-inner">
+						<td colspan="7">
+							<table class="tables">
+								<tbody>
+									<tr>
+										<td>
+											<label for="l3-4-1" class="choice">
+												<input type="checkbox" name="l3-4-1" id="l3-4-1" />
+												<span class="choice-name"></span>
+											</label>
+										</td>
+										<td>张弓学</td>
+										<td>20160614</td>
+										<td>女</td>
+										<td>高一(1)班</td>
+										<td class="text-right">77</td>
+										<td>
+											<a href="#">编辑</a>
+											<span class="tables-line">|</span>
+											<a href="#">删除</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="l3-4-2" class="choice">
+												<input type="checkbox" name="l3-4-2" id="l3-4-2" />
+												<span class="choice-name"></span>
+											</label>
+										</td>
+										<td>张弓学</td>
+										<td>20160614</td>
+										<td>女</td>
+										<td>高一(1)班</td>
+										<td class="text-right">77</td>
+										<td>
+											<a href="#">编辑</a>
+											<span class="tables-line">|</span>
+											<a href="#">删除</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<label for="l3-4-3" class="choice">
+												<input type="checkbox" name="l3-4-3" id="l3-4-3" />
+												<span class="choice-name"></span>
+											</label>
+										</td>
+										<td>张弓学</td>
+										<td>20160614</td>
+										<td>女</td>
+										<td>高一(1)班</td>
+										<td class="text-right">77</td>
+										<td>
+											<a href="#">编辑</a>
+											<span class="tables-line">|</span>
+											<a href="#">删除</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<h3 class="mt-10 pl-10">带边框</h3>
+		<div class="row">
+			<table class="tables tables-border">
+				<thead>
+					<tr>
+						<th width="36">
+							<label for="l2-all" class="choice choice-all">
+								<input type="checkbox" name="l2-all" id="l2-all" />
+								<span class="choice-name"></span>
+							</label>
+						</th>
+						<th>姓名</th>
+						<th>
+							<div class="btn-group filter dropdown">
+								<button class="btn btn-link dropdown-toggle">学号</button>
+								<ul class="dropdown-menu">
+									<li class="disabled"><a href="#">选项一</a></li>
+									<li><a href="#">选项二</a></li>
+									<li><a href="#">选项三</a></li>
+									<li class="line"></li>
+									<li><a href="#">其他选项</a></li>
+							    </ul>
+							</div>
+						</th>
+						<th>性别</th>
+						<th>行政班</th>
+						<th class="text-right">总分</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<label for="l2-1" class="choice">
+								<input type="checkbox" name="l2-1" id="l2-1" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="l2-2" class="choice">
+								<input type="checkbox" name="l2-2" id="l2-2" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="l2-3" class="choice">
+								<input type="checkbox" name="l2-3" id="l2-3" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="l2-4" class="choice">
+								<input type="checkbox" name="l2-4" id="l2-4" />
+								<span class="choice-name"></span>
+							</label>
+						</td>
+						<td>张弓学</td>
+						<td>20160614</td>
+						<td>女</td>
+						<td>高一(1)班</td>
+						<td class="text-right">77</td>
+						<td>
+							<a href="#">编辑</a>
+							<span class="tables-line">|</span>
+							<a href="#">删除</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 	
@@ -1115,6 +1510,7 @@
 					<a href="#"></a>
 					<a href="#"></a>
 				</span>
+				<span class="rating-info"></span>
 			</div>
 		</div>
 		<h3 class="mt-10 pl-10">仅展示</h3>
@@ -1159,6 +1555,7 @@
 <script src="assets/js/jquery-rating.js"></script>
 <script src="assets/js/jquery-show.password.js"></script>
 <script src="assets/js/jquery-send.code.js"></script>
+<script src="assets/js/jquery-mail.auto.js"></script>
 <script src="assets/js/jquery-city.select.js"></script>
 <script src="assets/js/jquery-text.zoom.js"></script>
 <script src="assets/js/jquery-text.scroll.js"></script>
@@ -1263,6 +1660,11 @@ $(function(){
 	$('#formCount1').formCount();
 	$('#formCount2').formCount({
 		max: 20
+	});
+	
+	//邮箱自动输入
+	$('#email').mailAuto({
+		emails:['qq.com','163.com','126.com','sina.com','sohu.com','yahoo.cn','gmail.com','hotmail.com','live.cn']
 	});
 	
 	//标签输入

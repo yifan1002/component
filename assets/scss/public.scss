@@ -2,6 +2,19 @@
 @import 'mixin';
 
 /* =2 public */
+a {
+    text-decoration: none;
+    color: $link-color;
+    
+    &:hover {
+        text-decoration: $link-hover-decoration;
+        color: $link-hover-color;
+    }
+    
+    &:active {
+        color: $link-active-color;
+    }
+}
 strong, b, .b {
     font-weight: 700;
 }
@@ -111,28 +124,6 @@ h4, h6, .h4, .h6 {
 .text-break-all {
     word-wrap: break-word;
     word-break: break-all;
-}
-
-//文字放大校对
-.text-zoom {
-	position: absolute;
-	z-index: 99999999;
-	top: 0;
-	left: 0;
-	display: none;
-	height:40px;
-	line-height: 40px;
-	background-color:#fefae1;
-	border: 1px solid #ffa55c;
-	border-radius: $box-bdrs;
-	padding:0 10px;
-	margin: 5px 0;
-	white-space:nowrap;
-	font-size: $fz-lger;
-	color: #ff7200;
-	@include animation-duration(0.3s);
-	@include animation-fill-mode(both);
-	@include animation-name(ant-up);
 }
 
 //文字横向滚动

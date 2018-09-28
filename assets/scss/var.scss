@@ -41,11 +41,12 @@ $c-light:		#999 !default;		//三级文本色，用于说明性文字
 $c-lighter:		#ccc !default;		//四级文本色，用于特殊需要
 $c-white:		#fff !default;		//用于按钮、徽章等文字上
 //分隔色
-$c-head:		#fafafa !default;	//用于表格头部标题背景
-$c-separate:	#eeeeee !default;	//分隔线，用于模块栏目等分隔使用
-$c-border:		#d9d9d9 !default;	//边界线，用于描边等
-$c-hover:		#f5f5f5 !default;	//背景色，用于栏目背景底色
-$c-table-hover:	#fff1eb !default;	//选中背景色，用于表格鼠标选中效果等
+$c-head:		#fafafa !default;	//背景色，用于表格头部标题背景
+$c-border:		#d9d9d9 !default;	//边界线，用于描边
+$c-line:        #e8e8e8 !default;   //分隔色，用于表格、栏目分隔线隔开多个元素
+$c-separate:	#fcfcfc !default;	//分隔色，用于表格、栏目整块分隔使用
+$c-hover:	    #fff1eb !default;	//背景色，用于表格鼠标滑过、选中
+$c-bgc:		    #f5f5f5 !default;	//背景色，用于特殊栏目背景底色
 //品牌色+功能色
 $c-primary:		#e1331a !default; 	//产品主色，用于按钮导航背景等
 $c-info:		#1890ff !default;	//主要用于连接
@@ -78,7 +79,7 @@ $box-px-lg:		20px !default;
 //用于下拉按钮、菜单
 $dropdown-zindex:  				3 !default;
 $dropdown-bgc:     				$c-white !default;
-$dropdown-bdc:     				$c-separate !default;
+$dropdown-bdc:     				$c-line !default;
 $dropdown-fz:      				$fz !default;
 $dropdown-bgc-hover: 			$c-hover !default;
 

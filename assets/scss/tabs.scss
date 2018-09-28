@@ -1,7 +1,7 @@
 @import 'var';
 @import 'mixin';
 
-/* =7 tabs */
+/* =10 tabs */
 /*»ù´¡*/
 .tabs {
 	position: relative;
@@ -98,7 +98,7 @@
 			bottom: -1px;
 			height: 40px;
 			line-height: 38px;
-			background-color: $c-separate;
+			background-color: $c-line;
 			border: 1px solid $c-border;
 			padding: 0 20px;
 		}
@@ -180,7 +180,7 @@
 		}
 		
 		&.active a {
-			background-color: $c-separate;
+			background-color: $c-line;
 			
 			&:before {
 				top: 0;
