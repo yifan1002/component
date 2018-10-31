@@ -34,6 +34,16 @@
 		<button class="btn btn-default js-tips3">下+默认</button>
 		<button class="btn btn-default js-tips4">左+默认</button>
 	</div>
+	<h2 class="mt-30">轻提示Toast</h2>
+	<div class="row">
+		<button class="btn btn-success js-toast1">成功</button>
+		<button class="btn btn-danger js-toast2">失败</button>
+		<button class="btn btn-warning js-toast3">警告</button>
+		<button class="btn btn-danger js-toast4">出错</button>
+		<button class="btn btn-info js-toast5">加载</button>
+		<button class="btn btn-info js-toast6">加载-无文字</button>
+		<button class="btn js-toast7">普通纯文字</button>
+	</div>
 </div>
 
 <div class="js-feedback" style="display: none;">
@@ -70,7 +80,9 @@
 	
 <script src="assets/js/jquery-1.9.1.min.js"></script>
 <script src="plugs/layer/layer.js"></script>
+<script src="assets/js/jquery-toast.js"></script>
 <script type="text/javascript">
+$(function(){
 	//普通弹出层
 	$('.js-layer').click(function(){
 		layer.open({
@@ -182,8 +194,42 @@
 		});
 	});
 	
-	
-	
+	//轻提示Toast
+	//成功
+	$('.js-toast1').toast();
+	//失败
+	$('.js-toast2').toast({
+		title: '失败提示',
+		type: 2
+	});
+	//警告
+	$('.js-toast3').toast({
+		title: '警告提示',
+		type: 3
+	});
+	//出错
+	$('.js-toast4').toast({
+		title: '出错提示',
+		type: 4
+	});
+	//加载
+	$('.js-toast5').toast({
+		title: '加载中…',
+		type: 5,
+		time: 2000000,
+		mask: 1 
+	});
+	//加载-无文字
+	$('.js-toast6').toast({
+		title: '',
+		type: 5
+	});
+	//纯文字
+	$('.js-toast7').toast({
+		title: '纯文字提示。纯文字提示。',
+		type: 6
+	});
+});
 </script>
 </body>
 </html>

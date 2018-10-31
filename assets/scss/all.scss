@@ -33,145 +33,88 @@ $lte7:false;
 	background-color: #f8f8f8;
 }
 
-/* =6 tables */
-table {
+
+
+/*toast*/
+.toast {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    border-collapse: collapse;
-}
+    height: 100%;
+    z-index: 997;
+    background-color: transparent;
+    display: table;
+    
+    &-gray {
+        background: url(../images/toast/mask_bg.png);
+        background-color: rgba(0,0,0,.2);
+    }
 
-//»ù´¡
-.tables {
-    th,
-    td {
-        height: 48px;
-        border-bottom: 1px solid $c-border;
-        padding: 5px 10px;
-        font-size: 14px;
-        color: $c-darker;
-        
-        .choice {
-            margin: 0;
-        }
-        
-        .btn-link.dropdown-toggle {
-            height: 22px;
-            padding-left: 0;
-            font-weight: 700;
-            color: $c-darker;
-            
-            &:after {
-                border-color: $c-darker transparent transparent;
-            }
-        }
-        
-        .dropdown-menu {
-            border-color: $c-primary;
-            @include box-shadow(0 0 6px rgba(225,51,26,.2));
-            border-radius: 0;
-            padding: 0;
-            
-            > li.active > a {
-                background-color: $c-primary !important;
-                color: $c-white !important;
-            }
-            
-            > li.disabled > a {
-                background-color: $c-white !important;
-            }
-            
-            > li > a:hover {
-                background-color: $c-hover;
-            }
-        }
-        
-    }
-    
-    th {
-        background-color: $c-head;
-        text-align: left;
-        font-weight: 700;
-        
-        &.text-right {
-            text-align: right;
-        }
-    }
-    
-    tr:nth-child(2n) td{
-        background-color: $c-separate;
-    }
-    
-    tr:hover td{
-        background-color: $c-hover;
-    }
-    
-    td {
-        
-        a {
-            vertical-align: middle;
-        }
-    }
-    
-    &-line {
-        margin: 0 5px;
+    &-outer {
+        display: table-cell;
         vertical-align: middle;
-        font-size: $fz-sm;
-        color: $c-line;
+        text-align: center;
     }
-}
 
-//Ç¶Ì×¡¢ÕÛµþ
-.tables-nest {
-    tr:nth-child(2n) td{
-        background-color: $c-white;
-    }
-    
-    tr.has-inner {
-        display: none;
-        
-        > td {
-           border-bottom: 0;
-           padding: 0 20px; 
-        }
-        
-    }
-    
-    tr.open-inner {
-        display: table-row;
-        
-        td {
-           background-color: $c-head !important; 
-        }
-        
-        tr:hover td{
-            background-color: $c-hover !important;
-        }
-    }
-    
-    i.toggle-next {
+    &-inner {
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: url(../images/icon/tables_plus.png) no-repeat 0 0;
-        cursor: pointer;
+        min-width: 105px;
+        background: url(../images/toast/toast_bg.png);
+        background: rgba(56, 56, 56, .8);
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 15px;
+        color: #fff;
         
-        &.open {
-            background-image: url(../images/icon/tables_minus.png);
+        i {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background-repeat: no-repeat;
+            line-height: 1;
         }
     }
-}
-
-
-//´ø±ß¿ò
-.tables-border {
-    th,
-    td {
-        border: 1px solid $c-border;
+    &-text .toast-inner {
+        width: auto;
+        white-space: nowrap;
+        padding: 10px 20px;
     }
     
-    .choice > .choice-name::before {
-        margin-right: 0;
+    &-succeed i {
+        background-image: url(../images/toast/succeed.png);
+    }
+    &-failure i {
+        background-image: url(../images/toast/failure.png);
+    }
+    &-warning i {
+        background-image: url(../images/toast/warning.png);
+    }
+    &-error i {
+        background-image: url(../images/toast/error.png);
+    }
+    &-loading i {
+        background-image: url(../images/toast/loading.png);
+        @include animation(spinner-spin 1.5s step-end infinite);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
