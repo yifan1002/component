@@ -49,7 +49,7 @@
     @include badge-var($c-white,$c-warning,$c-warning);
 }
 .badge-default {
-    @include badge-var($c-white,$c-brighter,$c-brighter);
+    @include badge-var($c-white,$c-bright,$c-bright);
 }
 
 //按钮尺寸

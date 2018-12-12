@@ -187,7 +187,7 @@ $chosen-img-path: "../images/spirit/" !default;
 	    line-height: 15px;
 	    word-wrap: break-word;
 	    -webkit-touch-callout: none;
-	    color: $c-darker;
+	    color: $c-darken;
 	    
 	    &.active-result {
 		    display: list-item;
@@ -205,7 +205,7 @@ $chosen-img-path: "../images/spirit/" !default;
 		}
 		
 		&.no-results {
-		    color: $c-darker;
+		    color: $c-darken;
 		    display: list-item;
 		    background: $c-bgc;
 		}
@@ -287,7 +287,7 @@ $chosen-img-path: "../images/spirit/" !default;
 			    background-size: 100% 19px;
 			    background-repeat: repeat-x;
 			    background-clip: padding-box;
-			    color: $c-darker;
+			    color: $c-darken;
 			    line-height: 1;
 			    cursor: default;
 			    
@@ -315,7 +315,7 @@ $chosen-img-path: "../images/spirit/" !default;
 			
 			&.search-choice-disabled {
 			    padding-right: 5px;
-			    border: 1px solid $c-lighter;
+			    border: 1px solid $c-lighten;
 			    background-color: #e4e4e4;
 			    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), to(#eee));
 			    background-image: linear-gradient(#f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eee 100%);
@@ -340,7 +340,7 @@ $chosen-img-path: "../images/spirit/" !default;
 	
 	.chosen-drop .result-selected {
 	    display: list-item;
-	    color: $c-lighter;
+	    color: $c-lighten;
 	    cursor: default;
 	}
 }
@@ -376,7 +376,7 @@ $chosen-img-path: "../images/spirit/" !default;
 		@include box-shadow(0 0 6px rgba(228,49,3,.2));
     
 	    li.search-field input[type="text"] {
-	        color: $c-darker !important;
+	        color: $c-darken !important;
 	    }
 	}
 }

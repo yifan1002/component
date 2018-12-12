@@ -111,7 +111,7 @@
 
 //按钮颜色
 .btn-default {
-    @include btn-var($c-darker,$c-white,$c-lighter);
+    @include btn-var($c-darken,$c-white,$c-lighten);
 }
 .btn-primary {
     @include btn-var($c-white,$c-primary,$c-primary);
@@ -215,7 +215,7 @@ a.btn-lg {
 	border-color: transparent transparent $c-white;
 }
 .dropup .btn-default.dropdown-toggle:after {
-	border-color: transparent transparent $c-darker;
+	border-color: transparent transparent $c-darken;
 }
 .dropup .btn-link.dropdown-toggle:after {
 	border-color: transparent transparent $c-primary;
@@ -231,7 +231,7 @@ a.btn-lg {
     margin: 0 0 3px 2px;
 }
 .btn-default.dropdown-toggle:after {
-    border-color: $c-darker transparent transparent;
+    border-color: $c-darken transparent transparent;
 }
 .btn-link.dropdown-toggle:after {
     border-color: $c-primary transparent transparent;
@@ -278,7 +278,7 @@ a.btn-lg {
         white-space: nowrap;
         text-decoration: none;
         font-weight: normal;
-        color: $c-darker;
+        color: $c-darken;
     }
 }
 .dropdown-menu > li.active > a,

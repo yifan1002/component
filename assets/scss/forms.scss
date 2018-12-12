@@ -7,7 +7,7 @@ label, .label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
-    color: $c-darker;
+    color: $c-darken;
 }
 label + .form-control, .label + .form-control {
 	margin-left: 5px;
@@ -471,7 +471,7 @@ textarea.form-control {
     	margin-left: 55px;
     	text-decoration: none;
     	text-align: center;
-    	color: $c-lighter;
+    	color: $c-lighten;
     	
     	& + a{
     		line-height: $box-height / 2 - 1;

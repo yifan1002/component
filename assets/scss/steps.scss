@@ -20,7 +20,7 @@
 			display:block;
 			content:" ";
 			height: 2px;
-			background-color: $c-darker;
+			background-color: $c-darken;
 		}
 		
 		&:first-child:before {
@@ -35,7 +35,7 @@
 			display: block;
 			padding: 0 10px;
 			background-color: $c-white;
-			color: $c-darker;
+			color: $c-darken;
 		}
 		
 		& i {
@@ -44,7 +44,7 @@
 	        height: 20px;
 	        line-height: 18px;
 	        border-radius: 50%;
-	        border: 1px solid $c-darker;
+	        border: 1px solid $c-darken;
 	        margin: 0 8px 0 0;
 	        text-align: center;
 	        font-style: inherit;
@@ -93,7 +93,7 @@
 			z-index: 10;
 			width: 10px;
 			height: 10px;
-			background-color: $c-darker;
+			background-color: $c-darken;
 			margin-right: 0;
 			text-indent: -9999em;
 		}
@@ -132,7 +132,7 @@
 			padding: 0;
 			text-align: center;
 			font-size: $fz-lger;
-			color: $c-darker !important;
+			color: $c-darken !important;
 		}
 		
 		& i {
@@ -178,7 +178,7 @@
 		    height: 30px;
 		    line-height: 28px;
 		    padding: 0 10px 0 20px;
-		    color: $c-darker;
+		    color: $c-darken;
 		    
 		    &:before,
 		    &:after {
@@ -209,7 +209,7 @@
 		        height: 20px;
 		        line-height: 18px;
 		        border-radius: 50%;
-		        border: 1px solid $c-darker;
+		        border: 1px solid $c-darken;
 		        margin: 5px 8px 0 0;
 		        text-align: center;
 		        font-style: inherit;

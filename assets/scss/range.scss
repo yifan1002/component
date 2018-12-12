@@ -46,7 +46,7 @@
             width: 36px;
             height: 36px;
             line-height: 34px;
-            border: 1px solid $c-lighter;
+            border: 1px solid $c-lighten;
             @include box-shadow(0 2px 4px rgba(217,217,217,.5));
             @include border-radius;
             text-align: center;

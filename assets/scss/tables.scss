@@ -15,7 +15,7 @@ table {
         border-bottom: 1px solid $c-border;
         padding: 5px 10px;
         font-size: 14px;
-        color: $c-darker;
+        color: $c-darken;
         
         .choice {
             margin: 0;
@@ -25,10 +25,10 @@ table {
             height: 22px;
             padding-left: 0;
             font-weight: 700;
-            color: $c-darker;
+            color: $c-darken;
             
             &:after {
-                border-color: $c-darker transparent transparent;
+                border-color: $c-darken transparent transparent;
             }
         }
         

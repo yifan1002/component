@@ -34,13 +34,15 @@ $lh-lg:   1.8 !default;
 
 // ===3 颜色
 //基础色、中性色
-$c-black:		   #000 !default;		//
-$c-darker:		   #333 !default;		//一级文本色，用于标题正文等
-$c-dark:		   #666 !default;		//二级文本色，用于部分次级文本
-$c-light:		   #999 !default;		//三级文本色，用于说明性文字
-$c-lighter:		   #ccc !default;		//四级文本色，用于特殊需要
-$c-brighter:	   #aaa !default;		//五级文本色，用于特殊需要
-$c-white:		   #fff !default;		//用于按钮、徽章等文字上
+$c-black:          #000 !default;       //
+$c-darken:         #333 !default;       //一级文本色，用于标题正文等
+$c-dark:           #666 !default;       //二级文本色，用于部分次级文本
+$c-light:          #999 !default;       //三级文本色，用于说明性文字
+$c-lighten:        #ccc !default;       //四级文本色，用于特殊需要
+$c-white:          #fff !default;       //用于按钮、徽章等文字上
+//中性色新增
+$c-bright:         #aaa !default;       //明亮
+$c-brighter:       #eee !default;       //更亮
 //分隔色
 $c-head:		   #fafafa !default;	//背景色，用于表格头部标题背景
 $c-border:		   #d9d9d9 !default;	//边界线，用于描边
@@ -54,7 +56,7 @@ $c-info:		   #1890ff !default;	//主要用于连接
 $c-success:		   #52c41a !default;	//成功，用于审核通过保存成功等功能提示
 $c-warning:		   #faad14 !default;	//警告，用于关键操作提示
 $c-danger:		   #f5222d !default;	//错误，用于错误提示
-$c-disable:		$c-lighter !default;	//禁用色，用于按钮禁用、icon用色
+$c-disable:		$c-lighten !default;	//禁用色，用于按钮禁用、icon用色
 //=== 文本链接 ===
 $link-color:             		$c-primary !default;
 $link-hover-color:       		lighten($link-color, 10%) !default;
@@ -102,7 +104,7 @@ $badge-px-lg: 		10px !default;
 $input-px: 				10px !default;
 $input-bgc:             $c-white !default;
 $input-bg-disabled:     $c-head !default;
-$input-color:           $c-darker !default;
+$input-color:           $c-darken !default;
 $input-border:          $c-border !default;
 $input-focus-border:    $c-primary !default;
 
