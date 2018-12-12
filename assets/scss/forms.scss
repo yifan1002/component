@@ -2,7 +2,7 @@
 @import 'mixin';
 
 /* =5 forms */
-//±íÍ·£¬ÊäÈë¿ò
+//è¡¨å¤´ï¼Œè¾“å…¥æ¡†
 label, .label {
     display: inline-block;
     max-width: 100%;
@@ -89,7 +89,7 @@ textarea.form-control {
 	vertical-align: middle;
 }
 
-//ÕıÈ·¡¢´íÎó¡¢¾¯¸æÌáÊ¾
+//æ­£ç¡®ã€é”™è¯¯ã€è­¦å‘Šæç¤º
 .form-tips {
 	display: inline-block;
 	*display:inline;
@@ -115,67 +115,67 @@ textarea.form-control {
 }
 
 
-//ÆÕÍ¨-µ¥Ñ¡¿ò¡¢¶àÑ¡¿ò
+//æ™®é€š-å•é€‰æ¡†ã€å¤šé€‰æ¡†
 .choice {
     display: inline-block;
     margin: 5px 30px 5px 0;
     cursor: pointer;
     
 	& > input {
-		//IE7 IE8½µ¼¶
+		//IE7 IE8é™çº§
 	    width: 16px;
 	    height: 16px;
 	    margin-bottom: -3px;
 	    *margin-bottom: 1px;
 	    
-	    //ÀûÓÃÄÜÁ¦À´½øĞĞÑ¡ÔñµÄCSS Hack£¬µÚÒ»¸ö×ÓÔªËØ
+	    //åˆ©ç”¨èƒ½åŠ›æ¥è¿›è¡Œé€‰æ‹©çš„CSS Hackï¼Œç¬¬ä¸€ä¸ªå­å…ƒç´ 
 	    &:nth-child(1) {
 		    display: none;
 		}
 		
-		//Ñ¡ÖĞ
+		//é€‰ä¸­
 	    &:checked ~ .choice-name::before {
 	    	border: 1px solid $c-primary;
 		    background: $c-primary;
 		}
 		
-		//µ¥Ñ¡
+		//å•é€‰
 		&[type="radio"] ~ .choice-name::before {
 		    border-radius: 50%;
 		    background-clip: content-box;
 		}
 		
-		//¶àÑ¡
+		//å¤šé€‰
 		&[type="checkbox"] ~ .choice-name::before {
 		    border-radius: 2px;
 		}
 		
-		//¶àÑ¡Ñ¡ÖĞ
+		//å¤šé€‰é€‰ä¸­
 		&[type="checkbox"]:checked ~ .choice-name::before {
 		    background: url(../images/icon/checked.png) no-repeat center center $c-primary;
 		}
 		
-		//½ûÓÃ
+		//ç¦ç”¨
 		&[disabled] ~ .choice-name {
 		    cursor: $cur-d;
-		    color: #999;
+		    color: $c-disable;
 		    &::before {
-			    border-color: #eee;
+			    border-color: $c-border;
 			}
 		}
 		
-		//µ¥Ñ¡Ñ¡ÖĞ+½ûÓÃ
+		//å•é€‰é€‰ä¸­+ç¦ç”¨
 		&[type="radio"][disabled]:checked ~ .choice-name:before {
 		    background-color: $c-disable;
 		}
 		
-		//¶àÑ¡Ñ¡ÖĞ+½ûÓÃ
+		//å¤šé€‰é€‰ä¸­+ç¦ç”¨
 		&[type="checkbox"][disabled]:checked ~ .choice-name:before {
 		    background: url(../images/icon/checked_disable.png) no-repeat center center #fff;
 		}
 	}
 	
-	//ÏÔÊ¾ÎÄ±¾
+	//æ˜¾ç¤ºæ–‡æœ¬
 	& > .choice-name {
 	    display: block;
 	    color: #333;
@@ -193,39 +193,39 @@ textarea.form-control {
 		}
 	}
 	
-	//»¬¹ı
+	//æ»‘è¿‡
 	&:hover > .choice-name::before {
 	    border: 1px solid $c-primary;
 	}
 	
 }
 
-//¸ß¼¶-µ¥Ñ¡¿ò¡¢¶àÑ¡¿ò
+//é«˜çº§-å•é€‰æ¡†ã€å¤šé€‰æ¡†
 .choice-advanced {
     display: inline-block;
     margin: 10px 20px 10px 0;
     cursor: pointer;
     
 	& > input {
-		//IE7 IE8½µ¼¶
+		//IE7 IE8é™çº§
 	    width: 16px;
 	    height: 16px;
 	    margin-bottom: -3px;
 	    *margin-bottom: 1px;
 	    
-	    //ÀûÓÃÄÜÁ¦À´½øĞĞÑ¡ÔñµÄCSS Hack£¬µÚÒ»¸ö×ÓÔªËØ
+	    //åˆ©ç”¨èƒ½åŠ›æ¥è¿›è¡Œé€‰æ‹©çš„CSS Hackï¼Œç¬¬ä¸€ä¸ªå­å…ƒç´ 
 	    &:nth-child(1) {
 		    display: none;
 		}
 		
-		//Ä¬ÈÏ
+		//é»˜è®¤
 	    & ~ .choice-name {
 	    	display: inline-block;
 	    	border-radius: 2px;
 	    	text-align: center;
 		}
 		
-		//µ¥Ñ¡
+		//å•é€‰
 		&[type="radio"] ~ .choice-name:nth-child(2) {
 		    min-width: 52px;
 		    height: 24px;
@@ -234,7 +234,7 @@ textarea.form-control {
 		    color: #333;
 		}
 		
-		//¶àÑ¡
+		//å¤šé€‰
 		&[type="checkbox"] ~ .choice-name:nth-child(2) {
 			min-width: 70px;
 		    height: 32px;
@@ -244,33 +244,33 @@ textarea.form-control {
 		    color: #666;
 		}
 		
-		//µ¥Ñ¡Ñ¡ÖĞ
+		//å•é€‰é€‰ä¸­
 		&[type="radio"]:checked ~ .choice-name {
 		    background-color: $c-primary;
 		    color: #fff !important;
 		}
 		
-		//¶àÑ¡Ñ¡ÖĞ
+		//å¤šé€‰é€‰ä¸­
 		&[type="checkbox"]:checked ~ .choice-name {
 		    background: url(../images/icon/checked_advanced.png) no-repeat right bottom;
 		    border-color: $c-primary;
 		    color: $c-primary;
 		}
 		
-		//½ûÓÃ
+		//ç¦ç”¨
 		&[disabled] ~ .choice-name {
-			border-color: #d9d9d9 !important;
+			border-color: $c-border !important;
 			cursor: $cur-d;
-		    color: #999 !important;
+		    color: $c-disable !important;
 		}
 		
-		//¶àÑ¡Ñ¡ÖĞ+½ûÓÃ
+		//å¤šé€‰é€‰ä¸­+ç¦ç”¨
 		&[type="checkbox"][disabled]:checked ~ .choice-name {
 		    background: url(../images/icon/checked_advanced_disable.png) no-repeat right bottom;
 		}
 	}
 	
-	//»¬¹ı
+	//æ»‘è¿‡
 	&:hover > input ~ .choice-name:nth-child(2) {
 	    color: $c-primary;
 	}
@@ -281,7 +281,7 @@ textarea.form-control {
 }
 
 
-//¿ª¹Ø
+//å¼€å…³
 .switch {
     display: inline-block;
     
@@ -292,7 +292,7 @@ textarea.form-control {
         margin-bottom: -3px;
         *margin-bottom: 1px;
         
-        /*ÀûÓÃÄÜÁ¦À´½øĞĞÑ¡ÔñµÄCSS Hack£¬µÚÒ»¸ö×ÓÔªËØ*/
+        /*åˆ©ç”¨èƒ½åŠ›æ¥è¿›è¡Œé€‰æ‹©çš„CSS Hackï¼Œç¬¬ä¸€ä¸ªå­å…ƒç´ */
         &:nth-child(1) {
         	display: none;
     	}
@@ -308,7 +308,7 @@ textarea.form-control {
         cursor: pointer;
         text-indent: -9999em;
     }
-    /*ÀûÓÃÄÜÁ¦À´½øĞĞÑ¡ÔñµÄCSS Hack£¬×îºóÒ»¸ö×ÓÔªËØ*/
+    /*åˆ©ç”¨èƒ½åŠ›æ¥è¿›è¡Œé€‰æ‹©çš„CSS Hackï¼Œæœ€åä¸€ä¸ªå­å…ƒç´ */
     
     & > .switch-name::before {
         position: absolute;
@@ -361,12 +361,12 @@ textarea.form-control {
 }
 .switch-txt {
 	& > .switch-name::after {
-		content: "¹Ø";
+		content: "å…³";
 	}
 	
 	& > input:checked ~ .switch-name {
         &::after {
-            content: "¿ª";
+            content: "å¼€";
         }
     }
 }
@@ -395,7 +395,7 @@ textarea.form-control {
     }
 }
 
-//±íµ¥×ÖÊıĞ£Ñé
+//è¡¨å•å­—æ•°æ ¡éªŒ
 .form-count {
 	display: inline-block;
     *display:inline;
@@ -417,7 +417,7 @@ textarea.form-control {
     }
 }
 
-//Êı×ÖÊäÈë¿ò
+//æ•°å­—è¾“å…¥æ¡†
 .form-number {
 	display: inline-block;
     *display:inline;
@@ -488,7 +488,7 @@ textarea.form-control {
     }
 }
 
-//Ç°ºóÖÃÔªËØ
+//å‰åç½®å…ƒç´ 
 .input-group {
 	display: table;
 	border-collapse: separate;
@@ -540,7 +540,7 @@ textarea.form-control {
 	}
 }
 
-//ÏÔÊ¾Òş²ØÃÜÂë
+//æ˜¾ç¤ºéšè—å¯†ç 
 .form-group-pwd {
 	position: relative;
 	display: inline-block;
@@ -583,7 +583,7 @@ textarea.form-control {
 	}
 }
 
-//±êÇ©ÊäÈë
+//æ ‡ç­¾è¾“å…¥
 .form-tags {
 	display: inline-block;
     *display:inline;
@@ -647,7 +647,7 @@ textarea.form-control {
     
 }
 
-//ÎÄ×Ö·Å´óĞ£¶Ô
+//æ–‡å­—æ”¾å¤§æ ¡å¯¹
 .text-zoom {
     position: absolute;
     z-index: 999999;
@@ -670,7 +670,7 @@ textarea.form-control {
 }
 
 
-//ÓÊÏä×Ô¶¯ÊäÈë
+//é‚®ç®±è‡ªåŠ¨è¾“å…¥
 .mailAuto-list {
     position: absolute;
     z-index: 999999;

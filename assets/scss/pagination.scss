@@ -33,13 +33,13 @@
 			height: $page-width;
 			line-height: ($page-width - 2);
 			background: #fff;
-			border: 1px solid $page-bdc;
+			border: 1px solid $c-border;
 			border-radius: 2px;
 			margin-right: 6px;
 			padding: 0 5px;
 			text-decoration: none;
 			text-align: center;
-			color: $c-light;
+			color: $c-dark;
 			
 			&:hover {
 				border-color: $c-primary;
@@ -55,7 +55,7 @@
 		}
 		
 		&.disabled > a, &.disabled > span {
-			border-color: $page-bdc;
+			border-color: $c-border;
 			color: $c-disable;
 			cursor: $cur-d;
 		}

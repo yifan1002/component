@@ -2,7 +2,7 @@
 @import 'mixin';
 
 /* =15 rating */
-//��ͨ
+//普通
 .rating-item {
 	height: 28px;
 	padding: 5px 10px;
@@ -59,7 +59,7 @@
     color: $c-dark;
 }
 
-//��չʾ
+//仅展示
 .rating-show  {
 	.rating-list {
 		background: url(../images/spirit/star.png) repeat 0 0;

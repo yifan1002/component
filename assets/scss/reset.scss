@@ -123,25 +123,25 @@ select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
-//½ûÓÃÎÄ±¾ÓòÊÖ¶¯·Å´óËõĞ¡
+//ç¦ç”¨æ–‡æœ¬åŸŸæ‰‹åŠ¨æ”¾å¤§ç¼©å°
 textarea {
     resize: none;
 }
 
-//chrome»ñÈ¡½¹µãÍâ¿òÈ¥³ı
+//chromeè·å–ç„¦ç‚¹å¤–æ¡†å»é™¤
 input:focus,
 textarea:focus {
     outline: none;
 }
 
-//chrome±íµ¥×Ô¶¯Ìî³äÈ¥µôinput»ÆÉ«±³¾°
+//chromeè¡¨å•è‡ªåŠ¨å¡«å……å»æ‰inputé»„è‰²èƒŒæ™¯
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px white inset;
 }
 
-//ÆÁ±Î video±êÇ©ÏÂÔØ°´Å¥
+//å±è”½ videoæ ‡ç­¾ä¸‹è½½æŒ‰é’®
 video::-webkit-media-controls-enclosur {
     overflow: hidden;
 }
@@ -149,7 +149,7 @@ video::-webkit-media-controls-panel {
     width: calc(100% + 30px);
 }
 
-//placeholderÎÄ×ÖÑÕÉ«
+//placeholderæ–‡å­—é¢œè‰²
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
     //IE10+
@@ -170,7 +170,7 @@ textarea::-webkit-input-placeholder {
     color: $c-light;
 }
 
-//ÍÏ¶¯Êó±ê×ÖÌåÑ¡ÔñÑÕÉ«Ğ§¹û
+//æ‹–åŠ¨é¼ æ ‡å­—ä½“é€‰æ‹©é¢œè‰²æ•ˆæœ
 ::-moz-selection {
     background: $c-primary;
     color: $c-white;
@@ -180,13 +180,13 @@ textarea::-webkit-input-placeholder {
     color: $c-white;
 }
 
-//IE input ²æ²æºÍÑÛ¾¦Í¼±ê
+//IE input å‰å‰å’Œçœ¼ç›å›¾æ ‡
 ::-ms-clear,
 ::-ms-reveal {
 	display:none;
 }
 
-//ÖØÖÃºĞÄ£ĞÍ
+//é‡ç½®ç›’æ¨¡å‹
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

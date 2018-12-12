@@ -1,18 +1,18 @@
-///***³£ÓÃ±äÁ¿
+///***å¸¸ç”¨å˜é‡
 
-// ===1 ÌØÊâ±äÁ¿£¬Êó±êÏà¹ØµÈ¡­¡­
-//²»¿ÉÓÃÊó±ê×´Ì¬
+// ===1 ç‰¹æ®Šå˜é‡ï¼Œé¼ æ ‡ç›¸å…³ç­‰â€¦â€¦
+//ä¸å¯ç”¨é¼ æ ‡çŠ¶æ€
 $cur-d:    not-allowed !default;
 
 
-// ===2 ×ÖÌåÏà¹Ø
-//×ÖÌå
+// ===2 å­—ä½“ç›¸å…³
+//å­—ä½“
 $fm:   "Microsoft YaHei","SimSun",Tahoma,Verdana,Arial !default; 
-$fm-m: "Microsoft YaHei" !default; //Î¢ÈíÑÅºÚ
-$fm-s: "SimSun" !default; //ËÎÌå£º´íÎóÌáÊ¾ĞÇºÅ
-$fm-h: "SimHei" !default; //ºÚÌå
-$fm-a: Arial !default;   //Ó¢ÎÄ×ÖÌå
-//×ÖºÅ
+$fm-m: "Microsoft YaHei" !default; //å¾®è½¯é›…é»‘
+$fm-s: "SimSun" !default; //å®‹ä½“ï¼šé”™è¯¯æç¤ºæ˜Ÿå·
+$fm-h: "SimHei" !default; //é»‘ä½“
+$fm-a: Arial !default;   //è‹±æ–‡å­—ä½“
+//å­—å·
 $fz:		               14px !default;
 $fz-smer:	floor(($fz * 0.72)) !default; //10px
 $fz-sm:		floor(($fz * 0.88)) !default; //12px
@@ -24,37 +24,38 @@ $fz-h3:		floor(($fz * 1.45)) !default; //20px
 $fz-h4:		floor(($fz * 1.15)) !default; //16px
 $fz-h5:		floor(($fz * 1.15)) !default; //16px
 $fz-h6:		$fz !default;
-//¼Ó´Ö
+//åŠ ç²—
 $fw: 700 !default;
-//ĞĞ¸ß
+//è¡Œé«˜
 $lh:      1.5 !default;
 $lh-sm:     1 !default;
 $lh-lg:   1.8 !default;
 
 
-// ===3 ÑÕÉ«
-//»ù´¡É«¡¢ÖĞĞÔÉ«
-$c-black:		#000 !default;		//
-$c-darker:		#333 !default;		//Ò»¼¶ÎÄ±¾É«£¬ÓÃÓÚ±êÌâÕıÎÄµÈ
-$c-dark:		#666 !default;		//¶ş¼¶ÎÄ±¾É«£¬ÓÃÓÚ²¿·Ö´Î¼¶ÎÄ±¾
-$c-light:		#999 !default;		//Èı¼¶ÎÄ±¾É«£¬ÓÃÓÚËµÃ÷ĞÔÎÄ×Ö
-$c-lighter:		#ccc !default;		//ËÄ¼¶ÎÄ±¾É«£¬ÓÃÓÚÌØÊâĞèÒª
-$c-white:		#fff !default;		//ÓÃÓÚ°´Å¥¡¢»ÕÕÂµÈÎÄ×ÖÉÏ
-//·Ö¸ôÉ«
-$c-head:		#fafafa !default;	//±³¾°É«£¬ÓÃÓÚ±í¸ñÍ·²¿±êÌâ±³¾°
-$c-border:		#d9d9d9 !default;	//±ß½çÏß£¬ÓÃÓÚÃè±ß
-$c-line:        #e8e8e8 !default;   //·Ö¸ôÉ«£¬ÓÃÓÚ±í¸ñ¡¢À¸Ä¿·Ö¸ôÏß¸ô¿ª¶à¸öÔªËØ
-$c-separate:	#fcfcfc !default;	//·Ö¸ôÉ«£¬ÓÃÓÚ±í¸ñ¡¢À¸Ä¿Õû¿é·Ö¸ôÊ¹ÓÃ
-$c-hover:	    #fff1eb !default;	//±³¾°É«£¬ÓÃÓÚ±í¸ñÊó±ê»¬¹ı¡¢Ñ¡ÖĞ
-$c-bgc:		    #f5f5f5 !default;	//±³¾°É«£¬ÓÃÓÚÌØÊâÀ¸Ä¿±³¾°µ×É«
-//Æ·ÅÆÉ«+¹¦ÄÜÉ«
-$c-primary:		#e1331a !default; 	//²úÆ·Ö÷É«£¬ÓÃÓÚ°´Å¥µ¼º½±³¾°µÈ
-$c-info:		#1890ff !default;	//Ö÷ÒªÓÃÓÚÁ¬½Ó
-$c-success:		#52c41a !default;	//³É¹¦£¬ÓÃÓÚÉóºËÍ¨¹ı±£´æ³É¹¦µÈ¹¦ÄÜÌáÊ¾
-$c-warning:		#faad14 !default;	//¾¯¸æ£¬ÓÃÓÚ¹Ø¼ü²Ù×÷ÌáÊ¾
-$c-danger:		#f5222d !default;	//´íÎó£¬ÓÃÓÚ´íÎóÌáÊ¾
-$c-disable:		#bfbfbf !default;	//½ûÓÃÉ«£¬ÓÃÓÚ°´Å¥½ûÓÃ¡¢iconÓÃÉ«
-//=== ÎÄ±¾Á´½Ó ===
+// ===3 é¢œè‰²
+//åŸºç¡€è‰²ã€ä¸­æ€§è‰²
+$c-black:		   #000 !default;		//
+$c-darker:		   #333 !default;		//ä¸€çº§æ–‡æœ¬è‰²ï¼Œç”¨äºæ ‡é¢˜æ­£æ–‡ç­‰
+$c-dark:		   #666 !default;		//äºŒçº§æ–‡æœ¬è‰²ï¼Œç”¨äºéƒ¨åˆ†æ¬¡çº§æ–‡æœ¬
+$c-light:		   #999 !default;		//ä¸‰çº§æ–‡æœ¬è‰²ï¼Œç”¨äºè¯´æ˜æ€§æ–‡å­—
+$c-lighter:		   #ccc !default;		//å››çº§æ–‡æœ¬è‰²ï¼Œç”¨äºç‰¹æ®Šéœ€è¦
+$c-brighter:	   #aaa !default;		//äº”çº§æ–‡æœ¬è‰²ï¼Œç”¨äºç‰¹æ®Šéœ€è¦
+$c-white:		   #fff !default;		//ç”¨äºæŒ‰é’®ã€å¾½ç« ç­‰æ–‡å­—ä¸Š
+//åˆ†éš”è‰²
+$c-head:		   #fafafa !default;	//èƒŒæ™¯è‰²ï¼Œç”¨äºè¡¨æ ¼å¤´éƒ¨æ ‡é¢˜èƒŒæ™¯
+$c-border:		   #d9d9d9 !default;	//è¾¹ç•Œçº¿ï¼Œç”¨äºæè¾¹
+$c-line:           #e8e8e8 !default;   //åˆ†éš”è‰²ï¼Œç”¨äºè¡¨æ ¼ã€æ ç›®åˆ†éš”çº¿éš”å¼€å¤šä¸ªå…ƒç´ 
+$c-separate:	   #fcfcfc !default;	//åˆ†éš”è‰²ï¼Œç”¨äºè¡¨æ ¼ã€æ ç›®æ•´å—åˆ†éš”ä½¿ç”¨
+$c-hover:	       #fff1eb !default;	//èƒŒæ™¯è‰²ï¼Œç”¨äºè¡¨æ ¼é¼ æ ‡æ»‘è¿‡ã€é€‰ä¸­
+$c-bgc:		       #f5f5f5 !default;	//èƒŒæ™¯è‰²ï¼Œç”¨äºç‰¹æ®Šæ ç›®èƒŒæ™¯åº•è‰²
+//å“ç‰Œè‰²+åŠŸèƒ½è‰²
+$c-primary:		   #e1331a !default; 	//äº§å“ä¸»è‰²ï¼Œç”¨äºæŒ‰é’®å¯¼èˆªèƒŒæ™¯ç­‰
+$c-info:		   #1890ff !default;	//ä¸»è¦ç”¨äºè¿æ¥
+$c-success:		   #52c41a !default;	//æˆåŠŸï¼Œç”¨äºå®¡æ ¸é€šè¿‡ä¿å­˜æˆåŠŸç­‰åŠŸèƒ½æç¤º
+$c-warning:		   #faad14 !default;	//è­¦å‘Šï¼Œç”¨äºå…³é”®æ“ä½œæç¤º
+$c-danger:		   #f5222d !default;	//é”™è¯¯ï¼Œç”¨äºé”™è¯¯æç¤º
+$c-disable:		$c-lighter !default;	//ç¦ç”¨è‰²ï¼Œç”¨äºæŒ‰é’®ç¦ç”¨ã€iconç”¨è‰²
+//=== æ–‡æœ¬é“¾æ¥ ===
 $link-color:             		$c-primary !default;
 $link-hover-color:       		lighten($link-color, 10%) !default;
 $link-active-color:      		darken($link-color, 10%) !default;
@@ -62,11 +63,11 @@ $link-disabled-color:    		$c-disable !default;
 $link-hover-decoration:  		underline !default;
 
 
-// ===4 ÈİÆ÷Ïà¹Ø
-//ÓÃÓÚbutton¡¢inputµÈ
-$box-height: 	32px !default;	//ÈİÆ÷¸ß¶È
-$box-bdrs: 		 4px !default;	//ÈİÆ÷Ô²½Ç°ë¾¶
-$box-px: 		14px !default;	//ÈİÆ÷ºáÏòÄÚ²¹¶¡
+// ===4 å®¹å™¨ç›¸å…³
+//ç”¨äºbuttonã€inputç­‰
+$box-height: 	32px !default;	//å®¹å™¨é«˜åº¦
+$box-bdrs: 		 4px !default;	//å®¹å™¨åœ†è§’åŠå¾„
+$box-px: 		14px !default;	//å®¹å™¨æ¨ªå‘å†…è¡¥ä¸
 
 $box-height-sm: 26px !default;
 $box-bdrs-sm:    4px !default;
@@ -76,14 +77,14 @@ $box-height-lg: 40px !default;
 $box-bdrs-lg:    4px !default;
 $box-px-lg:		20px !default;
 
-//ÓÃÓÚÏÂÀ­°´Å¥¡¢²Ëµ¥
+//ç”¨äºä¸‹æ‹‰æŒ‰é’®ã€èœå•
 $dropdown-zindex:  				3 !default;
 $dropdown-bgc:     				$c-white !default;
 $dropdown-bdc:     				$c-line !default;
 $dropdown-fz:      				$fz !default;
 $dropdown-bgc-hover: 			$c-hover !default;
 
-//ÓÃÓÚbadge
+//ç”¨äºbadge
 $badge-height: 		24px !default;
 $badge-bdrs: 		4px !default;
 $badge-px: 			6px !default;
@@ -97,20 +98,19 @@ $badge-bdrs-lg: 	4px !default;
 $badge-px-lg: 		10px !default;
 
 
-// ===5 ±íµ¥ 
+// ===5 è¡¨å• 
 $input-px: 				10px !default;
-$input-bgc:				#fff !default;
-$input-bg-disabled:		#fafafa !default;
-$input-color:           #333 !default;
-$input-border:          #d9d9d9 !default;
-$input-focus-border:    #e63101 !default;
+$input-bgc:             $c-white !default;
+$input-bg-disabled:     $c-head !default;
+$input-color:           $c-darker !default;
+$input-border:          $c-border !default;
+$input-focus-border:    $c-primary !default;
 
 
-// ===6 ·ÖÒ³
+// ===6 åˆ†é¡µ
 $form-width: 		30px !default;
 $form-width-sm: 	28px !default;
 $form-width-lg: 	45px !default;
 $page-width: 		32px !default;
 $page-width-sm: 	26px !default;
 $page-width-lg: 	46px !default;
-$page-bdc: 			#e0e0e0 !default;

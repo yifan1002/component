@@ -28,7 +28,7 @@ button, submit, .button, .submit {
     height: auto !important;
 }
 
-//±êÌâ¡¢¶ÎÂä
+//æ ‡é¢˜ã€æ®µè½
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	line-height: $lh-sm;
 	margin-top: 5px;
@@ -54,7 +54,7 @@ h4, h6, .h4, .h6 {
 	font-weight: $fw;
 }
 
-//¸¡¶¯
+//æµ®åŠ¨
 .clearfix {
   @include clearfix;
 }
@@ -68,7 +68,7 @@ h4, h6, .h4, .h6 {
     float: right;
 }
 
-//ÏÔÊ¾&Òş²Ø
+//æ˜¾ç¤º&éšè—
 .hide, .hidden {
     display: none;
 }
@@ -82,7 +82,7 @@ h4, h6, .h4, .h6 {
   visibility: hidden;
 }
 
-//¶¨Î»
+//å®šä½
 .absolute {
     position: absolute;
 }
@@ -93,7 +93,7 @@ h4, h6, .h4, .h6 {
     position: fixed;
 }
 
-//×ÖÌå£ºËõ½ø¡¢¶ÔÆë¡¢×ª»»¡¢»»ĞĞ
+//å­—ä½“ï¼šç¼©è¿›ã€å¯¹é½ã€è½¬æ¢ã€æ¢è¡Œ
 .text-indent-em {
     text-indent: 2em;
 }
@@ -129,7 +129,7 @@ h4, h6, .h4, .h6 {
     word-break: break-all;
 }
 
-//ÎÄ×ÖºáÏò¹ö¶¯
+//æ–‡å­—æ¨ªå‘æ»šåŠ¨
 .marquee {
     position: relative;
     height: 30px;
@@ -142,7 +142,7 @@ h4, h6, .h4, .h6 {
     top: 0;
 }
 
-//½¥Òş¶¯»­£ºÖ÷ÒªÓÃÓÚ²å¼şµÄÏÔÊ¾Òş²Ø
+//æ¸éšåŠ¨ç”»ï¼šä¸»è¦ç”¨äºæ’ä»¶çš„æ˜¾ç¤ºéšè—
 @-webkit-keyframes ant-up {
 	from {
 		-webkit-transform: translate3d(0, 20px, 0);
@@ -163,7 +163,7 @@ h4, h6, .h4, .h6 {
 		opacity: 1
 	}
 }
-//Ğı×ª¶¯»­£ºÖ÷ÒªÓÃÓÚloadingÍ¼Æ¬Ğı×ª
+//æ—‹è½¬åŠ¨ç”»ï¼šä¸»è¦ç”¨äºloadingå›¾ç‰‡æ—‹è½¬
 @-webkit-keyframes spinner-spin {
     0% {
         -webkit-transform: rotate(0deg)
@@ -247,7 +247,7 @@ h4, h6, .h4, .h6 {
     }
 }
 
-//²¹¶¡
+//è¡¥ä¸
 .m-auto {
     margin-right: auto;
     margin-left: auto;

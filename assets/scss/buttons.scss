@@ -4,13 +4,13 @@
 /* =4 buttons */
 
 //*****S button mixin *****//
-// button var °´Å¥ÑÕÉ«¿ØÖÆ
+// button var æŒ‰é’®é¢œè‰²æ§åˆ¶
 @mixin btn-var($color, $background, $border) {
     color: $color;
     background-color: $background;
     border-color: $border;
     
-    //·´°×¡¢ÓÄÁé°´Å¥
+    //åç™½ã€å¹½çµæŒ‰é’®
     &.btn-inverse,
     &.btn-dashed {
     	background-color: $c-white;
@@ -24,8 +24,13 @@
 	        }
 	    }
 	}
+	
+    //åœ†è§’æŒ‰é’®
+    &.btn-fillet {
+        border-radius: 20px;
+    }
 
-	//ĞéÏß¿ò°´Å¥
+	//è™šçº¿æ¡†æŒ‰é’®
     &.btn-dashed {
     	border-style: dashed;
 	}
@@ -51,17 +56,17 @@
     
     &.disabled,
     &[disabled] {
-    	background-color: $c-disable;
-        border-color: $c-disable;
-        color: $c-dark;
+    	background-color: $c-bgc;
+        border-color: $c-border;
+        color: $c-disable;
         &:hover {
-            background-color: $c-disable;
-            border-color: $c-disable;
-        	color: $c-dark;
+            background-color: $c-bgc;
+            border-color: $c-border;
+        	color: $c-disable;
         }
     }
 }
-// button sizes °´Å¥³ß´ç¿ØÖÆ
+// button sizes æŒ‰é’®å°ºå¯¸æ§åˆ¶
 @mixin btn-size($height, $border-radius, $padding-horizontal, $font-size) {
 	height: $height;
     border-radius: $border-radius;
@@ -73,7 +78,7 @@
 
 
 
-//*****S ÑùÊ½Éú³É *****//
+//*****S æ ·å¼ç”Ÿæˆ *****//
 .btn {
     *overflow:visible;
     display: inline-block;
@@ -100,12 +105,11 @@
     &.disabled,
     &[disabled] {
         cursor: $cur-d;
-        @include opacity(65);
         @include box-shadow(none)
     }
 }
 
-//°´Å¥ÑÕÉ«
+//æŒ‰é’®é¢œè‰²
 .btn-default {
     @include btn-var($c-darker,$c-white,$c-lighter);
 }
@@ -125,7 +129,7 @@
     @include btn-var($c-white,$c-danger,$c-danger);
 }
 
-//ÎÄ±¾Á´½Ó
+//æ–‡æœ¬é“¾æ¥
 .btn-link {
     color: $link-color;
     font-weight: normal;
@@ -162,7 +166,7 @@
     }
 }
 
-//°´Å¥³ß´ç
+//æŒ‰é’®å°ºå¯¸
 .btn-sm, .pagination-sm .btn {
     @include btn-size($box-height-sm, $box-bdrs-sm, $box-px-sm, $fz-sm);
 }
@@ -180,13 +184,13 @@ a.btn-lg {
 	line-height: ($box-height-lg - 2);
 }
 
-//¿é¼¶°´Å¥
+//å—çº§æŒ‰é’®
 .btn-block {
     display: block;
     width: 100%;
 }
 
-//Í¼±ê°´Å¥
+//å›¾æ ‡æŒ‰é’®
 .btn {
 	img,
 	span {
@@ -202,7 +206,7 @@ a.btn-lg {
 	}
 }
 
-//µ¥°´Å¥Ê½ÏÂÀ­²Ëµ¥
+//å•æŒ‰é’®å¼ä¸‹æ‹‰èœå•
 .dropdown-toggle[disabled]:after {
     border-color: $c-dark transparent transparent !important;
 }
@@ -293,7 +297,7 @@ a.btn-lg {
         cursor: $cur-d;
     }
 }
-//·ÖÁĞÊ½°´Å¥ÏÂÀ­²Ëµ¥
+//åˆ†åˆ—å¼æŒ‰é’®ä¸‹æ‹‰èœå•
 .btn-group > .btn + .dropdown-toggle {
 	position: relative;
 	border-top-right-radius: $box-bdrs !important;
@@ -339,7 +343,7 @@ a.btn-lg {
 
 
 
-//°´Å¥×é
+//æŒ‰é’®ç»„
 .btn-group {
     position: relative;
     display: inline-block;
@@ -372,6 +376,6 @@ a.btn-lg {
 .btn-group-sm > .btn { @extend .btn-sm; }
 .btn-group-lg > .btn { @extend .btn-lg; }
 
-//*****E ÑùÊ½Éú³É *****//
+//*****E æ ·å¼ç”Ÿæˆ *****//
 
 
