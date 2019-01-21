@@ -35,7 +35,7 @@
 					var g = $(this).parent('.tabs').attr('tabs-group');
 					var href = $(this).children('a').attr('href');
 					$(this).addClass('active').siblings().removeClass('active');
-					$(href).siblings('.tabs-panel[tabs-group= '+ g +' ]').hide();
+					$('.tabs-panel[tabs-group= '+ g +' ]').hide();
 					if(ant === 1) {
 						$(href).show();
 					} else if(ant === 2) {

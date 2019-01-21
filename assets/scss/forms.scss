@@ -97,6 +97,7 @@ textarea.form-control {
 	background-repeat: no-repeat;
 	background-position: 0 center;
 	padding-left: 20px;
+	color: $c-light;
 	
 	&-warning {
 		background-image: url(../images/icon/warning_16x16.png);
@@ -540,47 +541,65 @@ textarea.form-control {
 	}
 }
 
-//显示隐藏密码
+//显示隐藏密码、日期选择
+.form-group-date,
 .form-group-pwd {
-	position: relative;
-	display: inline-block;
-	*display:inline;
-	vertical-align: middle;
-	
-	.form-control {
-	    padding-right: 35px;
-	}
-	
-	> i {
-		position: absolute;
-		right: 5px;
-		display: block;
-		width: 20px;
-		height: 14px;
-		background-image: url(../images/spirit/eye.png);
-		background-repeat: no-repeat;
-		cursor: pointer;
-		
-		&.hide {
-			background-position: 0 0;
-		}
-		
-		&.show {
-			background-position: 0 -14px;
-		}
-	}
-	
-	.form-control + i {
-		top: 9px;
-	}
-	
-	.form-control-sm + i {
-		top: 6px;
-	}
-	
-	.form-control-lg + i {
-		top: 13px;
-	}
+    position: relative;
+    display: inline-block;
+    *display:inline;
+    vertical-align: middle;
+    
+    .form-control {
+        padding-right: 35px;
+    }
+    
+    > i {
+        position: absolute;
+        right: 5px;
+        display: block;
+        width: 20px;
+        height: 14px;
+        background-image: url(../images/spirit/eye.png);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        
+        &.hide {
+            background-position: 0 0;
+        }
+        
+        &.show {
+            background-position: 0 -14px;
+        }
+    }
+    
+    .form-control + i {
+        top: 9px;
+    }
+    
+    .form-control-sm + i {
+        top: 6px;
+    }
+    
+    .form-control-lg + i {
+        top: 13px;
+    }
+}
+.form-group-date {
+    
+    > i {
+        right: 10px;
+        width: 15px;
+        height: 16px;
+        background: url(../images/spirit/date.png) no-repeat 0 0;
+        
+        &:hover {
+            background-position: 0 -16px;
+        }
+    }
+}
+.form-connector {
+    margin: 0 10px;
+    color: $c-darken;
 }
 
 //标签输入

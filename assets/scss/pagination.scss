@@ -32,7 +32,6 @@
 			min-width: $page-width;
 			height: $page-width;
 			line-height: ($page-width - 2);
-			background: #fff;
 			border: 1px solid $c-border;
 			border-radius: 2px;
 			margin-right: 6px;
@@ -47,6 +46,10 @@
 			}
 			
 		}
+		
+		& > a {
+            background: $c-white;
+        }
 		
 		&.active > a, &.active > span {
 			background-color: $c-primary !important;

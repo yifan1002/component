@@ -18,6 +18,31 @@
     font-size: #{$fz}px;
 }
 
+//链接：主色调、下划线；默认颜色-var定义的链接颜色、hover下划线-无、hover颜色-主色调
+@mixin link($a-color: $link-color, $a-td: none, $a-color-hover: $c-primary) {
+    color: $a-color ;
+    &:hover {
+        text-decoration: $a-td;
+        color: $a-color-hover;
+    }
+}
+
+//文字截取
+@mixin wsn() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@mixin wsn2() {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal !important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 //opacity
 @mixin opacity($opacity) {
   opacity: $opacity / 100;

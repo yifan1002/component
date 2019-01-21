@@ -9,6 +9,13 @@ $slick-img-path: "../images/icon/" !default;
 	height: 400px;
 	overflow: hidden;
 }
+.slick-item > a {
+    display: block;
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
 .slick-slider {
     position: relative;
     display: block;

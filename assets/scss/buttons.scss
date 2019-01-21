@@ -13,14 +13,14 @@
     //反白、幽灵按钮
     &.btn-inverse,
     &.btn-dashed {
-    	background-color: $c-white;
+    	background-color: transparent;
 		color: $border;
 		
 		&.disabled,
 	    &[disabled] {
-        	background-color: $c-white;
+        	background-color: transparent;
 	        &:hover {
-	        	background-color: $c-white;
+	        	background-color: transparent;
 	        }
 	    }
 	}
