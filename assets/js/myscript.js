@@ -50,6 +50,27 @@ $('.tables .choice-all input').click(function(){
 	}
 });
 
+//文件上传相关
+$('.webuploader-list').on('click', '.file-edit,.file-remove,.file-save', function(e){
+	e.preventDefault();
+	var $li = $(this).parents('.webuploader-list-item'),
+		$name = $li.children('.file-name'),
+		$loading = $li.children('.file-loading');
+	if ($(this).hasClass('file-edit')) {
+		var val = $name.text(),
+			str = '<p class="file-text"><a href="#" class="file-save" title="保存"></a><input type="text" value="' + val + '" class="form-control" /></p>';
+		$li.append(str);
+		$name.hide();
+		$loading.hide();
+	} else if($(this).hasClass('file-remove')) {
+		$li.remove();
+	} else{
+		val = $(this).siblings('.form-control').val();
+		$name.show().text(val);
+		$loading.show().siblings('.file-text').remove();
+	}
+});
+
 //下拉多选输入框
 if($('.chosen-select')){
 	$('.chosen-select').chosen({
@@ -66,4 +87,5 @@ if($('.chosen-select')){
 		})
 	}).trigger('resize.chosen');
 }
+
 
