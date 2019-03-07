@@ -44,12 +44,12 @@ $c-white:          #fff !default;       //用于按钮、徽章等文字上
 $c-bright:         #aaa !default;       //明亮
 $c-brighter:       #eee !default;       //更亮
 //分隔色
-$c-head:		   #fafafa !default;	//背景色，用于表格头部标题背景
-$c-border:		   #d9d9d9 !default;	//边界线，用于描边
-$c-line:           #e8e8e8 !default;   //分隔色，用于表格、栏目分隔线隔开多个元素
-$c-separate:	   #fcfcfc !default;	//分隔色，用于表格、栏目整块分隔使用
+$c-head:		   #f5f5f5 !default;	//背景色，用于表格头部标题背景
+$c-border:		$c-lighten !default;	//边界线，用于描边
+$c-line:           #e8e8e8 !default;    //分隔色，用于表格、栏目分隔线隔开多个元素
+$c-separate:	   #fafafa !default;	//分隔色，用于表格、栏目整块分隔使用
 $c-hover:	       #fff1eb !default;	//背景色，用于表格鼠标滑过、选中
-$c-bgc:		       #f5f5f5 !default;	//背景色，用于特殊栏目背景底色
+$c-bgc:		       $c-head !default;	//背景色，用于特殊栏目背景底色
 //品牌色+功能色
 $c-primary:		   #e1331a !default; 	//产品主色，用于按钮导航背景等
 $c-info:		   #1890ff !default;	//主要用于连接

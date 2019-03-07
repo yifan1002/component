@@ -98,7 +98,7 @@
 			bottom: -1px;
 			height: 40px;
 			line-height: 38px;
-			background-color: $c-line;
+			background-color: $c-head;
 			border: 1px solid $c-border;
 			padding: 0 20px;
 		}
@@ -114,7 +114,6 @@
 				left: -1px;
 			}
 		}
-		
 	}
 }
 /*胶囊*/
@@ -180,7 +179,7 @@
 		}
 		
 		&.active a {
-			background-color: $c-line;
+			background-color: $c-head;
 			
 			&:before {
 				top: 0;
