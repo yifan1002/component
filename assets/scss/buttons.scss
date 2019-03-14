@@ -196,14 +196,53 @@ a.btn-lg {
 	span {
 		vertical-align: middle;
 	}
+		
+	img + span {
+		margin-left: 6px;
+	}
 	
 	img {
-		margin: 0 -7px;
-	}
-	
-	img + span {
-		margin-left: 12px;
-	}
+        width: $fz;
+        height: $fz;
+    }
+    &.btn-sm {
+        img {
+            width: $fz-sm;
+            height: $fz-sm;
+        }
+    }
+    &.btn-lg {
+        img {
+            width: $fz-lg;
+            height: $fz-lg;
+        }
+    }
+}
+.btn-icon {
+    width: $box-height;
+    padding: 0;
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 16px;
+        height: 16px;
+    }
+    
+    &.btn-sm {
+        width: $box-height-sm;
+        img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+    
+    &.btn-lg {
+        width: $box-height-lg;
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
 }
 
 //单按钮式下拉菜单
