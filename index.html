@@ -1521,6 +1521,31 @@
 				<span class="rating-info"></span>
 			</div>
 		</div>
+		<h3 class="mt-10 pl-10">小号</h3>
+		<div class="row">
+			<div class="rating-item rating-item-sm">
+				<span class="rating-name">描述相符：</span>
+				<span class="rating-list">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</span>
+				<span class="rating-info"></span>
+			</div>
+			<div class="rating-item rating-item-sm even">
+				<span class="rating-name">描述相符：</span>
+				<span class="rating-list">
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</span>
+				<span class="rating-info"></span>
+			</div>
+		</div>
 		<h3 class="mt-10 pl-10">仅展示</h3>
 		<div class="row">
 			<div class="rating-item rating-show" data-score="1.5">
@@ -1610,6 +1635,14 @@
 				</li>
 			</ul>
 		</div>
+		<h3 class="mt-10 pl-10">viewer图片预览</h3>
+		<div class="row">
+			<ul class="webuploader-imgList viewerList mt-10">
+				<li>
+					<img src="assets/images/temp/line.jpg" data-original="assets/images/temp/pie.jpg" />
+				</li>
+			</ul>
+		</div>
 	</div>
 	
 	
@@ -1621,6 +1654,7 @@
 <script src="plugs/jRange/jquery.range-min.js"></script>
 <script src="plugs/echarts.common.min.js"></script>
 <script src="plugs/webuploader/webuploader.custom.js"></script>
+<script src="plugs/viewer/jquery.viewer.min.js"></script>
 <script src="assets/js/jquery-browser.update.js"></script>
 <script src="assets/js/jquery-tabs.js"></script>
 <script src="assets/js/jquery-tags.js"></script>
@@ -1756,7 +1790,10 @@ $(function(){
 		isRange:true
 	});
 	
-
+	//图片预览
+	$('.viewerList').viewer({
+		url: 'data-original'
+	});
 
 });
 

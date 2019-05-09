@@ -59,6 +59,12 @@
     color: $c-dark;
 }
 
+
+.rating-name,
+.rating-info {
+    line-height: 18px;
+}
+
 //仅展示
 .rating-show  {
 	.rating-list {
@@ -72,4 +78,49 @@
 				background-position: -5px -18px;
 		}
 	}
+}
+
+
+//小号
+.rating-item-sm {
+    &.rating-show {
+        .rating-list {
+            background: url(../images/spirit/star_sm.png) repeat 0 0;
+            margin-top: 3px;
+            
+            > a:hover {
+                background-position: -2px 0;
+            }
+            
+            > a.active:hover {
+                background-position: -2px -12px;
+            }
+        
+        }
+    }
+    .rating-list {
+        width: 80px;
+        
+        > a {
+            width: 12px;
+            height: 12px;
+            background: url(../images/spirit/star_sm.png) no-repeat -2px 0 !important;
+            margin: 0 2px;
+            
+            &.empty {
+                margin-right: 14px;
+            }
+            
+            &.half {
+                width: 6px;
+                margin-right: 8px;
+            }
+            
+            &:hover,
+            &.hover,
+            &.active {
+                background-position: -2px -12px !important;
+            }
+        }
+    }
 }
