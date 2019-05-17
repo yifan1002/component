@@ -143,7 +143,7 @@ textarea.form-control {
 		//单选
 		&[type="radio"] ~ .choice-name::before {
 		    border-radius: 50%;
-		    background-clip: content-box;
+		    background-clip: content-box !important;
 		}
 		
 		//多选
