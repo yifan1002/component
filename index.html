@@ -1248,9 +1248,9 @@
 		<h3 class="mt-10 pl-10">卡片</h3>
 		<div class="row">
 			<ul class="tabs tabs-card" tabs-group="g2">
-				<li class="tab active"><a href="#g2-tab1">tab1</a></li>
-				<li class="tab disabled"><a href="#g2-tab2">tab2</a></li>
-				<li class="tab"><a href="#g2-tab3">tab3</a></li>
+				<li class="tab active"><a href="www.baidu.com">baidu</a></li>
+				<li class="tab disabled"><a href="www.taobao.com">taobao</a></li>
+				<li class="tab"><a href="www.google.com">google</a></li>
 			</ul>
 			<div class="tabs-panel active" tabs-group="g2" id="g2-tab1">
 				tab1-content
@@ -1701,7 +1701,8 @@ $(function(){
 	$('.tabs-basics').tabs();
 	$('.tabs-card').tabs({
 		evt: 1,
-		ant: 2
+		ant: 2,
+		jump: 1
 	});
 	$('.tabs-capsule').tabs({
 		evt: 0,
