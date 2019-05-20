@@ -36,8 +36,11 @@
 					e.preventDefault();
 				}
 				if (!$(this).hasClass('disabled')) {
-					var g = $(this).parent('.tabs').attr('tabs-group');
-					var href = $(this).children('a').attr('href');
+					var g = $(this).parent('[tabs-group]').attr('tabs-group');
+					var href = $(this).attr('href');
+					if (!href) {
+						var href = $(this).children('a').attr('href');
+					}
 					$(this).addClass('active').siblings().removeClass('active');
 					$('.tabs-panel[tabs-group= '+ g +' ]').hide();
 					if(ant === 1) {
