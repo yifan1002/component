@@ -253,9 +253,32 @@ textarea.form-control {
 		
 		//多选选中
 		&[type="checkbox"]:checked ~ .choice-name {
-		    background: url(../images/icon/checked_advanced.png) no-repeat right bottom;
+		    position: relative;
 		    border-color: $c-primary;
 		    color: $c-primary;
+		    
+		    &:before,
+		    &:after {
+		        position: absolute;
+                right: 0;
+                bottom: 0;
+                display: block;
+                content: '';
+		    }
+		    
+		    &:before {
+		        width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 0 14px 14px;
+                border-color: transparent transparent $c-primary transparent;
+		    }
+		    
+		    &:after {
+		        width: 14px;
+		        height: 14px;
+		        background: url(../images/icon/checked_advanced.png) no-repeat 6px 7px;
+		    }
 		}
 		
 		//禁用
@@ -267,7 +290,9 @@ textarea.form-control {
 		
 		//多选选中+禁用
 		&[type="checkbox"][disabled]:checked ~ .choice-name {
-		    background: url(../images/icon/checked_advanced_disable.png) no-repeat right bottom;
+		    &:before {
+		        border-bottom-color: $c-border;
+		    }
 		}
 	}
 	
