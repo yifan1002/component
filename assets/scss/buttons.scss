@@ -10,27 +10,6 @@
     background-color: $background;
     border-color: $border;
     
-    //反白、幽灵按钮
-    &.btn-inverse,
-    &.btn-dashed {
-    	background-color: transparent !important;
-    	border-color: $c-lighten;
-		color: $c-darken;
-		
-		
-        &:hover {
-            border-color: lighten($background, 10%);
-            color: lighten($background, 10%);
-        }
-        
-        &:active,
-        &.active {
-            border-color: darken($background, 10%);
-            color: lighten($background, 10%);
-            @include box-shadow(none);
-        }
-	}
-	
     &:hover {
         color: $color;
         background-color: lighten($background, 10%);
@@ -44,11 +23,74 @@
         border-color: darken($border, 10%);
     }
     
+    //次按钮、虚框按钮
+    &.btn-second,
+    &.btn-dashed  {
+        background-color: $c-white;
+        border-color: $c-lighten;
+        color: $c-darken;
+        
+        &:hover {
+            border-color: lighten($background, 10%);
+            color: lighten($background, 10%);
+        }
+        
+        &:active,
+        &.active {
+            border-color: darken($background, 10%);
+            color: darken($background, 10%);
+        }
+    }
     
+    //幽灵按钮、文字链接
+    &.btn-inverse,
+    &.btn-link {
+        background-color: transparent;
+        color: $background;
+        
+        &:hover {
+            color: lighten($background, 10%);
+        }
+        
+        &:active,
+        &.active {
+            color: darken($background, 10%);
+        }
+    }
+    
+    //幽灵按钮
+    &.btn-inverse {
+        border-color: $background;
+        
+        &.btn-second,
+        &.btn-dashed,
+        &.btn-link {
+            border-color: $c-white;
+            color: $c-white;
+            
+            &:hover {
+                color: lighten($background, 10%);
+            }
+            
+            &:active,
+            &.active {
+                color: darken($background, 10%);
+            }
+        }
+        
+        &:hover {
+            border-color: lighten($background, 10%);
+        }
+        
+        &:active,
+        &.active {
+            border-color: darken($background, 10%);
+        }
+    }
 }
 // button sizes 按钮尺寸控制
 @mixin btn-size($height, $border-radius, $padding-horizontal, $font-size) {
-	height: $height;
+    height: $height;
     border-radius: $border-radius;
     padding-right: $padding-horizontal;
     padding-left: $padding-horizontal;
@@ -74,26 +116,21 @@
     @include touch-action;
     @include transition(all ease-in-out 0.2s);
     
-    &:hover {
-        text-decoration: none;
-    }
-    
     &:active,
     &.active {
         outline: 0;
-        background-image: none;
-        @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125)); 
     }
     
+    //禁用
     &.disabled,
     &[disabled] {
         background-color: $c-bgc !important;
         border-color: $c-border !important;
+        text-decoration: none !important;
         color: $c-disable !important;
         cursor: $cur-d;
-        @include box-shadow(none);
+        
     }
-    
     
     //圆角按钮
     &.btn-fillet {
@@ -104,12 +141,19 @@
     &.btn-dashed {
         border-style: dashed;
     }
+    
+    //文字链接
+    &.btn-link {
+        background-color: transparent !important;
+        border: 0;
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 //按钮颜色
-.btn-default {
-    @include btn-var($c-darken,$c-white,$c-lighten);
-}
 .btn-primary {
     @include btn-var($c-white,$c-primary,$c-primary);
 }
@@ -126,44 +170,6 @@
     @include btn-var($c-white,$c-danger,$c-danger);
 }
 
-//文本链接
-.btn-link {
-    color: $link-color;
-    font-weight: normal;
-    border-radius: 0;
-    
-    &,
-    &:active,
-    &.active,
-    &[disabled] {
-        background-color: transparent;
-        @include box-shadow(none);
-    }
-    
-    &,
-    &:hover,
-    &:active {
-        border-color: transparent;
-    }
-    
-    &:hover {
-        background-color: transparent;
-        text-decoration: underline;
-        color: $link-hover-color;
-    }
-    
-    &:active {
-        background-color: transparent;
-        color: $link-active-color;
-    }
-    
-    &[disabled] {
-        &:hover {
-            color: $link-disabled-color;
-        }
-    }
-}
-
 //按钮尺寸
 .btn-sm, .pagination-sm .btn {
     @include btn-size($box-height-sm, $box-bdrs-sm, $box-px-sm, $fz-sm);
@@ -173,13 +179,13 @@
     
 }
 a.btn {
-	line-height: ($box-height - 3);
+    line-height: ($box-height - 3);
 }
 a.btn-sm {
-	line-height: ($box-height-sm - 2);
+    line-height: ($box-height-sm - 2);
 }
 a.btn-lg {
-	line-height: ($box-height-lg - 2);
+    line-height: ($box-height-lg - 2);
 }
 
 //块级按钮
@@ -190,16 +196,16 @@ a.btn-lg {
 
 //图标按钮
 .btn {
-	img,
-	span {
-		vertical-align: middle;
-	}
-		
-	img + span {
-		margin-left: 6px;
-	}
-	
-	img {
+    img,
+    span {
+        vertical-align: middle;
+    }
+        
+    img + span {
+        margin-left: 6px;
+    }
+    
+    img {
         width: $fz;
         height: $fz;
     }
@@ -244,18 +250,81 @@ a.btn-lg {
 }
 
 //单按钮式下拉菜单
+//向上三角形
+@mixin trigon-up($color) {
+    &.btn-second,
+    &.btn-dashed,
+    &.btn-inverse,
+    &.btn-link {
+        &:hover:after {
+            border-bottom-color: lighten($color,10%);
+        }
+        
+        &:active:after {
+            border-bottom-color: darken($color,10%);
+        }
+    }
+    
+    &.btn-inverse,
+    &.btn-link {
+        &:after {
+            border-bottom-color: $color;
+        }
+    }
+}
+//向下三角形
+@mixin trigon-down($color) {
+    &.btn-second,
+    &.btn-dashed,
+    &.btn-inverse,
+    &.btn-link {
+        &:hover:after {
+            border-top-color: lighten($color,10%);
+        }
+        
+        &:active:after {
+            border-top-color: darken($color,10%);
+        }
+    }
+    
+    &.btn-inverse,
+    &.btn-link {
+        &:after {
+            border-top-color: $color;
+        }
+    }
+}
 .dropdown-toggle[disabled]:after {
     border-color: $c-disable transparent transparent !important;
 }
 .dropup .dropdown-toggle:after {
     border-width: 0 4px 4px;
-	border-color: transparent transparent $c-white;
+    border-color: transparent transparent $c-white;
 }
-.dropup .btn-default.dropdown-toggle:after {
-	border-color: transparent transparent $c-darken;
+.dropup .dropdown-toggle {
+    &.btn-second,
+    &.btn-dashed,
+    &.btn-inverse,
+    &.btn-link {
+        &:after {
+            border-bottom-color: $c-darken;
+        }
+    }
 }
-.dropup .btn-link.dropdown-toggle:after {
-	border-color: transparent transparent $c-primary;
+.dropup .dropdown-toggle.btn-primary {
+    @include trigon-up($c-primary);
+}
+.dropup .dropdown-toggle.btn-info {
+    @include trigon-up($c-info);
+}
+.dropup .dropdown-toggle.btn-success {
+    @include trigon-up($c-success);
+}
+.dropup .dropdown-toggle.btn-warning {
+    @include trigon-up($c-warning);
+}
+.dropup .dropdown-toggle.btn-danger {
+    @include trigon-up($c-danger);
 }
 .dropdown-toggle:after {
     content: " ";
@@ -267,22 +336,41 @@ a.btn-lg {
     border-color: $c-white transparent transparent;
     margin: 0 0 3px 2px;
 }
-.btn-default.dropdown-toggle:after {
-    border-color: $c-darken transparent transparent;
+.dropdown-toggle {
+    &.btn-second,
+    &.btn-dashed,
+    &.btn-inverse,
+    &.btn-link {
+        &:after {
+            border-top-color: $c-darken;
+        }
+    }
 }
-.btn-link.dropdown-toggle:after {
-    border-color: $c-primary transparent transparent;
+.dropdown-toggle.btn-primary {
+    @include trigon-down($c-primary);
+}
+.dropdown-toggle.btn-info {
+    @include trigon-down($c-info);
+}
+.dropdown-toggle.btn-success {
+    @include trigon-down($c-success);
+}
+.dropdown-toggle.btn-warning {
+    @include trigon-down($c-warning);
+}
+.dropdown-toggle.btn-danger {
+    @include trigon-down($c-danger);
 }
 .btn-group.open .dropdown-menu {
-	display: block;
+    display: block;
 }
 .btn-group.dropup .dropdown-menu {
-	top: auto;
-	bottom: 100%;
-	margin: 0 0 4px;
+    top: auto;
+    bottom: 100%;
+    margin: 0 0 4px;
 }
 .dropdown-menu {
-	display: none;
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -300,10 +388,10 @@ a.btn-lg {
     background-clip: padding-box;
     
     > li.line {
-    	height: 1px;
-	    margin: 8px 0;
-	    overflow: hidden;
-	    background-color: $c-line;
+        height: 1px;
+        margin: 8px 0;
+        overflow: hidden;
+        background-color: $c-line;
     }
     
     > li > a {
@@ -320,8 +408,8 @@ a.btn-lg {
 }
 .dropdown-menu > li.active > a,
 .dropdown-menu > li > a:hover {
-	background-color: $dropdown-bgc-hover;
-	text-decoration: none;
+    background-color: $dropdown-bgc-hover;
+    text-decoration: none;
 }
 .dropdown-menu > .disabled > a {
     &,
@@ -329,53 +417,58 @@ a.btn-lg {
         color: $link-disabled-color;
     }
     &:hover {
-    	background-color: transparent;
+        background-color: transparent;
         text-decoration: none;
         cursor: $cur-d;
     }
 }
 //分列式按钮下拉菜单
+@mixin separate($color) {
+    border-left-color: lighten($color, 10%);
+    
+    &.btn-inverse {
+        border-left-color: $color;
+    }
+        
+    &:hover {
+        border-left-color: lighten($color, 10%);
+    }
+    
+    &:active {
+        border-left-color: darken($color, 10%);
+    }
+}
 .btn-group > .btn + .dropdown-toggle {
-	position: relative;
-	border-top-right-radius: $box-bdrs !important;
-	border-bottom-right-radius: $box-bdrs !important;
-	padding-right: 8px;
-	padding-left: 8px;
-	
-	&:before {
-		position: absolute;
-		top: -1px;
-		bottom: -1px;
-		left: -1px;
-		display: block;
-		content: '';
-		width: 1px;
-	}
-	
-	&[disabled]:before {
-		background-color: $c-disable !important;
-	}
-	
-	&.btn-primary:before {
-		background-color: lighten($c-primary, 10%);
-	}
-	
-	&.btn-info:before {
-		background-color: lighten($c-info, 10%);
-	}
-	
-	&.btn-success:before {
-		background-color: lighten($c-success, 10%);
-	}
-	
-	&.btn-warning:before {
-		background-color: lighten($c-warning, 10%);
-	}
-	
-	&.btn-danger:before {
-		background-color: lighten($c-danger, 10%);
-	}
-	
+    position: relative;
+    border-top-right-radius: $box-bdrs !important;
+    border-bottom-right-radius: $box-bdrs !important;
+    padding-right: 8px;
+    padding-left: 8px;
+    
+    &.btn-primary {
+        @include separate($c-primary);
+    }
+    
+    &.btn-info {
+        @include separate($c-info);
+    }
+    
+    &.btn-success {
+        @include separate($c-success);
+    }
+    
+    &.btn-warning {
+        @include separate($c-warning);
+    }
+    
+    &.btn-danger {
+        @include separate($c-danger);
+    }
+    
+    &.btn-second,
+    &.btn-dashed {
+        border-left-color: $c-lighten;
+    }
 }
 
 
@@ -394,6 +487,11 @@ a.btn-lg {
     > .btn {
         position: relative;
         float: left;
+        z-index: 2;
+        
+        &:hover {
+            z-index: 3;
+        }
     }
     
     > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
