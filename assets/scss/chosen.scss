@@ -86,7 +86,6 @@ $chosen-img-path: "../images/spirit/" !default;
             position: absolute;
             top: 10px;
             right: 26px;
-            display: none;
             width: 12px;
             height: 12px;
             background: url(#{$chosen-img-path}chosen.png) -40px 2px no-repeat;
