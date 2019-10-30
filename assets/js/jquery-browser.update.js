@@ -84,7 +84,7 @@ function browserInit(_title,_dicaryon,_close){
 		'.browser-update-list{padding: 30px 0 50px;white-space:nowrap;}'+
 		'.browser-update-item{display: inline-block;width: 100px;}'+
 		'.browser-update-item span{display: block;text-align: center;}'+
-		'.browser-update-item .icon{width: 64px;height: 64px;background: url(https://kehouweb.b0.upaiyun.com//dev/images/browser.png) no-repeat;margin: 0 auto 5px;}'+
+		'.browser-update-item .icon{width: 64px;height: 64px;background: url(https://static.kehou.com/zj/sysfile/images/browser.png) no-repeat;margin: 0 auto 5px;}'+
 		'.browser-update-item.chrome .icon{background-position: 0 0;}'+
 		'.browser-update-item.firefox .icon{background-position: 0 -64px;}'+
 		'.browser-update-item.ie .icon{background-position: 0 -128px;}'+

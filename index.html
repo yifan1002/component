@@ -1801,6 +1801,10 @@
 				</li>
 			</ul>
 		</div>
+		<h3 class="mt-10 pl-10">倒计时：当前时间从服务器传入，避免用户修改本地时间</h3>
+		<div class="row">
+			<p class="js-countdown"></p>
+		</div>
 	</div>
 	
 	
@@ -1826,6 +1830,7 @@
 <script src="assets/js/jquery-text.scroll.js"></script>
 <script src="assets/js/jquery-form.number.js"></script>
 <script src="assets/js/jquery-form.count.js"></script>
+<script src="assets/js/jquery-count.down.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -1954,6 +1959,11 @@ $(function(){
 		url: 'data-original'
 	});
 
+	// 倒计时
+	$('.js-countdown').countDown({
+		endTime: '2020/10/27 10:20:40',
+		curTime: '2019/10/27 10:19:20'
+	});
 });
 
 //echart图表
