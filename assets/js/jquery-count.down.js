@@ -9,7 +9,7 @@
 	var defaults = {
 		endTime: '2099/10/1 00:00:00', //当前时间
 		curTime: new Date(), //结束时间，默认本地当前时间
-		timeoffset: -480 //东8区默认时区和格林威治时间差，不需要外部传参
+		timeOffset: -480 //东8区默认时区和格林威治时间差，不需要外部传参
 	};
 
 	//定义构造函数
@@ -28,8 +28,8 @@
 				_el = $(this.element),
 				endTime = this.options.endTime,
 				curTime = new Date(this.options.curTime).getTime(),
-				timeoffset = this.options.timeoffset;
-			//console.log('原本时间差：' + timeoffset)
+				timeOffset = this.options.timeOffset;
+			//console.log('原本时间差：' + timeOffset)
 
 			_countDown(curTime);
 			window.setInterval(function() {
@@ -41,11 +41,11 @@
 				var startTime = new Date(time), //当前时间
 					stopTime = new Date(endTime), //结束时间
 					diffMs = stopTime.getTime() - startTime.getTime(), //校正前的倒计时毫秒数
-					timeoffsetNew = new Date().getTimezoneOffset(), //新时区和格林威治时间差
-					timeoffsetNeed = timeoffset - timeoffsetNew, //需要矫正的时间差
-					diffMs = diffMs + timeoffsetNeed * 60 * 1000; //校正后的倒计时毫秒数
-				//console.log('新时间差：' + timeoffsetNew);
-				//console.log('需要矫正的时间差：' + timeoffsetNeed);
+					timeOffsetNew = new Date().getTimezoneOffset(), //新时区和格林威治时间差
+					timeOffsetNeed = timeOffset - timeOffsetNew, //需要矫正的时间差
+					diffMs = diffMs + timeOffsetNeed * 60 * 1000; //校正后的倒计时毫秒数
+				//console.log('新时间差：' + timeOffsetNew);
+				//console.log('需要矫正的时间差：' + timeOffsetNeed);
 				if(diffMs > 0) {
 					var diffD = parseInt(diffMs / (60 * 60 * 24 * 1000)), //转换为天
 						D = parseInt(diffMs) - parseInt(diffD * 60 * 60 * 24 * 1000), //除去天的毫秒数
