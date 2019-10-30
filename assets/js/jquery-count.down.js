@@ -44,8 +44,8 @@
 						diffH = parseInt(D / (60 * 60 * 1000)), //除去天的毫秒数转换成小时
 						H = D - diffH * 60 * 60 * 1000, //除去天、小时的毫秒数
 						diffM = parseInt(H / (60 * 1000)), //除去天的毫秒数转换成分钟
-						M = H - diffM * 60 * 1000; //除去天、小时、分的毫秒数
-					diffS = parseInt((diffMs - diffD * 60 * 60 * 24 * 1000 - diffH * 60 * 60 * 1000 - diffM * 60 * 1000) / 1000) //除去天、小时、分的毫秒数转化为秒
+						M = H - diffM * 60 * 1000, //除去天、小时、分的毫秒数
+						diffS = M / 1000; //除去天、小时、分的毫秒数转化为秒
 					_el.html('<span>' + diffD + "</span>天<span> " + diffH + "</span> 小时 <span>" + diffM + "</span> 分 <span>" + diffS + "</span> 秒");
 				} else{
 					_el.html('已结束！');
