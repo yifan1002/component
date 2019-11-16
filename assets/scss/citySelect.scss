@@ -40,6 +40,14 @@
 		    border-right: 0;
 		}
 		
+		.city-select-tier2 & {
+		    width: 50% !important;
+		    
+		    &:last-child {
+                display: none;
+            }
+		}
+		
 		&.active {
 		    background: $c-white;
 		    border-bottom: 1px solid $c-white;
@@ -50,6 +58,7 @@
 		}
 	}
 }
+
 
 .city-select-list + .city-select-tab {
 	li {
