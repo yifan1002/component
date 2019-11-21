@@ -142,29 +142,54 @@ h4, h6, .h4, .h6 {
     top: 0;
 }
 
+//放大动画：主要用于弹层的放大
+@-webkit-keyframes ant-scale {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+@keyframes ant-scale {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
 //渐隐动画：主要用于插件的显示隐藏
 @-webkit-keyframes ant-up {
-	from {
-		-webkit-transform: translate3d(0, 20px, 0);
-		opacity: .3
-	}
-	to {
-		-webkit-transform: translate3d(0, 0, 0);
-		opacity: 1
-	}
+    from {
+        -webkit-transform: translate3d(0, 20px, 0);
+        opacity: .3
+    }
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
 }
 @keyframes ant-up {
-	from {
-		transform: translate3d(0, 20px, 0);
-		opacity: .3
-	}
-	to {
-		transform: translate3d(0, 0, 0);
-		opacity: 1
-	}
+    from {
+        transform: translate3d(0, 20px, 0);
+        opacity: .3
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1
+    }
 }
 //旋转动画：主要用于loading图片旋转
-@-webkit-keyframes spinner-spin {
+@-webkit-keyframes ant-roate360 {
     0% {
         -webkit-transform: rotate(0deg)
     }
@@ -205,7 +230,7 @@ h4, h6, .h4, .h6 {
         -webkit-transform: rotate(360deg)
     }
 }
-@keyframes spinner-spin {
+@keyframes ant-roate360 {
     0% {
         transform: rotate(0deg)
     }

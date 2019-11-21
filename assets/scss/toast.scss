@@ -35,6 +35,8 @@
         padding: 20px;
         font-size: 15px;
         color: #fff;
+        @include animation-duration(.2s);
+        @include animation-name(ant-scale);
         
         i {
             display: inline-block;
@@ -64,6 +66,6 @@
     }
     &-loading i {
         background-image: url(../images/toast/loading.png);
-        @include animation(spinner-spin 1.5s step-end infinite);
+        @include animation(ant-roate360 1.5s step-end infinite);
     }
 }

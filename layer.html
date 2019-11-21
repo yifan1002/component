@@ -101,7 +101,15 @@ $(function(){
 			shade: 0.2,
 			area: ['410px', 'auto'],
 			btn: ['确定', '取消']
-		})
+		}, function(){
+			//点击确定按钮，结合toast提示
+			$.toast({
+				title: '你点击了确定按钮<br />这是二次提示！',
+				type: 1,
+				time: 200000,
+				mask: 1
+			});
+		});
 	});
 	//错误
 	$('.js-opt2').click(function(){
@@ -196,38 +204,52 @@ $(function(){
 	
 	//轻提示Toast
 	//成功
-	$('.js-toast1').toast();
+	$('.js-toast1').on('click', function(){
+		$.toast();
+	});
 	//失败
-	$('.js-toast2').toast({
-		title: '失败提示',
-		type: 2
+	$('.js-toast2').on('click', function(){
+		$.toast({
+			title: '失败提示',
+			type: 2
+		});
 	});
 	//警告
-	$('.js-toast3').toast({
-		title: '警告提示',
-		type: 3
+	$('.js-toast3').on('click', function(){
+		$.toast({
+			title: '警告提示',
+			type: 3
+		});
 	});
 	//出错
-	$('.js-toast4').toast({
-		title: '出错提示',
-		type: 4
+	$('.js-toast4').on('click', function(){
+		$.toast({
+			title: '出错提示',
+			type: 4
+		});
 	});
 	//加载
-	$('.js-toast5').toast({
-		title: '加载中…',
-		type: 5,
-		time: 2000000,
-		mask: 1 
+	$('.js-toast5').on('click', function(){
+		$.toast({
+			title: '加载中…',
+			type: 5,
+			time: 200000,
+			mask: 1
+		});
 	});
 	//加载-无文字
-	$('.js-toast6').toast({
-		title: '',
-		type: 5
+	$('.js-toast6').on('click', function(){
+		$.toast({
+			title: '',
+			type: 5
+		});
 	});
 	//纯文字
-	$('.js-toast7').toast({
-		title: '纯文字提示。纯文字提示。<br />强制换行',
-		type: 6
+	$('.js-toast7').on('click', function(){
+		$.toast({
+			title: '纯文字提示。纯文字提示。<br />强制换行',
+			type: 6
+		});
 	});
 });
 </script>

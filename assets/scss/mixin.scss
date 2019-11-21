@@ -69,15 +69,18 @@
 }
 
 // Animations
+//合并属性动画
 @mixin animation($animation) {
   -webkit-animation: $animation;
        -o-animation: $animation;
           animation: $animation;
 }
+//动画名称
 @mixin animation-name($name) {
   -webkit-animation-name: $name;
           animation-name: $name;
 }
+//动画持续时间
 @mixin animation-duration($duration) {
   -webkit-animation-duration: $duration;
           animation-duration: $duration;
