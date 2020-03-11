@@ -17,7 +17,7 @@
 	var initStrList = '<div id="province" class="city-select-list">' +
 		'<dl>' +
 			'<dt>A-G</dt>' +
-			'<dd><span pro-code="11" pro-sort="0">北京</span><span pro-code="34" pro-sort="11">安徽</span><span pro-code="" pro-sort="35">福建</span><span pro-code="44" pro-sort="18">广东</span><span pro-code="45" pro-sort="19">广西</span><span pro-code="50" pro-sort="21">重庆</span><span pro-code="52" pro-sort="23">贵州</span><span pro-code="62" pro-sort="27">甘肃</span><span pro-code="82" pro-sort="32">澳门</span></dd>' +
+			'<dd><span pro-code="11" pro-sort="0">北京</span><span pro-code="34" pro-sort="11">安徽</span><span pro-code="35" pro-sort="12">福建</span><span pro-code="44" pro-sort="18">广东</span><span pro-code="45" pro-sort="19">广西</span><span pro-code="50" pro-sort="21">重庆</span><span pro-code="52" pro-sort="23">贵州</span><span pro-code="62" pro-sort="27">甘肃</span><span pro-code="82" pro-sort="32">澳门</span></dd>' +
 		'</dl>' +
 		'<dl>' +
 			'<dt>H-K</dt>' +
