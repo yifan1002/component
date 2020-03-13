@@ -160,7 +160,7 @@
 				direction = this.options.direction,
 				format = this.options.format;
 			//省相关操作
-			$('body').off('click').on('click','#province dd > span',function(){
+			$('#province').on('click','dd > span',function(){
 				//省选择获取数据
 				var province_txt = $(this).text();
 				var province_code = $(this).attr('pro-code');
@@ -188,7 +188,7 @@
 			});
 			
 			//市相关操作
-			$('body').on('click','#city li',function(){
+			$('#city').on('click','li',function(){
 				//市选择获取数据
 				var province_txt = $('.city-select-txt').attr('data-province');
 				var city_txt = $(this).text();
@@ -223,7 +223,7 @@
 			});
 			
 			//区相关操作
-			$('body').on('click','#district li',function(){
+			$('#district').on('click','li',function(){
 				//区选择获取数据
 				var province_txt = $('.city-select-txt').attr('data-province');
 				var city_txt = $('.city-select-txt').attr('data-city');
@@ -236,7 +236,7 @@
 			});
 			
 			//tab切换-回退
-			$('body').on('click','.city-select-tab li.can',function(){
+			$('.city-select-tab').on('click','li.can',function(){
 				$(this).addClass('active').removeClass('can').siblings('li').removeClass('active');
 				$('.city-select-tab li:gt(' + $(this).index() + ')').removeClass('can');
 				$('.city-select-list:eq(' + $(this).index() + ')').show().siblings('.city-select-list').hide();
