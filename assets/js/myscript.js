@@ -73,7 +73,12 @@ $('.webuploader-list').on('click', '.file-edit,.file-remove,.file-save', functio
 
 //下拉多选输入框
 if($('.chosen-select')){
-	$('.chosen-select').chosen({
+	$('.chosen-select-spill').chosen({
+		allow_single_deselect: true,
+		disable_search_threshold: 10,
+		chosen_select_spill: true
+	});
+	$('.chosen-select:not(.chosen-select-spill)').chosen({
 		allow_single_deselect:true,
 		disable_search_threshold: 10
 	}); 

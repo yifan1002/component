@@ -6,6 +6,9 @@
 $chosen-img-path: "../images/spirit/" !default;
 
 //@group Base
+.chosen-select-spill + .chosen-container .chosen-drop {
+    width: 160%;
+}
 .chosen-container {
     position: relative;
     display: inline-block;
@@ -184,6 +187,21 @@ $chosen-img-path: "../images/spirit/" !default;
         word-wrap: break-word;
         -webkit-touch-callout: none;
         color: $c-darken;
+        
+        > .main,
+        > .sub {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        > .main {
+            width: 40%;
+            padding-right: 10px;
+        }
+        > .sub {
+            width: 60%;
+        }
         
         &.active-result {
             display: list-item;
