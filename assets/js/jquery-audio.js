@@ -32,7 +32,7 @@
 				title = $(audio).attr('title'),
 				size = $(audio).attr('size'),
 				download = $(audio).children('source').attr('src'),
-				duration = $(audio).attr('duration');
+				duration = audio.duration || $(audio).attr('duration');
 			$(audio).wrap('<div class="audio"></div>')
 			var $wrap = $(audio).parent('.audio'),
 				str = '';
@@ -61,6 +61,11 @@
 			}
 			$wrap.append(str);
 			
+			// 初始化获取总时长
+			audio.addEventListener('canplaythrough', function(){
+				$wrap.find('.audio-time-total').text(that.transTime(audio.duration));
+			},false);
+			
 			// 播放
 			$wrap.on('click', '.audio-play', function(e) {
 				that.play();
@@ -70,11 +75,6 @@
 				// PS：控制台报“Uncaught(in promise) DOMException”错误，在最新版的Chrome浏览器（以及所有以Chromium为内核的浏览器）中，已不再允许自动播放音频和视频。http://www.nooong.com/docs/chrome_video_autoplay.htm
 				that.play();
 			}
-			
-			// 初始化获取总时长
-			audio.addEventListener('canplaythrough', function(){
-				$wrap.find('.audio-time-total').text(that.transTime(duration));
-			},false);
 			
 			// 点击进度条跳到指定点播放
 			// PS：此处不要用click，否则下面的拖动进度点事件有可能在此处触发，此时e.offsetX的值非常小，会导致进度条弹回开始处（简直不能忍！！）
@@ -182,7 +182,6 @@
 		/**
 		 * 更新进度条与当前播放时间
 		 * @param {object} audio - audio对象
-		 * @param {number} index - 索引，第几个音频（从0开始）
 		 */
 		updateProgress: function(audio) {
 			var value = audio.currentTime / audio.duration,
@@ -197,7 +196,7 @@
 		
 		/**
 		 * 播放完成时把进度调回开始的位置
-		 * @param {number} index - 索引，第几个音频（从0开始）
+		 * @param {object} audio - audio对象
 		 */
 		audioEnded: function(audio) {
 			var $wrap = $(audio).parent('.audio'),
