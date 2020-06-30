@@ -1,0 +1,168 @@
+.audio-horizontal {
+    margin-right: -2%;
+    
+    .audio {
+        border-radius: 3px;
+        
+        & + .audio {
+            margin-top: 0;
+        }
+    }
+    
+    .audio-play {
+        top: 11px;
+        width: 16px;
+        height: 16px;
+        background-repeat: no-repeat;
+        background-position: center center;
+            
+        &.play {
+            background-image: url(../images/icon/play_16x16.png);
+        }
+        
+        &.pause {
+            background-image: url(../images/icon/music.gif);
+        }
+    }
+    
+    .audio-info{
+        position: relative;
+        padding-right: 0;
+        padding-left: 40px;
+    }
+    
+    .audio-time {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45px;
+        margin-top: 0;
+        color: #999;
+    }
+    
+    .audio-time-total {
+        float: none;
+    }
+}
+
+
+.audio {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 8px 0;
+    
+    & + & {
+        margin-top: 10px;
+    }
+    
+    .audio-horizontal & {
+        float: left;
+        width: 22.8%;
+        margin-right: 2%;
+        margin-bottom: 5px;
+    }
+    
+    &-play {
+        position: absolute;
+        top: 17px;
+        top: calc(50% - 17px);
+        left: 15px;
+        z-index: 8;
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        cursor: pointer;
+    
+        &.play {
+            background-image: url(../images/icon/play_34x34.png);
+        }
+        &.pause {
+            background-image: url(../images/icon/pause_34x34.png);
+        }
+    }
+    
+    &-download {
+        position: absolute;
+        top: 25px;
+        top: calc(50% - 9px);
+        right: 15px;
+        display: inline-block;
+        height: 18px;
+        line-height: 18px;
+        background: url(../images/icon/download.png) no-repeat 0 center;
+        padding-left: 15px;
+        color: #fe5633;
+    }
+    
+    &-info {
+        padding: 0 20px 0 60px;
+    }
+    
+    &-download ~ &-info {
+        padding-right: 80px;
+    }
+    
+    &-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        color: #333;
+    }
+    
+    &-progress {
+        position: relative;
+        height: 2px;
+        padding: 5px 0;
+        cursor: pointer;
+        
+        &::before,
+        &-in {
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            display: block;
+            content: '';
+        }
+        &::before {
+            background-color: #e5e5e5;
+            z-index: 5;
+        }
+        &-in {
+            z-index: 6;
+            width: 0;
+            background-color: #e12d29;
+        }
+        &-dot {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            z-index: 7;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #e12d29;
+            margin-top: -4px;
+            cursor: pointer;
+        }
+    }
+    
+    &-time {
+        overflow: hidden;
+        margin-top: 1px;
+
+        &-current {
+            float: left;
+            font-size: 12px;
+        }
+
+        &-total {
+            float: right;
+            font-size: 12px;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>audio</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/all.css" />
+	</head>
+
+	<body class="center">
+
+		<div class="audio-horizontal pa-10 clearfix">
+			<audio class="audio-media" size="4.50MB" duration="117.786122" title="Launch_Kan R. Gao.mp3">
+				<source src="http://file.duzhai.net/Files/Audio/2017-08/af01ab05-d112-4ad7-9cff-2cfecced5bc6.mp3">
+			</audio>
+			<audio class="audio-media" size="2.50MB" duration="10.008" title="标题2">
+				<source src="assets/images/temp/song.mp3" type="audio/mp3">
+			</audio>
+		</div>
+
+		<div class="pa-10">
+			<audio class="audio-media2" size="4.50MB" duration="117.786122" title="Launch_Kan R. Gao.mp3">
+				<source src="http://file.duzhai.net/Files/Audio/2017-08/af01ab05-d112-4ad7-9cff-2cfecced5bc6.mp3">
+			</audio>
+			<audio class="audio-media2" size="2.50MB" duration="10.008" title="标题2">
+				<source src="assets/images/temp/song.mp3" type="audio/mp3">
+			</audio>
+		</div>
+
+		<script src="plugs/jquery-1.9.1.min.js"></script>
+		<script src="assets/js/jquery-audio.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('.audio-media').audio({
+					manual: false, // 可手动调整播放进度，默认true
+					simple: true, // 简易模式，默认false
+					autoplay: false // 自动播放，默认false；PS：控制台报“Uncaught(in promise) DOMException”错误，在最新版的Chrome浏览器（以及所有以Chromium为内核的浏览器）中，已不再允许自动播放音频和视频。http://www.nooong.com/docs/chrome_video_autoplay.htm
+				});
+				$('.audio-media2').audio();
+			});
+		</script>
+	</body>
+
+</html>
