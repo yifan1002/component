@@ -822,6 +822,12 @@
 		</div>
 		<div class="row" style="padding: 5px 10px;">
 			<div class="form-group">
+				<label for="num">文本域自适应高度：</label>
+				<textarea rows="3" class="form-control" id="autoHeight"></textarea>
+			</div>
+		</div>
+		<div class="row" style="padding: 5px 10px;">
+			<div class="form-group">
 				<label for="num">邮箱自动输入：</label>
 				<input type="text" class="form-control" id="email" />
 			</div>
@@ -1870,6 +1876,7 @@
 <script src="assets/js/jquery-text.scroll.js"></script>
 <script src="assets/js/jquery-form.number.js"></script>
 <script src="assets/js/jquery-form.count.js"></script>
+<script src="assets/js/jquery-autoheight.js"></script>
 <script src="assets/js/jquery-count.down.js"></script>
 <script src="assets/js/myscript.js"></script>
 <script type="text/javascript">
@@ -1975,6 +1982,9 @@ $(function(){
 	$('#formCount2').formCount({
 		max: 20
 	});
+	
+	//文本域自适应高度
+	$('#autoHeight').autoHeight();
 	
 	//邮箱自动输入
 	$('#email').mailAuto({
