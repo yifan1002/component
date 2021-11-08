@@ -38,7 +38,16 @@ $lte7:false;
 	background-color: #f8f8f8;
 }
 
-
+.scroll-list {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    
+    li {
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+    }
+}
 
 
 

@@ -54,6 +54,45 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="container">
+		<h2 class="mt-30 pl-10">文字纵向滚动</h2>
+		<h3 class="mt-10 pl-10">单行</h3>
+		<div class="row">
+			<div class="scroll-list" id="verticalScroll1" style="height: 30px;">
+				<ul>
+					<li>1-纵向滚动</li>
+					<li>2-纵向滚动</li>
+					<li>3-纵向滚动</li>
+					<li>4-纵向滚动</li>
+				</ul>
+			</div>
+		</div>
+		<h3 class="mt-10 pl-10">多行</h3>
+		<div class="row">
+			<div class="scroll-list" id="verticalScroll2" style="height: 90px;">
+				<ul>
+					<li>11-纵向滚动</li>
+					<li>22-纵向滚动</li>
+					<li>33-纵向滚动</li>
+					<li>44-纵向滚动</li>
+					<li>55-纵向滚动</li>
+					<li>66-纵向滚动</li>
+					<li>77-纵向滚动</li>
+					<li>88-纵向滚动</li>
+					<li>99-纵向滚动</li>
+				</ul>
+			</div>
+			<p class="mt-10">
+				<button id="verticalScrollBtn1">点击向上滚动</button>
+				<button id="verticalScrollBtn2">点击向下滚动</button>
+			</p>
+		</div>
+		<div class="row">
+			
+		</div>
+	</div>
+	
 	<div class="container">
 		<h2 class="mt-30 pl-10">标题+段落</h2>
 		<div class="row">
@@ -1874,6 +1913,7 @@
 <script src="assets/js/jquery-city.select.js"></script>
 <script src="assets/js/jquery-text.zoom.js"></script>
 <script src="assets/js/jquery-text.scroll.js"></script>
+<script src="assets/js/jquery-vertical.scroll.js"></script>
 <script src="assets/js/jquery-form.number.js"></script>
 <script src="assets/js/jquery-form.count.js"></script>
 <script src="assets/js/jquery-autoheight.js"></script>
@@ -1905,6 +1945,20 @@ $(function(){
 		direction: 'right',
 		speed: 100,
 		offset: 50
+	});
+	
+	//纵向滚动
+	$('#verticalScroll1').verticalScroll({
+		line: 1,
+		speed: 500,
+		timer: 2000
+	});
+	$('#verticalScroll2').verticalScroll({
+		line: 3,
+		speed: 500,
+		timer: 2000,
+		up: 'verticalScrollBtn1',
+		down: 'verticalScrollBtn2'
 	});
 	
 	//tabs
